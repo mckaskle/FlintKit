@@ -22,8 +22,8 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
 import FlintKit
+import Foundation
 import XCTest
 
 class AFBaseTestCase: XCTestCase {
