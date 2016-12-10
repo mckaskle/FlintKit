@@ -37,6 +37,8 @@ public protocol FetchedResultsControllerCollectionViewDataSourceDelegate: class 
   func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, moveItemAtIndexPath sourceIndexPath: IndexPath, toIndexPath destinationIndexPath: IndexPath)
   
   func fetchedResultsControllerCollectionViewDataSourceDidUpdateContent(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>)
+  
+  func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView?
 }
 
 
@@ -278,6 +280,14 @@ final public class FetchedResultsControllerCollectionViewDataSource<
     isProgrammaticallyMovingItem = true
     delegate?.fetchedResultsControllerCollectionViewDataSource(self, moveItemAtIndexPath: sourceIndexPath, toIndexPath: destinationIndexPath)
     isProgrammaticallyMovingItem = false
+  }
+  
+  public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    guard let view = delegate?.fetchedResultsControllerCollectionViewDataSource(self, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath) else {
+      return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kind, for: indexPath)
+    }
+    
+    return view
   }
   
 }
