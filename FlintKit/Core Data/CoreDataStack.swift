@@ -176,17 +176,8 @@ final public class CoreDataStack {
   }
   
   public class func migrate(with configuration: CoreDataStackConfigurationType) throws {
-    var task = UIBackgroundTaskInvalid
-    task = UIApplication.shared.beginBackgroundTask(withName: "FlintKit.CoreDataStack.migrate") {
-      UIApplication.shared.endBackgroundTask(task)
-      task = UIBackgroundTaskInvalid
-    }
-    
     let migrationManager = MigrationManager()
     try migrationManager.migrate(configuration: configuration)
-    
-    UIApplication.shared.endBackgroundTask(task)
-    task = UIBackgroundTaskInvalid
   }
   
   public func newBackgroundContext() -> NSManagedObjectContext {
