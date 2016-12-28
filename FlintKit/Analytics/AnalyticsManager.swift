@@ -38,25 +38,22 @@ public struct AnalyticsManager {
   
   public static var services: [AnalyticsService] = []
   
-  
-  // MARK: - Public Methods
-  
-  public static func log(_ error: Error) {
-    log(error as NSError)
-  }
-  
-  
-  // MARK: - Private Properties
-  
   /// These contain the errors that should not be logged.
   /// [NSErrorDomain: Set<Error Code>]
-  private static let whiteListedErrors: [String: Set<Int>] = [
+  public static var whiteListedErrors: [String: Set<Int>] = [
     NSURLErrorDomain: [
       NSURLErrorCancelled,
       NSURLErrorNetworkConnectionLost,
       NSURLErrorNotConnectedToInternet,
     ]
   ]
+  
+  
+  // MARK: - Public Methods
+  
+  public static func log(_ error: Error) {
+    log(error as NSError)
+  }
   
   
   // MARK: - Private Methods
