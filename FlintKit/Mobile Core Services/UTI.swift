@@ -40,17 +40,17 @@ import MobileCoreServices
     it back to the original tag.
  
  */
-public func UTIForMIMEType(_ MIMEType: String) -> CFString {
+public func UTIForMIMEType(_ MIMEType: String) -> String {
   // Note: because we are not constraining the UTI to conform
   // to any UTI, there will always be a return value. It is
   // therefore known to be safe to force unwrap the return
   // value.
   let UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, MIMEType as CFString, nil)
-  return UTI!.takeRetainedValue()
+  return UTI!.takeRetainedValue() as String
 }
 
 
-public func fileExtension(forUTI UTI: String) -> CFString? {
+public func fileExtension(forUTI UTI: String) -> String? {
   let fileExtension = UTTypeCopyPreferredTagWithClass(UTI as CFString, kUTTagClassFilenameExtension)
-  return fileExtension?.takeRetainedValue()
+  return fileExtension?.takeRetainedValue() as String?
 }
