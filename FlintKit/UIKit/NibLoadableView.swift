@@ -38,7 +38,7 @@ public extension NibLoadableView where Self: UIView {
     return String(describing: self)
   }
   
-  static func instantiate() -> Self {
+  static func _instantiate() -> Self {
     let bundle = Bundle(for: self)
     let nib = UINib(nibName: nibName, bundle: bundle)
     let views = nib.instantiate(withOwner: nil, options: nil)
