@@ -59,6 +59,7 @@
 		C5B38E791D1EF8C900A8F28B /* rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5B38E771D1EF8C900A8F28B /* rainbow.jpg */; };
 		C5B38E7A1D1EF8C900A8F28B /* unicorn.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B38E781D1EF8C900A8F28B /* unicorn.png */; };
 		C5CD2AAB1D9F64FE007199DE /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */; };
+		D29FC8001E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FC7FF1E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		C5B38E771D1EF8C900A8F28B /* rainbow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbow.jpg; sourceTree = "<group>"; };
 		C5B38E781D1EF8C900A8F28B /* unicorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unicorn.png; sourceTree = "<group>"; };
 		C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		D29FC7FF1E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+FlintKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				03C8C3C61C86776100E7BFAE /* Array+FlintKit.swift */,
+				D29FC7FF1E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift */,
 				B92095841D14CE55004B4FBE /* Result.swift */,
 				C58C8C8A1DBC1A770064ADD5 /* String+FlintKit.swift */,
 			);
@@ -540,6 +543,7 @@
 				C58C8C8B1DBC1A770064ADD5 /* String+FlintKit.swift in Sources */,
 				C5B38E6E1D1EF01800A8F28B /* MultipartFormData.swift in Sources */,
 				C52A5A0D1DA065010003ACB0 /* AnalyticsManager.swift in Sources */,
+				D29FC8001E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift in Sources */,
 				B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */,
 				C594E3BE1DCED73600629B43 /* UIView+FlintKit.swift in Sources */,
 				C594E3A91DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift in Sources */,
