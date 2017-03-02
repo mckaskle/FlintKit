@@ -30,6 +30,8 @@
 		03F795031C8A69DB00385923 /* NibLoadableViewTwoTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F795021C8A69DB00385923 /* NibLoadableViewTwoTest.xib */; };
 		03FA91591CDF62DF00475260 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */; };
 		03FA915D1CDF631A00475260 /* AsynchronousOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */; };
+		1F02515B1E688861009AC7C8 /* Optional+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F02515A1E688861009AC7C8 /* Optional+FlintKit.swift */; };
+		1F02515D1E6888A8009AC7C8 /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */; };
 		B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */; };
 		B90C46881D19FD1000CD4F36 /* UIImage+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */; };
 		B92095851D14CE55004B4FBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095841D14CE55004B4FBE /* Result.swift */; };
@@ -99,6 +101,8 @@
 		03F795021C8A69DB00385923 /* NibLoadableViewTwoTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NibLoadableViewTwoTest.xib; sourceTree = "<group>"; };
 		03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperationTests.swift; sourceTree = "<group>"; };
+		1F02515A1E688861009AC7C8 /* Optional+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+FlintKit.swift"; sourceTree = "<group>"; };
+		1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalTests.swift; sourceTree = "<group>"; };
 		B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerTableViewDataSource.swift; sourceTree = "<group>"; };
 		B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FlintKit.swift"; sourceTree = "<group>"; };
 		B92095841D14CE55004B4FBE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 			children = (
 				03C8C3C61C86776100E7BFAE /* Array+FlintKit.swift */,
 				D29FC7FF1E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift */,
+				1F02515A1E688861009AC7C8 /* Optional+FlintKit.swift */,
 				B92095841D14CE55004B4FBE /* Result.swift */,
 				C58C8C8A1DBC1A770064ADD5 /* String+FlintKit.swift */,
 			);
@@ -313,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				03C8C3C91C8677FC00E7BFAE /* ArrayTests.swift */,
+				1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */,
 				C58C8C8C1DBC1B0F0064ADD5 /* StringTests.swift */,
 			);
 			path = "Swift Standard Library";
@@ -471,7 +477,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Castle And King";
+				ORGANIZATIONNAME = "Devin McKaskle";
 				TargetAttributes = {
 					03C8C37A1C8674AD00E7BFAE = {
 						CreatedOnToolsVersion = 7.3;
@@ -535,6 +541,7 @@
 				B92095851D14CE55004B4FBE /* Result.swift in Sources */,
 				03C8C3B61C86762800E7BFAE /* UTI.swift in Sources */,
 				C52A5A081DA0608B0003ACB0 /* Sys.swift in Sources */,
+				1F02515B1E688861009AC7C8 /* Optional+FlintKit.swift in Sources */,
 				B931EEF91CFCE1C7008E58DD /* TryCatcher.m in Sources */,
 				03C8C3BB1C8676D600E7BFAE /* NSManagedObject+FlintKit.swift in Sources */,
 				03C8C3D51C867BE900E7BFAE /* CellRegistration.swift in Sources */,
@@ -572,6 +579,7 @@
 				03C8C3B11C86760300E7BFAE /* UTITests.swift in Sources */,
 				03F794FF1C8A68A100385923 /* NibLoadableViewOne.swift in Sources */,
 				03C8C3B01C86760300E7BFAE /* CFStringTests.swift in Sources */,
+				1F02515D1E6888A8009AC7C8 /* OptionalTests.swift in Sources */,
 				03F795011C8A699C00385923 /* NibLoadableViewTwo.swift in Sources */,
 				B931EEFB1CFCE220008E58DD /* TryCatcherTests.swift in Sources */,
 				C5145A891D9F0BD3001BA24A /* AFError+AlamofireTests.swift in Sources */,

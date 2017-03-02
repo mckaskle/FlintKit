@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  NibLoadableViewTests.swift
+//  StringTests.swift
 //
 //  Copyright (c) 2016 Devin McKaskle
 //
@@ -28,20 +28,28 @@ import FlintKit
 import XCTest
 
 
-class NibLoadableViewTests: XCTestCase {
+class OptionalTests: XCTestCase {
   
-  func testDefaultNibName() {
-    XCTAssertEqual(NibLoadableViewOne.nibName, "NibLoadableViewOne")
+  // MARK: - Tests
+  
+  func testNonNil_some() {
+    let test: String? = "test"
+    XCTAssertEqual(test.nonNil(), "test")
   }
   
-  func testLoadingNibWithDefaultNibName() {
-    let view = NibLoadableViewOne._instantiate()
-    XCTAssertEqual(view.tag, 10)
+  func testNonNil_none() {
+    let test: String? = nil
+    XCTAssertEqual(test.nonNil(), "")
   }
   
-  func testLoadingNibWithCustomNibName() {
-    let view = NibLoadableViewTwo._instantiate()
-    XCTAssertEqual(view.tag, 20)
+  func testNonNil_fallback_some() {
+    let test: String? = "test"
+    XCTAssertEqual(test.nonNil(fallback: "different"), "test")
+  }
+  
+  func testNonNil_fallback_none() {
+    let test: String? = nil
+    XCTAssertEqual(test.nonNil(fallback: "different"), "different")
   }
   
 }

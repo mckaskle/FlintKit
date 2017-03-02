@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  NibLoadableViewTests.swift
+//  StringTests.swift
 //
 //  Copyright (c) 2016 Devin McKaskle
 //
@@ -24,24 +24,14 @@
 //  THE SOFTWARE.
 //
 
-import FlintKit
-import XCTest
+import Foundation
 
 
-class NibLoadableViewTests: XCTestCase {
+public extension Optional where Wrapped: ExpressibleByStringLiteral {
   
-  func testDefaultNibName() {
-    XCTAssertEqual(NibLoadableViewOne.nibName, "NibLoadableViewOne")
-  }
-  
-  func testLoadingNibWithDefaultNibName() {
-    let view = NibLoadableViewOne._instantiate()
-    XCTAssertEqual(view.tag, 10)
-  }
-  
-  func testLoadingNibWithCustomNibName() {
-    let view = NibLoadableViewTwo._instantiate()
-    XCTAssertEqual(view.tag, 20)
+  func nonNil(fallback: String = "") -> String {
+    guard let wrapped = self else { return fallback }
+    return String(describing: wrapped)
   }
   
 }

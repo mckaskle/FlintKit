@@ -34,11 +34,11 @@ class UTITests: XCTestCase {
   // MARK: - Tests
   
   func testUTIForMIMEType_image_jpeg() {
-    XCTAssertEqual(UTIForMIMEType("image/jpeg"), kUTTypeJPEG)
+    XCTAssertEqual(UTIForMIMEType("image/jpeg"), kUTTypeJPEG as String)
   }
   
   func testUTIForMIMEType_image_png() {
-    XCTAssertEqual(UTIForMIMEType("image/png"), kUTTypePNG)
+    XCTAssertEqual(UTIForMIMEType("image/png"), kUTTypePNG as String)
   }
   
   func testUTIForMIMEType_badMIME() {
