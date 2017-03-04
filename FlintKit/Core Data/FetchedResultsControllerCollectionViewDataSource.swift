@@ -87,8 +87,16 @@ final public class FetchedResultsControllerCollectionViewDataSource<
   
   // MARK: - Public Methods
   
-  public func objectAtIndexPath(_ indexPath: IndexPath) -> ItemType {
+  public func object(at indexPath: IndexPath) -> ItemType {
     return controller.object(at: indexPath)
+  }
+  
+  public func safeObject(at indexPath: IndexPath) -> ItemType? {
+    let sections = controller.sections ?? []
+    guard indexPath.section < sections.count else { return nil }
+    let section = sections[indexPath.section]
+    guard indexPath.item < section.numberOfObjects else { return nil }
+    return object(at: indexPath)
   }
   
   /// Keep the data source up to date with the collection view's interactive
@@ -213,7 +221,7 @@ final public class FetchedResultsControllerCollectionViewDataSource<
             break
           }
           
-          let item = self.objectAtIndexPath(indexPath)
+          let item = self.object(at: indexPath)
           self.delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: indexPath)
           
         case let .objectMove(from, to):
@@ -222,7 +230,7 @@ final public class FetchedResultsControllerCollectionViewDataSource<
           if let cell = self.collectionView?.cellForItem(at: from) as? CellType {
             // Use "to" since the object in "from" cell is already at the "to"
             // path in the data model.
-            let item = self.objectAtIndexPath(to)
+            let item = self.object(at: to)
             self.delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: from)
           }
           
@@ -270,7 +278,7 @@ final public class FetchedResultsControllerCollectionViewDataSource<
       itemIndexPath = IndexPath(item: item, section: (indexPath as NSIndexPath).section)
     }
     
-    let item = objectAtIndexPath(itemIndexPath)
+    let item = object(at: itemIndexPath)
     delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: itemIndexPath)
     
     return cell
