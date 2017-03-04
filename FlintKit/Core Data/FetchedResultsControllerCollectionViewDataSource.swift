@@ -199,45 +199,51 @@ final public class FetchedResultsControllerCollectionViewDataSource<
       return
     }
     
-    collectionView?.performBatchUpdates({
-      let changes = self.changes
-      
-      for change in changes {
-        switch change {
-        case let .sectionInsert(section):
-          self.collectionView?.insertSections(IndexSet(integer: section))
-          
-        case let .sectionDelete(section):
-          self.collectionView?.deleteSections(IndexSet(integer: section))
-          
-        case let .objectInsert(indexPath):
-          self.collectionView?.insertItems(at: [indexPath])
-          
-        case let .objectDelete(indexPath):
-          self.collectionView?.deleteItems(at: [indexPath])
-          
-        case let .objectUpdate(indexPath):
-          guard let cell = self.collectionView?.cellForItem(at: indexPath) as? CellType else {
-            break
+    TryCatcher.try({ [unowned self] in
+      self.collectionView?.performBatchUpdates({
+        let changes = self.changes
+        
+        for change in changes {
+          switch change {
+          case let .sectionInsert(section):
+            self.collectionView?.insertSections(IndexSet(integer: section))
+            
+          case let .sectionDelete(section):
+            self.collectionView?.deleteSections(IndexSet(integer: section))
+            
+          case let .objectInsert(indexPath):
+            self.collectionView?.insertItems(at: [indexPath])
+            
+          case let .objectDelete(indexPath):
+            self.collectionView?.deleteItems(at: [indexPath])
+            
+          case let .objectUpdate(indexPath):
+            guard let cell = self.collectionView?.cellForItem(at: indexPath) as? CellType else {
+              break
+            }
+            
+            let item = self.object(at: indexPath)
+            self.delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: indexPath)
+            
+          case let .objectMove(from, to):
+            // The item is moving because some data changed. Update the cell before
+            // moving it.
+            if let cell = self.collectionView?.cellForItem(at: from) as? CellType {
+              // Use "to" since the object in "from" cell is already at the "to"
+              // path in the data model.
+              let item = self.object(at: to)
+              self.delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: from)
+            }
+            
+            self.collectionView?.moveItem(at: from, to: to)
           }
-          
-          let item = self.object(at: indexPath)
-          self.delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: indexPath)
-          
-        case let .objectMove(from, to):
-          // The item is moving because some data changed. Update the cell before
-          // moving it.
-          if let cell = self.collectionView?.cellForItem(at: from) as? CellType {
-            // Use "to" since the object in "from" cell is already at the "to"
-            // path in the data model.
-            let item = self.object(at: to)
-            self.delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: from)
-          }
-          
-          self.collectionView?.moveItem(at: from, to: to)
         }
-      }
-    }, completion: nil)
+      }, completion: nil)
+    }) { [unowned self] _ in
+      // An error occurred while performing the changes. The best we can do
+      // is reload the collection view and hope it works.
+      self.collectionView?.reloadData()
+    }
   }
   
   
