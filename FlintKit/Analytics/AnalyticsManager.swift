@@ -45,6 +45,12 @@ public struct AnalyticsManager {
       NSURLErrorCancelled,
       NSURLErrorNetworkConnectionLost,
       NSURLErrorNotConnectedToInternet,
+    ],
+    // Undocumented, private errors that are returned when no Internet connection
+    // is available and a product is requested from StoreKit.
+    // http://www.openradar.me/25502597
+    "SSErrorDomain": [
+      110
     ]
   ]
   
