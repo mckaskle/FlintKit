@@ -32,6 +32,7 @@
 		03FA915D1CDF631A00475260 /* AsynchronousOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */; };
 		1F02515B1E688861009AC7C8 /* Optional+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F02515A1E688861009AC7C8 /* Optional+FlintKit.swift */; };
 		1F02515D1E6888A8009AC7C8 /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */; };
+		1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */; };
 		B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */; };
 		B90C46881D19FD1000CD4F36 /* UIImage+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */; };
 		B92095851D14CE55004B4FBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095841D14CE55004B4FBE /* Result.swift */; };
@@ -103,6 +104,7 @@
 		03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperationTests.swift; sourceTree = "<group>"; };
 		1F02515A1E688861009AC7C8 /* Optional+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+FlintKit.swift"; sourceTree = "<group>"; };
 		1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalTests.swift; sourceTree = "<group>"; };
+		1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+FlintKit.swift"; sourceTree = "<group>"; };
 		B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerTableViewDataSource.swift; sourceTree = "<group>"; };
 		B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FlintKit.swift"; sourceTree = "<group>"; };
 		B92095841D14CE55004B4FBE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */,
 				03C8C3D41C867BE900E7BFAE /* UIAlertController+FlintKit.swift */,
 				B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */,
+				1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */,
 				C594E3BD1DCED73600629B43 /* UIView+FlintKit.swift */,
 				C5AC57091DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift */,
 			);
@@ -543,6 +546,7 @@
 				C52A5A081DA0608B0003ACB0 /* Sys.swift in Sources */,
 				1F02515B1E688861009AC7C8 /* Optional+FlintKit.swift in Sources */,
 				B931EEF91CFCE1C7008E58DD /* TryCatcher.m in Sources */,
+				1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */,
 				03C8C3BB1C8676D600E7BFAE /* NSManagedObject+FlintKit.swift in Sources */,
 				03C8C3D51C867BE900E7BFAE /* CellRegistration.swift in Sources */,
 				03C8C3C51C86774700E7BFAE /* FileManager+FlintKit.swift in Sources */,
