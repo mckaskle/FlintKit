@@ -113,6 +113,11 @@ public final class NetworkActivityIndicatorManager {
         application.isNetworkActivityIndicatorVisible = false
         
       case .delayingStart:
+        // Apple's HIG describes the following:
+        //   > Display the network activity indicator to provide feedback when your app accesses
+        //   > the network for more than a couple of seconds. If the operation finishes sooner
+        //   > than that, you don’t have to show the network activity indicator, because the
+        //   > indicator is likely to disappear before users notice its presence.
         startTimer = .scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] _ in
           guard let s = self else { return }
           s.state = s.activityCount > 0 ? .active : .notActive
@@ -124,6 +129,8 @@ public final class NetworkActivityIndicatorManager {
         
       case .delayingEnd:
         endTimer?.invalidate()
+        // Delay hiding the indicator so that if multiple requests are happening one after another,
+        // there is one continuous showing of the network indicator.
         endTimer = .scheduledTimer(withTimeInterval: 0.17, repeats: false) { [weak self] _ in
           self?.state = .notActive
         }
