@@ -162,6 +162,7 @@ final public class Keychain {
     case couldNotEncodeKey
     case couldNotCreateKeychainItem(OSStatus)
     case couldNotDeleteKeychainItem(OSStatus)
+    case couldNotDeleteKeychainService(OSStatus)
     case couldNotUpdateKeychainItem(OSStatus)
   }
   
@@ -370,7 +371,7 @@ final public class Keychain {
   /// - parameter accessibility: accessibility level to use when
   ///   looking up the keychain item.
   /// - throws: Throws an error if the item could not be deleted.
-  public func removeObject(forKey key: String, accessibility: Accessibility = .default) throws {
+  public func removeItem(forKey key: String, accessibility: Accessibility = .default) throws {
     let dictionary = try queryDictionary(forKey: key, accessibility: accessibility)
     
     // Delete
@@ -378,11 +379,32 @@ final public class Keychain {
     guard status == errSecSuccess else { throw Error.couldNotDeleteKeychainItem(status) }
   }
   
+  /// Remove all keychain data added through Keychain. This will only delete 
+  /// items matching the currnt ServiceName and AccessGroup if one is set.
+  ///
+  /// - throws: Throws an error if the keychain service couldn't be deleted.
+  public func removeAll() throws {
+    // Setup dictionary to access keychain and specify we are using a generic 
+    // password (rather than a certificate, internet password, etc)
+    var dictionary: [String: Any] = [SecClass: kSecClassGenericPassword]
+    
+    // Uniquely identify this keychain accessor
+    dictionary[SecAttrService] = serviceName
+    
+    // Set the keychain access group if defined
+    if let accessGroup = accessGroup {
+      dictionary[SecAttrAccessGroup] = accessGroup
+    }
+    
+    let status = SecItemDelete(dictionary as CFDictionary)
+    guard status == errSecSuccess else { throw Error.couldNotDeleteKeychainService(status) }
+  }
+  
   
   // MARK: - Private Properties
   
-  /// ServiceName is used for the kSecAttrService property to uniquely identify this
-  /// keychain accessor.
+  /// ServiceName is used for the kSecAttrService property to uniquely identify
+  /// this keychain accessor.
   private let serviceName: String
   
   /// AccessGroup is used for the kSecAttrAccessGroup property to identify which
@@ -430,8 +452,8 @@ final public class Keychain {
     return dictionary
   }
   
-  /// Update existing data associated with a specified key name. The existing data
-  /// will be overwritten by the new data.
+  /// Update existing data associated with a specified key name. The existing
+  /// data will be overwritten by the new data.
   private func update(_ value: Data, forKey key: String, accessibility: Accessibility?) throws {
     let queryDictionary = try self.queryDictionary(forKey: key, accessibility: accessibility)
     let updateDictionary = [SecValueData: value]
