@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  Array+FlintKit.swift
+//  Keychain.swift
 //
 //  Copyright (c) 2016 Devin McKaskle
 //
@@ -136,7 +136,7 @@ final public class Keychain {
     case whenUnlockedThisDeviceOnly
     
     
-    public static var `default`: Accessibility { return .afterFirstUnlock }
+    public static var `default`: Accessibility { return .whenUnlocked }
     
     
     fileprivate var keychainAttrValue: CFString {
@@ -425,7 +425,7 @@ final public class Keychain {
   /// - returns: A dictionary with all the needed properties setup to access the 
   ///   keychain on iOS
   /// - throws: Throws an error when the key could not be encoded.
-  private func queryDictionary(forKey key: String, accessibility: Accessibility? = nil) throws -> [String: Any] {
+  private func queryDictionary(forKey key: String, accessibility: Accessibility?) throws -> [String: Any] {
     // Setup default access as generic password (rather than a certificate,
     // internet password, etc).
     var dictionary: [String: Any] = [SecClass: kSecClassGenericPassword]
