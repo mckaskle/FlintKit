@@ -156,7 +156,6 @@ final public class Keychain {
   public enum Error: Swift.Error {
     case didNotReceiveItemAsData
     case couldNotDecodeObject
-    case couldNotDecodeNumber
     case couldNotDecodeString
     case couldNotEncodeString
     case couldNotEncodeKey
@@ -256,9 +255,9 @@ final public class Keychain {
   /// - returns: The decoded object associated with the key if it exists. If no
   ///   data exists, returns nil.
   /// - throws: If the data cannot be decoded, an error is thrown.
-  public func object(forKey key: String, accessibility: Accessibility? = nil) throws -> NSCoding? {
+  public func object<T: NSCoding>(forKey key: String, accessibility: Accessibility? = nil) throws -> T? {
     guard let data = try self.data(forKey: key, accessibility: accessibility) else { return nil }
-    guard let object = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSCoding else { throw Error.couldNotDecodeObject }
+    guard let object = NSKeyedUnarchiver.unarchiveObject(with: data) as? T else { throw Error.couldNotDecodeObject }
     return object
   }
   
@@ -464,9 +463,7 @@ final public class Keychain {
   }
   
   private func number(forKey key: String, accessibility: Accessibility?) throws -> NSNumber? {
-    guard let object = try self.object(forKey: key, accessibility: accessibility) else { return nil }
-    guard let number = object as? NSNumber else { throw Error.couldNotDecodeNumber }
-    return number
+    return try self.object(forKey: key, accessibility: accessibility)
   }
   
 }
