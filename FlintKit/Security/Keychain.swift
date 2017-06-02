@@ -396,7 +396,8 @@ final public class Keychain {
     }
     
     let status = SecItemDelete(dictionary as CFDictionary)
-    guard status == errSecSuccess else { throw Error.couldNotDeleteKeychainService(status) }
+    let validStatuses: Set<OSStatus> = [errSecSuccess, errSecItemNotFound]
+    guard validStatuses.contains(status) else { throw Error.couldNotDeleteKeychainService(status) }
   }
   
   
