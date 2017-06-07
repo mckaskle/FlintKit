@@ -50,6 +50,31 @@ public final class NetworkActivityIndicatorManager {
   
   static public let shared = NetworkActivityIndicatorManager(application: .shared)
   
+  public private(set) var activityCount = 0 {
+    didSet {
+      switch state {
+      case .notActive:
+        if activityCount > 0 {
+          state = .delayingStart
+        }
+        
+      case .delayingStart:
+        // No-op, let the timer finish.
+        break
+        
+      case .active:
+        if activityCount <= 0 {
+          state = .delayingEnd
+        }
+        
+      case .delayingEnd:
+        if activityCount > 0 {
+          state = .active
+        }
+      }
+    }
+  }
+  
   
   // MARK: - Public Methods
   
@@ -78,31 +103,6 @@ public final class NetworkActivityIndicatorManager {
   
   private var startTimer: Timer?
   private var endTimer: Timer?
-  
-  private var activityCount = 0 {
-    didSet {
-      switch state {
-      case .notActive:
-        if activityCount > 0 {
-          state = .delayingStart
-        }
-        
-      case .delayingStart:
-        // No-op, let the timer finish.
-        break
-        
-      case .active:
-        if activityCount <= 0 {
-          state = .delayingEnd
-        }
-        
-      case .delayingEnd:
-        if activityCount > 0 {
-          state = .active
-        }
-      }
-    }
-  }
   
   private var state: State = .notActive {
     didSet {
