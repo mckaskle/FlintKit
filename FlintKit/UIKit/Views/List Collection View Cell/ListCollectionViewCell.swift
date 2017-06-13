@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  ListTableViewCell.swift
+//  ListCollectionViewCell.swift
 //
 //  Copyright (c) 2017 Devin McKaskle
 //
@@ -27,7 +27,7 @@
 import UIKit
 
 
-final public class ListTableViewCell: UITableViewCell {
+final public class ListCollectionViewCell: UICollectionViewCell {
   
   // MARK: - Object Lifecycle
   
@@ -52,8 +52,8 @@ final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Properties
   
-  static public let rowHeight = UITableViewAutomaticDimension
-  static public let estimatedRowHeight: CGFloat = 63
+  @available(iOS 10.0, *)
+  public static let itemSize = UICollectionViewFlowLayoutAutomaticSize
   
   public var headline: String? {
     get { return headlineLabel.text }
@@ -200,7 +200,7 @@ final public class ListTableViewCell: UITableViewCell {
   }
   
   
-  // MARK: - UITableViewCell
+  // MARK: - UICollectionReusableView
   
   override public func prepareForReuse() {
     super.prepareForReuse()
@@ -212,4 +212,4 @@ final public class ListTableViewCell: UITableViewCell {
 
 
 // MARK: - NibLoadableView
-extension ListTableViewCell: NibLoadableView {}
+extension ListCollectionViewCell: NibLoadableView {}

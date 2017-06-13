@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  CellRegistration.swift
+//  ListCellAccessoryContainerView.swift
 //
 //  Copyright (c) 2017 Devin McKaskle
 //
