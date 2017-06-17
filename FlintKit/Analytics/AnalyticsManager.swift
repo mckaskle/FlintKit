@@ -58,16 +58,7 @@ public struct AnalyticsManager {
   // MARK: - Public Methods
   
   public static func log(_ error: Error) {
-    log(error as NSError)
-  }
-  
-  
-  // MARK: - Private Methods
-  
-  /// This will stay private until it's necessary 
-  // to make it available elsewhere.
-  private static func log(_ error: NSError) {
-    guard !(whiteListedErrors[error.domain]?.contains(error.code) ?? false) else { return }
+    guard !(whiteListedErrors[error._domain]?.contains(error._code) ?? false) else { return }
     
     for service in services {
       service.log(error)

@@ -28,5 +28,5 @@ import Foundation
 
 
 public protocol AnalyticsService {
-  func log(_ error: NSError)
+  func log(_ error: Error)
 }

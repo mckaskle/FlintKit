@@ -36,9 +36,9 @@ public struct PrintingAnalyticsService: AnalyticsService {
   
   // MARK: - Analytics Service
   
-  public func log(_ error: NSError) {
+  public func log(_ error: Error) {
     let symbols = Thread.callStackSymbols.joined(separator: "\n")
-    print("ANALYTICS: Error", error, "\n", symbols)
+    print("ANALYTICS: Error", String(reflecting: error), "\n", symbols)
   }
   
 }
