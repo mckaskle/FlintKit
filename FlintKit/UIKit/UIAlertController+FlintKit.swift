@@ -30,17 +30,17 @@ import UIKit
 public extension UIAlertController {
   
   func addDoneAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
-    let action = UIAlertAction(title: NSLocalizedString("Done", tableName: "FlintKitLocalizable", comment: "Done button on alert view"), style: .default, handler: handler)
+    let action = UIAlertAction(title: .done, style: .default, handler: handler)
     addAction(action)
   }
   
   func addOkayAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
-    let action = UIAlertAction(title: NSLocalizedString("OK", tableName: "FlintKitLocalizable", comment: "OK button on alert view"), style: .default, handler: handler)
+    let action = UIAlertAction(title: .ok, style: .default, handler: handler)
     addAction(action)
   }
   
   func addCancelAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
-    let action = UIAlertAction(title: NSLocalizedString("Cancel", tableName: "FlintKitLocalizable", comment: "Cancel button on alert view"), style: .cancel, handler: handler)
+    let action = UIAlertAction(title: .cancel, style: .cancel, handler: handler)
     addAction(action)
   }
   
