@@ -18,7 +18,7 @@ import Foundation
  - Seealso: `dump(_:to:name:indent:maxDepth:maxItems)`
  - Author: https://oleb.net/blog/2017/03/dump-as-equatable-safeguard/
  */
-func assertDumpsEqual<T>(_ lhs: @autoclosure () -> T,
+public func assertDumpsEqual<T>(_ lhs: @autoclosure () -> T,
                       _ rhs: @autoclosure () -> T,
                       file: StaticString = #file, line: UInt = #line) {
   assert(String(dumping: lhs()) == String(dumping: rhs()),
