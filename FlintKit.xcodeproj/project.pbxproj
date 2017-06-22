@@ -39,6 +39,7 @@
 		4483FE0F1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */; };
 		4483FE111EF065C900EA8FA3 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */; };
 		4483FE131EF0665000EA8FA3 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4483FE121EF0665000EA8FA3 /* ListCollectionViewCell.xib */; };
+		44AA394C1EFC261700015795 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA394B1EFC261700015795 /* Assert.swift */; };
 		B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */; };
 		B90C46881D19FD1000CD4F36 /* UIImage+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */; };
 		B92095851D14CE55004B4FBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095841D14CE55004B4FBE /* Result.swift */; };
@@ -117,6 +118,7 @@
 		4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellAccessoryContainerView.swift; sourceTree = "<group>"; };
 		4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		4483FE121EF0665000EA8FA3 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
+		44AA394B1EFC261700015795 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
 		B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerTableViewDataSource.swift; sourceTree = "<group>"; };
 		B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FlintKit.swift"; sourceTree = "<group>"; };
 		B92095841D14CE55004B4FBE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				03C8C3C61C86776100E7BFAE /* Array+FlintKit.swift */,
+				44AA394B1EFC261700015795 /* Assert.swift */,
 				D29FC7FF1E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift */,
 				B92095841D14CE55004B4FBE /* Result.swift */,
 				C58C8C8A1DBC1A770064ADD5 /* String+FlintKit.swift */,
@@ -609,6 +612,7 @@
 				C58C8C8B1DBC1A770064ADD5 /* String+FlintKit.swift in Sources */,
 				C5B38E6E1D1EF01800A8F28B /* MultipartFormData.swift in Sources */,
 				C52A5A0D1DA065010003ACB0 /* AnalyticsManager.swift in Sources */,
+				44AA394C1EFC261700015795 /* Assert.swift in Sources */,
 				D29FC8001E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift in Sources */,
 				B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */,
 				C594E3BE1DCED73600629B43 /* UIView+FlintKit.swift in Sources */,

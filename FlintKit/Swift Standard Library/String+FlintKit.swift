@@ -27,18 +27,18 @@
 import Foundation
 
 
-public extension String {
+extension String {
   
   // MARK: - Public Properties
   
-  static let cancel = NSLocalizedString("Cancel", tableName: "FlintKitLocalizable", comment: "Cancel button on alert view")
-  static let done = NSLocalizedString("Done", tableName: "FlintKitLocalizable", comment: "Done button on alert view")
-  static let ok = NSLocalizedString("OK", tableName: "FlintKitLocalizable", comment: "OK button on alert view")
+  public static let cancel = NSLocalizedString("Cancel", tableName: "FlintKitLocalizable", comment: "Cancel button on alert view")
+  public static let done = NSLocalizedString("Done", tableName: "FlintKitLocalizable", comment: "Done button on alert view")
+  public static let ok = NSLocalizedString("OK", tableName: "FlintKitLocalizable", comment: "OK button on alert view")
   
   
   // MARK: - Public Methods
   
-  func normalized() -> String {
+  public func normalized() -> String {
     let mutable = NSMutableString(string: self) as CFMutableString
     // Using a trick to perform several transformations in one go. If this ever breaks,
     // these are the transformations that will need to be done one at a time:
@@ -47,6 +47,15 @@ public extension String {
     // - kCFStringLowercase
     CFStringTransform(mutable, nil, "Any-Latin; Latin-ASCII; Any-Lower" as CFString, false)
     return mutable as String
+  }
+  
+  
+  // MARK: - Internal Methods
+  
+  /// Author: https://oleb.net/blog/2017/03/dump-as-equatable-safeguard/
+  init<T>(dumping x: T) {
+    self.init()
+    dump(x, to: &self)
   }
   
 }
