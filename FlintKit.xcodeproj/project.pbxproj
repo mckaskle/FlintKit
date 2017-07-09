@@ -30,7 +30,6 @@
 		03F795031C8A69DB00385923 /* NibLoadableViewTwoTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F795021C8A69DB00385923 /* NibLoadableViewTwoTest.xib */; };
 		03FA91591CDF62DF00475260 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */; };
 		03FA915D1CDF631A00475260 /* AsynchronousOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */; };
-		1F02515D1E6888A8009AC7C8 /* OptionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */; };
 		1FADD5ED1EA1564B00274197 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FADD5EA1EA1564B00274197 /* ListTableViewCell.swift */; };
 		1FADD5EE1EA1564B00274197 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */; };
 		1FD0AAA71E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */; };
@@ -109,7 +108,6 @@
 		03F795021C8A69DB00385923 /* NibLoadableViewTwoTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NibLoadableViewTwoTest.xib; sourceTree = "<group>"; };
 		03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperationTests.swift; sourceTree = "<group>"; };
-		1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalTests.swift; sourceTree = "<group>"; };
 		1FADD5EA1EA1564B00274197 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 			isa = PBXGroup;
 			children = (
 				03C8C3C91C8677FC00E7BFAE /* ArrayTests.swift */,
-				1F02515C1E6888A8009AC7C8 /* OptionalTests.swift */,
 				C58C8C8C1DBC1B0F0064ADD5 /* StringTests.swift */,
 			);
 			path = "Swift Standard Library";
@@ -643,7 +640,6 @@
 				03C8C3B11C86760300E7BFAE /* UTITests.swift in Sources */,
 				03F794FF1C8A68A100385923 /* NibLoadableViewOne.swift in Sources */,
 				03C8C3B01C86760300E7BFAE /* CFStringTests.swift in Sources */,
-				1F02515D1E6888A8009AC7C8 /* OptionalTests.swift in Sources */,
 				03F795011C8A699C00385923 /* NibLoadableViewTwo.swift in Sources */,
 				B931EEFB1CFCE220008E58DD /* TryCatcherTests.swift in Sources */,
 				C5145A891D9F0BD3001BA24A /* AFError+AlamofireTests.swift in Sources */,
