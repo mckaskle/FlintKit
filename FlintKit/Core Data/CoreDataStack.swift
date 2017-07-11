@@ -32,8 +32,33 @@ public protocol CoreDataStackConfigurationType {
   var managedObjectModel: NSManagedObjectModel { get }
   var persistentStoreType: CoreDataStack.PersistentStoreType { get }
   
-  func destination(forSource source: NSManagedObjectModel) throws -> NSManagedObjectModel
+  func sourceModelContainer(forSourceMetadata metadata: [String: Any]) throws -> CoreDataStackSourceModelContainer
+  func destinationModel(forSourceModelContainer container: CoreDataStackSourceModelContainer) throws -> NSManagedObjectModel
   func mappingModels(fromSource source: NSManagedObjectModel, toDestination destination: NSManagedObjectModel) throws -> [NSMappingModel]
+}
+
+
+private enum CoreDataStackConfigurationTypeError: Error {
+  case cannotFindSourceModel
+}
+
+extension CoreDataStackConfigurationType {
+  
+  public func sourceModelContainer(forSourceMetadata metadata: [String: Any]) throws -> CoreDataStackSourceModelContainer {
+    print(Bundle.allBundles)
+    for bundle in Bundle.allBundles {
+      guard
+        let path = bundle.path(forManagedObjectModelSourceMetadata: metadata),
+        let model = NSManagedObjectModel(contentsOf: path) else {
+          continue
+      }
+      
+      return CoreDataStackSourceModelContainer(model: model, metadata: metadata, path: path)
+    }
+    
+    throw CoreDataStackConfigurationTypeError.cannotFindSourceModel
+  }
+  
 }
 
 
@@ -71,7 +96,7 @@ final public class CoreDataStack {
     public let managedObjectModel: NSManagedObjectModel
     public let persistentStoreType: CoreDataStack.PersistentStoreType
     
-    public var destinationBlock: ((_ forSource: NSManagedObjectModel) throws -> NSManagedObjectModel) = { source in
+    public var destinationBlock: ((_ forContainer: CoreDataStackSourceModelContainer) throws -> NSManagedObjectModel) = { container in
       guard let model = NSManagedObjectModel.mergedModel(from: nil) else {
         throw CoreDataStackError.cannotLoadModelDestinationBlock
       }
@@ -83,8 +108,8 @@ final public class CoreDataStack {
       return try [NSMappingModel.inferredMappingModel(forSourceModel: source, destinationModel: destination)]
     }
     
-    public func destination(forSource source: NSManagedObjectModel) throws -> NSManagedObjectModel {
-      return try destinationBlock(source)
+    public func destinationModel(forSourceModelContainer container: CoreDataStackSourceModelContainer) throws -> NSManagedObjectModel {
+      return try destinationBlock(container)
     }
     
     public func mappingModels(fromSource source: NSManagedObjectModel, toDestination destination: NSManagedObjectModel) throws -> [NSMappingModel] {

@@ -33,7 +33,6 @@ final class MigrationManager {
   // MARK: - Enum
   
   fileprivate enum MigrationManagerError: Error {
-    case cannotLoadSourceModel
     case unknownStorePathAndExtension
   }
   
@@ -59,15 +58,13 @@ final class MigrationManager {
       return
     }
     
-    guard let sourceModel = NSManagedObjectModel.mergedModel(from: Bundle.allBundles, forStoreMetadata: sourceMetadata) else {
-      throw MigrationManagerError.cannotLoadSourceModel
-    }
+    let sourceModelContainer = try configuration.sourceModelContainer(forSourceMetadata: sourceMetadata)
     
-    let destinationModel = try configuration.destination(forSource: sourceModel)
+    let destinationModel = try configuration.destinationModel(forSourceModelContainer: sourceModelContainer)
     let destinationUrl = try destinationStoreUrl(sourceStoreUrl: sourceStoreUrl)
-    let mappingModels = try configuration.mappingModels(fromSource: sourceModel, toDestination: destinationModel)
+    let mappingModels = try configuration.mappingModels(fromSource: sourceModelContainer.model, toDestination: destinationModel)
     
-    let manager = NSMigrationManager(sourceModel: sourceModel, destinationModel: destinationModel)
+    let manager = NSMigrationManager(sourceModel: sourceModelContainer.model, destinationModel: destinationModel)
     
     for mappingModel in mappingModels {
       try manager.migrateStore(from: sourceStoreUrl, sourceType: type, options: nil, with: mappingModel, toDestinationURL: destinationUrl, destinationType: type, destinationOptions: nil)
