@@ -58,6 +58,8 @@
 		C52A5A0B1DA064BF0003ACB0 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A0A1DA064BF0003ACB0 /* AnalyticsService.swift */; };
 		C52A5A0D1DA065010003ACB0 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A0C1DA065010003ACB0 /* AnalyticsManager.swift */; };
 		C52A5A0F1DA13E630003ACB0 /* PrintingAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A0E1DA13E630003ACB0 /* PrintingAnalyticsService.swift */; };
+		C543E35F1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C543E35E1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift */; };
+		C543E3611F150CE50078DBDF /* CoreDataStackSourceModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C543E3601F150CE50078DBDF /* CoreDataStackSourceModelContainer.swift */; };
 		C58C8C8B1DBC1A770064ADD5 /* String+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C8C8A1DBC1A770064ADD5 /* String+FlintKit.swift */; };
 		C58C8C8D1DBC1B0F0064ADD5 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C8C8C1DBC1B0F0064ADD5 /* StringTests.swift */; };
 		C594E3A91DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594E3A81DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift */; };
@@ -136,6 +138,8 @@
 		C52A5A0A1DA064BF0003ACB0 /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		C52A5A0C1DA065010003ACB0 /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		C52A5A0E1DA13E630003ACB0 /* PrintingAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingAnalyticsService.swift; sourceTree = "<group>"; };
+		C543E35E1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+CoreData+FlintKit.swift"; sourceTree = "<group>"; };
+		C543E3601F150CE50078DBDF /* CoreDataStackSourceModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSourceModelContainer.swift; sourceTree = "<group>"; };
 		C58C8C8A1DBC1A770064ADD5 /* String+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FlintKit.swift"; sourceTree = "<group>"; };
 		C58C8C8C1DBC1B0F0064ADD5 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		C594E3A81DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+FlintKit.swift"; sourceTree = "<group>"; };
@@ -254,7 +258,9 @@
 		03C8C39D1C8675C600E7BFAE /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				C543E35E1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift */,
 				03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */,
+				C543E3601F150CE50078DBDF /* CoreDataStackSourceModelContainer.swift */,
 				03C8C3B81C8676D600E7BFAE /* FetchedResultsControllerCollectionViewDataSource.swift */,
 				B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */,
 				B9437BD51D0BB8BF00357DAD /* MigrationManager.swift */,
@@ -596,9 +602,11 @@
 				C52A5A0F1DA13E630003ACB0 /* PrintingAnalyticsService.swift in Sources */,
 				1FADD5ED1EA1564B00274197 /* ListTableViewCell.swift in Sources */,
 				B92095851D14CE55004B4FBE /* Result.swift in Sources */,
+				C543E3611F150CE50078DBDF /* CoreDataStackSourceModelContainer.swift in Sources */,
 				03C8C3B61C86762800E7BFAE /* UTI.swift in Sources */,
 				C52A5A081DA0608B0003ACB0 /* Sys.swift in Sources */,
 				4433A6351ED4BE2D00344033 /* Keychain.swift in Sources */,
+				C543E35F1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift in Sources */,
 				1FD0AAA71E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift in Sources */,
 				B931EEF91CFCE1C7008E58DD /* TryCatcher.m in Sources */,
 				1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */,
