@@ -15,7 +15,7 @@ extension Bundle {
   func path(forManagedObjectModelSourceMetadata metadata: [String: Any]) -> URL? {
     let momdPaths = paths(forResourcesOfType: "momd", inDirectory: nil)
     
-    var modelPaths: [String] = momdPaths.flatMap { (momdPath: String) -> [String] in
+    var modelPaths: [String] = momdPaths.flatMap { momdPath -> [String] in
       let directory = (momdPath as NSString).lastPathComponent
       return paths(forResourcesOfType: "mom", inDirectory: directory)
     }
