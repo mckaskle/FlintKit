@@ -37,6 +37,24 @@ public protocol FetchedResultsControllerTableViewDataSourceDelegate: class {
   func fetchedResultsControllerTableViewDataSource(_ dataSource: FetchedResultsControllerTableViewDataSource<ItemType, CellType, Self>, commitDeleteForItem item: ItemType, atIndexPath indexPath: IndexPath)
   
   func fetchedResultsControllerTableViewDataSource(_ dataSource: FetchedResultsControllerTableViewDataSource<ItemType, CellType, Self>, canEditItem item: ItemType, atIndexPath indexPath: IndexPath) -> Bool
+  
+  func fetchedResultsControllerTableViewDataSourceDidUpdateContent(_ dataSource: FetchedResultsControllerTableViewDataSource<ItemType, CellType, Self>)
+}
+
+public extension FetchedResultsControllerTableViewDataSourceDelegate {
+  
+  func fetchedResultsControllerTableViewDataSource(_ dataSource: FetchedResultsControllerTableViewDataSource<ItemType, CellType, Self>, commitDeleteForItem item: ItemType, atIndexPath indexPath: IndexPath) {
+    assertionFailure("By default, table view items cannot be edited. If you change this default, commitDeleteForItem must be implemented.")
+  }
+  
+  func fetchedResultsControllerTableViewDataSource(_ dataSource: FetchedResultsControllerTableViewDataSource<ItemType, CellType, Self>, canEditItem item: ItemType, atIndexPath indexPath: IndexPath) -> Bool {
+    return false
+  }
+  
+  func fetchedResultsControllerTableViewDataSourceDidUpdateContent(_ dataSource: FetchedResultsControllerTableViewDataSource<ItemType, CellType, Self>) {
+    // No-op.
+  }
+  
 }
 
 
@@ -61,6 +79,13 @@ final public class FetchedResultsControllerTableViewDataSource<
     controller.delegate = self
     try controller.performFetch()
     tableView.reloadData()
+  }
+  
+  
+  // MARK: - Public Properties
+  
+  public var fetchedObjects: [ItemType] {
+    return controller.fetchedObjects ?? []
   }
   
   
@@ -136,6 +161,7 @@ final public class FetchedResultsControllerTableViewDataSource<
   
   public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     tableView?.endUpdates()
+    delegate?.fetchedResultsControllerTableViewDataSourceDidUpdateContent(self)
   }
   
   
