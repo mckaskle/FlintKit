@@ -30,6 +30,6 @@
 // Wrapper for try-catch that is available to Swift.
 @interface TryCatcher : NSObject
 
-+ (void)try:(void (^__nonnull)())tryBlock catch:(void (^__nullable)(NSException  * _Nonnull))catchBlock;
++ (void)try:(void (^__nonnull)(void))tryBlock catch:(void (^__nullable)(NSException  * _Nonnull))catchBlock;
 
 @end

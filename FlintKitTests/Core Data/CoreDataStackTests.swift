@@ -101,7 +101,7 @@ private struct SQLiteWithNoExistingStoreConfiguration: CoreDataStackConfiguratio
     return .sqLite(storeUrl: url)
   }()
   
-  func destination(forSource source: NSManagedObjectModel) throws -> NSManagedObjectModel {
+  func destinationModel(forSourceModelContainer container: CoreDataStackSourceModelContainer) throws -> NSManagedObjectModel {
     throw SQLiteWithNoExistingStoreConfigurationError.genericError
   }
   
@@ -134,7 +134,7 @@ private struct SimpleInMemoryConfiguration: CoreDataStackConfigurationType {
   
   let persistentStoreType: CoreDataStack.PersistentStoreType = .inMemory
   
-  fileprivate func destination(forSource source: NSManagedObjectModel) throws -> NSManagedObjectModel {
+  fileprivate func destinationModel(forSourceModelContainer container: CoreDataStackSourceModelContainer) throws -> NSManagedObjectModel {
     throw SimpleInMemoryConfigurationError.genericError
   }
   

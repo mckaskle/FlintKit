@@ -29,7 +29,7 @@
 
 @implementation TryCatcher
 
-+ (void)try:(void (^)())tryBlock catch:(void (^)(NSException *))catchBlock {
++ (void)try:(void (^)(void))tryBlock catch:(void (^)(NSException *))catchBlock {
   @try {
     tryBlock();
   } @catch (NSException *exception) {
