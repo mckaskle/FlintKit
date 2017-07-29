@@ -223,7 +223,7 @@ final public class CoreDataStack {
   
   // MARK: - Actions
   
-  dynamic fileprivate func backgroundContextDidSave(_ notification: Notification) {
+  @objc dynamic fileprivate func backgroundContextDidSave(_ notification: Notification) {
     CoreDataStack.mergeChangesFrom(notification, into: mainContext)
   }
   
