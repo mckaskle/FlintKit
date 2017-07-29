@@ -45,7 +45,7 @@ extension MKAnnotationView: ReusableAnnotationView {}
 
 public extension MKMapView {
   
-  func dequeueAnnotationView<T: MKAnnotationView>(for annotation: MKAnnotation) -> T where T: ReusableAnnotationView {
+  func dequeueAnnotationView<T: MKAnnotationView>(for annotation: MKAnnotation) -> T {
     if let view = dequeueReusableAnnotationView(withIdentifier: T.reuseIdentifier) as? T {
       view.annotation = annotation
       return view

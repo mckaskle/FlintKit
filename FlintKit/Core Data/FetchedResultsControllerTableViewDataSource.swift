@@ -59,11 +59,10 @@ public extension FetchedResultsControllerTableViewDataSourceDelegate {
 
 
 final public class FetchedResultsControllerTableViewDataSource<
-  ItemType: NSManagedObject,
-  CellType: UITableViewCell,
+  ItemType,
+  CellType,
   Delegate: FetchedResultsControllerTableViewDataSourceDelegate>: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource
   where ItemType == Delegate.ItemType,
-  CellType: ReusableView,
   CellType == Delegate.CellType
  {
   

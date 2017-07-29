@@ -59,11 +59,10 @@ private enum InteractiveMovementMode {
 
 
 final public class FetchedResultsControllerCollectionViewDataSource<
-  ItemType: NSManagedObject,
-  CellType: UICollectionViewCell,
+  ItemType,
+  CellType,
   Delegate: FetchedResultsControllerCollectionViewDataSourceDelegate>: NSObject, NSFetchedResultsControllerDelegate, UICollectionViewDataSource
   where ItemType == Delegate.ItemType,
-  CellType: ReusableView,
   CellType == Delegate.CellType
  {
   

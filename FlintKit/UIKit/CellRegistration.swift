@@ -54,7 +54,7 @@ public protocol ReusableSupplementaryView: ReusableView {
 
 public extension UICollectionView {
   
-  func register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView {
+  func register<T: UICollectionViewCell>(_: T.Type) {
     register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)
   }
   
@@ -62,7 +62,7 @@ public extension UICollectionView {
     register(T.self, forSupplementaryViewOfKind: T.supplementaryViewKind, withReuseIdentifier: T.reuseIdentifier)
   }
   
-  func register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T:NibLoadableView {
+  func register<T: UICollectionViewCell>(_: T.Type) where T:NibLoadableView {
     let bundle = Bundle(for: T.self)
     let nib = UINib(nibName: T.nibName, bundle: bundle)
     register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
@@ -74,7 +74,7 @@ public extension UICollectionView {
     register(nib, forSupplementaryViewOfKind: T.supplementaryViewKind, withReuseIdentifier: T.reuseIdentifier)
   }
   
-  func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: ReusableView {
+  func dequeueCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
     guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
       fatalError()
     }
@@ -94,17 +94,17 @@ public extension UICollectionView {
 
 public extension UITableView {
   
-  func register<T: UITableViewCell>(_: T.Type) where T: ReusableView {
+  func register<T: UITableViewCell>(_: T.Type) {
     self.register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
   }
   
-  func register<T: UITableViewCell>(_: T.Type) where T: ReusableView, T:NibLoadableView {
+  func register<T: UITableViewCell>(_: T.Type) where T:NibLoadableView {
     let bundle = Bundle(for: T.self)
     let nib = UINib(nibName: T.nibName, bundle: bundle)
     self.register(nib, forCellReuseIdentifier: T.reuseIdentifier)
   }
   
-  func dequeueCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: ReusableView {
+  func dequeueCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
     guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
       fatalError()
     }
