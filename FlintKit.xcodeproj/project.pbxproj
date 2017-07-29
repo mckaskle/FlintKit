@@ -818,6 +818,7 @@
 		03C8C3931C8674AD00E7BFAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = "FlintKitTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -828,6 +829,7 @@
 		03C8C3941C8674AD00E7BFAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = "FlintKitTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
