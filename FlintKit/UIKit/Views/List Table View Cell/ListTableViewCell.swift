@@ -186,8 +186,11 @@ final public class ListTableViewCell: UITableViewCell {
     
     headlineFont = .preferredFont(forTextStyle: .body)
     subheadFont = .preferredFont(forTextStyle: .body)
-    headlineColor = .darkText
-    subheadColor = .darkText
+    
+    #if os(iOS)
+      headlineColor = .darkText
+      subheadColor = .darkText
+    #endif
     headlineTextAlignment = .natural
     subheadTextAlignment = .natural
     
