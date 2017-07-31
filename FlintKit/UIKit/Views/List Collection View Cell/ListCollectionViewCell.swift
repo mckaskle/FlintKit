@@ -186,12 +186,8 @@ final public class ListCollectionViewCell: UICollectionViewCell {
     
     headlineFont = .preferredFont(forTextStyle: .body)
     subheadFont = .preferredFont(forTextStyle: .body)
-    
-    #if os(iOS)
-      headlineColor = .darkText
-      subheadColor = .darkText
-    #endif
-    
+    headlineColor = .darkText
+    subheadColor = .darkText
     headlineTextAlignment = .natural
     subheadTextAlignment = .natural
     

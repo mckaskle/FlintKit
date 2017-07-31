@@ -110,9 +110,7 @@ public final class NetworkActivityIndicatorManager {
       case .notActive:
         startTimer?.invalidate()
         endTimer?.invalidate()
-        #if os(iOS)
-          application.isNetworkActivityIndicatorVisible = false
-        #endif
+        application.isNetworkActivityIndicatorVisible = false
         
       case .delayingStart:
         // Apple's HIG describes the following:
@@ -127,9 +125,7 @@ public final class NetworkActivityIndicatorManager {
         
       case .active:
         endTimer?.invalidate()
-        #if os(iOS)
-          application.isNetworkActivityIndicatorVisible = true
-        #endif
+        application.isNetworkActivityIndicatorVisible = true
         
       case .delayingEnd:
         endTimer?.invalidate()
