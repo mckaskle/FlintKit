@@ -1060,6 +1060,7 @@
 				442E11D51F2FDB950096C3C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
