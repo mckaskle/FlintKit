@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03C8C3861C8674AD00E7BFAE /* FlintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */; };
-		03C8C3981C8674CF00E7BFAE /* FlintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C8C3961C8674CF00E7BFAE /* FlintKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */; };
 		03C8C3A51C8675C600E7BFAE /* CFString+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3A01C8675C600E7BFAE /* CFString+FlintKit.swift */; };
 		03C8C3B01C86760300E7BFAE /* CFStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3AC1C86760300E7BFAE /* CFStringTests.swift */; };
@@ -34,6 +33,46 @@
 		1FADD5EE1EA1564B00274197 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */; };
 		1FD0AAA71E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */; };
 		1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */; };
+		442E11DD1F2FDC060096C3C4 /* FlintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 442E11D81F2FDBD10096C3C4 /* FlintKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		442E11DE1F2FDC150096C3C4 /* FlintKitTV.h in Headers */ = {isa = PBXBuildFile; fileRef = 442E11DB1F2FDBD10096C3C4 /* FlintKitTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		442E11DF1F2FDCB90096C3C4 /* TryCatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B931EEF71CFCE1C7008E58DD /* TryCatcher.m */; };
+		442E11E01F2FDCD70096C3C4 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A0C1DA065010003ACB0 /* AnalyticsManager.swift */; };
+		442E11E11F2FDCD70096C3C4 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A0A1DA064BF0003ACB0 /* AnalyticsService.swift */; };
+		442E11E21F2FDCD70096C3C4 /* PrintingAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A0E1DA13E630003ACB0 /* PrintingAnalyticsService.swift */; };
+		442E11E31F2FDD170096C3C4 /* Bundle+CoreData+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C543E35E1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift */; };
+		442E11E41F2FDD170096C3C4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */; };
+		442E11E51F2FDD170096C3C4 /* CoreDataStackSourceModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C543E3601F150CE50078DBDF /* CoreDataStackSourceModelContainer.swift */; };
+		442E11E61F2FDD170096C3C4 /* FetchedResultsControllerCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3B81C8676D600E7BFAE /* FetchedResultsControllerCollectionViewDataSource.swift */; };
+		442E11E71F2FDD170096C3C4 /* FetchedResultsControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */; };
+		442E11E81F2FDD170096C3C4 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9437BD51D0BB8BF00357DAD /* MigrationManager.swift */; };
+		442E11E91F2FDD170096C3C4 /* NSManagedObject+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3B91C8676D600E7BFAE /* NSManagedObject+FlintKit.swift */; };
+		442E11EA1F2FDD1A0096C3C4 /* CFString+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3A01C8675C600E7BFAE /* CFString+FlintKit.swift */; };
+		442E11EB1F2FDD1C0096C3C4 /* CGRect+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9437BD31D0BA09A00357DAD /* CGRect+FlintKit.swift */; };
+		442E11EC1F2FDD220096C3C4 /* CLLocationCoordinate2D+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594E3A81DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift */; };
+		442E11ED1F2FDD260096C3C4 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5145A851D9F028B001BA24A /* AFError.swift */; };
+		442E11EE1F2FDD260096C3C4 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */; };
+		442E11EF1F2FDD260096C3C4 /* Bundle+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A041DA05CE50003ACB0 /* Bundle+FlintKit.swift */; };
+		442E11F01F2FDD260096C3C4 /* FileManager+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3C41C86774700E7BFAE /* FileManager+FlintKit.swift */; };
+		442E11F11F2FDD260096C3C4 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B38E6D1D1EF01800A8F28B /* MultipartFormData.swift */; };
+		442E11F21F2FDD290096C3C4 /* MKMapView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5052E651DBD07960046AFDA /* MKMapView+FlintKit.swift */; };
+		442E11F31F2FDD2B0096C3C4 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3B31C86762800E7BFAE /* UTI.swift */; };
+		442E11F41F2FDD300096C3C4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A6341ED4BE2D00344033 /* Keychain.swift */; };
+		442E11F51F2FDD4C0096C3C4 /* Array+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3C61C86776100E7BFAE /* Array+FlintKit.swift */; };
+		442E11F61F2FDD4C0096C3C4 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA394B1EFC261700015795 /* Assert.swift */; };
+		442E11F71F2FDD4C0096C3C4 /* Dictionary+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FC7FF1E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift */; };
+		442E11F81F2FDD4C0096C3C4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095841D14CE55004B4FBE /* Result.swift */; };
+		442E11F91F2FDD4C0096C3C4 /* String+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C8C8A1DBC1A770064ADD5 /* String+FlintKit.swift */; };
+		442E11FA1F2FDD500096C3C4 /* Sys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52A5A071DA0608B0003ACB0 /* Sys.swift */; };
+		442E11FB1F2FDD840096C3C4 /* ListCellAccessoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */; };
+		442E11FC1F2FDD840096C3C4 /* CellRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3D21C867BE900E7BFAE /* CellRegistration.swift */; };
+		442E11FE1F2FDD840096C3C4 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3D31C867BE900E7BFAE /* NibLoadableView.swift */; };
+		442E11FF1F2FDD840096C3C4 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */; };
+		442E12001F2FDD840096C3C4 /* UIAlertController+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3D41C867BE900E7BFAE /* UIAlertController+FlintKit.swift */; };
+		442E12011F2FDD840096C3C4 /* UIImage+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */; };
+		442E12021F2FDD840096C3C4 /* UINavigationViewController+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */; };
+		442E12031F2FDD840096C3C4 /* UIView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594E3BD1DCED73600629B43 /* UIView+FlintKit.swift */; };
+		442E12041F2FDD840096C3C4 /* UIViewController+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC57091DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift */; };
+		442E12051F2FDDD40096C3C4 /* TryCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B931EEF61CFCE1C7008E58DD /* TryCatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4433A6351ED4BE2D00344033 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A6341ED4BE2D00344033 /* Keychain.swift */; };
 		4483FE0F1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */; };
 		4483FE111EF065C900EA8FA3 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */; };
@@ -86,8 +125,6 @@
 /* Begin PBXFileReference section */
 		03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlintKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03C8C3961C8674CF00E7BFAE /* FlintKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlintKit.h; sourceTree = "<group>"; };
-		03C8C3971C8674CF00E7BFAE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C8C39B1C86751900E7BFAE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		03C8C3A01C8675C600E7BFAE /* CFString+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CFString+FlintKit.swift"; sourceTree = "<group>"; };
@@ -114,6 +151,11 @@
 		1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+FlintKit.swift"; sourceTree = "<group>"; };
+		442E11CF1F2FDB950096C3C4 /* FlintKitTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlintKitTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		442E11D81F2FDBD10096C3C4 /* FlintKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlintKit.h; sourceTree = "<group>"; };
+		442E11D91F2FDBD10096C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442E11DB1F2FDBD10096C3C4 /* FlintKitTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlintKitTV.h; sourceTree = "<group>"; };
+		442E11DC1F2FDBD10096C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4433A6341ED4BE2D00344033 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellAccessoryContainerView.swift; sourceTree = "<group>"; };
 		4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +211,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		442E11CB1F2FDB950096C3C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -199,6 +248,7 @@
 			children = (
 				03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */,
 				03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */,
+				442E11CF1F2FDB950096C3C4 /* FlintKitTV.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,8 +291,8 @@
 		03C8C3951C8674CF00E7BFAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03C8C3961C8674CF00E7BFAE /* FlintKit.h */,
-				03C8C3971C8674CF00E7BFAE /* Info.plist */,
+				442E11D71F2FDBD10096C3C4 /* iOS */,
+				442E11DA1F2FDBD10096C3C4 /* tvOS */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -401,6 +451,24 @@
 			path = "List Table View Cell";
 			sourceTree = "<group>";
 		};
+		442E11D71F2FDBD10096C3C4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				442E11D81F2FDBD10096C3C4 /* FlintKit.h */,
+				442E11D91F2FDBD10096C3C4 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		442E11DA1F2FDBD10096C3C4 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				442E11DB1F2FDBD10096C3C4 /* FlintKitTV.h */,
+				442E11DC1F2FDBD10096C3C4 /* Info.plist */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		4433A6331ED4BE1700344033 /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,8 +552,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C8C3981C8674CF00E7BFAE /* FlintKit.h in Headers */,
 				B931EEF81CFCE1C7008E58DD /* TryCatcher.h in Headers */,
+				442E11DD1F2FDC060096C3C4 /* FlintKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442E11CC1F2FDB950096C3C4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442E11DE1F2FDC150096C3C4 /* FlintKitTV.h in Headers */,
+				442E12051F2FDDD40096C3C4 /* TryCatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +605,24 @@
 			productReference = 03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		442E11CE1F2FDB950096C3C4 /* FlintKitTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 442E11D61F2FDB950096C3C4 /* Build configuration list for PBXNativeTarget "FlintKitTV" */;
+			buildPhases = (
+				442E11CA1F2FDB950096C3C4 /* Sources */,
+				442E11CB1F2FDB950096C3C4 /* Frameworks */,
+				442E11CC1F2FDB950096C3C4 /* Headers */,
+				442E11CD1F2FDB950096C3C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlintKitTV;
+			productName = FlintKitTV;
+			productReference = 442E11CF1F2FDB950096C3C4 /* FlintKitTV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -546,6 +641,10 @@
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0900;
 					};
+					442E11CE1F2FDB950096C3C4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 03C8C3751C8674AD00E7BFAE /* Build configuration list for PBXProject "FlintKit" */;
@@ -561,6 +660,7 @@
 			projectRoot = "";
 			targets = (
 				03C8C37A1C8674AD00E7BFAE /* FlintKit */,
+				442E11CE1F2FDB950096C3C4 /* FlintKitTV */,
 				03C8C3841C8674AD00E7BFAE /* FlintKitTests */,
 			);
 		};
@@ -584,6 +684,13 @@
 				03F794FD1C8A687800385923 /* NibLoadableViewOne.xib in Resources */,
 				C5B38E791D1EF8C900A8F28B /* rainbow.jpg in Resources */,
 				03F795031C8A69DB00385923 /* NibLoadableViewTwoTest.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442E11CD1F2FDB950096C3C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +763,50 @@
 				03C8C3CD1C86799E00E7BFAE /* UIAlertControllerTests.swift in Sources */,
 				C5B38E721D1EF7E000A8F28B /* MultipartFormDataTests.swift in Sources */,
 				B920958A1D1780EC004B4FBE /* CoreDataStackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		442E11CA1F2FDB950096C3C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442E11EC1F2FDD220096C3C4 /* CLLocationCoordinate2D+FlintKit.swift in Sources */,
+				442E12021F2FDD840096C3C4 /* UINavigationViewController+FlintKit.swift in Sources */,
+				442E11E71F2FDD170096C3C4 /* FetchedResultsControllerTableViewDataSource.swift in Sources */,
+				442E11F01F2FDD260096C3C4 /* FileManager+FlintKit.swift in Sources */,
+				442E11ED1F2FDD260096C3C4 /* AFError.swift in Sources */,
+				442E11F21F2FDD290096C3C4 /* MKMapView+FlintKit.swift in Sources */,
+				442E11F91F2FDD4C0096C3C4 /* String+FlintKit.swift in Sources */,
+				442E11F41F2FDD300096C3C4 /* Keychain.swift in Sources */,
+				442E11EE1F2FDD260096C3C4 /* AsynchronousOperation.swift in Sources */,
+				442E11E01F2FDCD70096C3C4 /* AnalyticsManager.swift in Sources */,
+				442E11E81F2FDD170096C3C4 /* MigrationManager.swift in Sources */,
+				442E12011F2FDD840096C3C4 /* UIImage+FlintKit.swift in Sources */,
+				442E11E21F2FDCD70096C3C4 /* PrintingAnalyticsService.swift in Sources */,
+				442E11F11F2FDD260096C3C4 /* MultipartFormData.swift in Sources */,
+				442E11E91F2FDD170096C3C4 /* NSManagedObject+FlintKit.swift in Sources */,
+				442E11FF1F2FDD840096C3C4 /* StoryboardLoadable.swift in Sources */,
+				442E11EF1F2FDD260096C3C4 /* Bundle+FlintKit.swift in Sources */,
+				442E11E31F2FDD170096C3C4 /* Bundle+CoreData+FlintKit.swift in Sources */,
+				442E11FA1F2FDD500096C3C4 /* Sys.swift in Sources */,
+				442E11FC1F2FDD840096C3C4 /* CellRegistration.swift in Sources */,
+				442E11F81F2FDD4C0096C3C4 /* Result.swift in Sources */,
+				442E11F51F2FDD4C0096C3C4 /* Array+FlintKit.swift in Sources */,
+				442E11EA1F2FDD1A0096C3C4 /* CFString+FlintKit.swift in Sources */,
+				442E11EB1F2FDD1C0096C3C4 /* CGRect+FlintKit.swift in Sources */,
+				442E11FB1F2FDD840096C3C4 /* ListCellAccessoryContainerView.swift in Sources */,
+				442E11F61F2FDD4C0096C3C4 /* Assert.swift in Sources */,
+				442E12041F2FDD840096C3C4 /* UIViewController+FlintKit.swift in Sources */,
+				442E11FE1F2FDD840096C3C4 /* NibLoadableView.swift in Sources */,
+				442E12031F2FDD840096C3C4 /* UIView+FlintKit.swift in Sources */,
+				442E11E41F2FDD170096C3C4 /* CoreDataStack.swift in Sources */,
+				442E11E61F2FDD170096C3C4 /* FetchedResultsControllerCollectionViewDataSource.swift in Sources */,
+				442E11F31F2FDD2B0096C3C4 /* UTI.swift in Sources */,
+				442E11DF1F2FDCB90096C3C4 /* TryCatcher.m in Sources */,
+				442E11E11F2FDCD70096C3C4 /* AnalyticsService.swift in Sources */,
+				442E11F71F2FDD4C0096C3C4 /* Dictionary+FlintKit.swift in Sources */,
+				442E12001F2FDD840096C3C4 /* UIAlertController+FlintKit.swift in Sources */,
+				442E11E51F2FDD170096C3C4 /* CoreDataStackSourceModelContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,7 +936,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "FlintKit/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "FlintKit/Supporting Files/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKit;
@@ -805,7 +956,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "FlintKit/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "FlintKit/Supporting Files/iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKit;
@@ -837,6 +988,55 @@
 			};
 			name = Release;
 		};
+		442E11D41F2FDB950096C3C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "FlintKit/Supporting Files/tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKitTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		442E11D51F2FDB950096C3C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "FlintKit/Supporting Files/tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKitTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -863,6 +1063,15 @@
 			buildConfigurations = (
 				03C8C3931C8674AD00E7BFAE /* Debug */,
 				03C8C3941C8674AD00E7BFAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		442E11D61F2FDB950096C3C4 /* Build configuration list for PBXNativeTarget "FlintKitTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				442E11D41F2FDB950096C3C4 /* Debug */,
+				442E11D51F2FDB950096C3C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

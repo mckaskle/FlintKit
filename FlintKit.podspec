@@ -31,9 +31,11 @@ Swift Standard Library, UIKit and more.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '9.2'
 
   s.source_files = 'FlintKit/**/*'
   s.exclude_files = 'FlintKit/Supporting Files/**/*'
+  s.tvos.exclude_files = ['FlintKit/UIKit/Views/**/*', 'FlintKit/UIKit/NetworkActivityIndicatorManager.swift']
   
   # s.resource_bundles = {
   #   'FlintKit' => ['FlintKit/Assets/*.png']
