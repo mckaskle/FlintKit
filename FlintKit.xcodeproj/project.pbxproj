@@ -73,6 +73,8 @@
 		442E12031F2FDD840096C3C4 /* UIView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C594E3BD1DCED73600629B43 /* UIView+FlintKit.swift */; };
 		442E12041F2FDD840096C3C4 /* UIViewController+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC57091DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift */; };
 		442E12051F2FDDD40096C3C4 /* TryCatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B931EEF61CFCE1C7008E58DD /* TryCatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		443073BD1F38FF5100EEFC68 /* WeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443073BC1F38FF5100EEFC68 /* WeakProxy.swift */; };
+		443073BE1F38FF5100EEFC68 /* WeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443073BC1F38FF5100EEFC68 /* WeakProxy.swift */; };
 		4433A6351ED4BE2D00344033 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4433A6341ED4BE2D00344033 /* Keychain.swift */; };
 		4483FE0F1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */; };
 		4483FE111EF065C900EA8FA3 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */; };
@@ -156,6 +158,7 @@
 		442E11D91F2FDBD10096C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		442E11DB1F2FDBD10096C3C4 /* FlintKitTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlintKitTV.h; sourceTree = "<group>"; };
 		442E11DC1F2FDBD10096C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443073BC1F38FF5100EEFC68 /* WeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakProxy.swift; sourceTree = "<group>"; };
 		4433A6341ED4BE2D00344033 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellAccessoryContainerView.swift; sourceTree = "<group>"; };
 		4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -381,6 +384,7 @@
 				C5B38E6D1D1EF01800A8F28B /* MultipartFormData.swift */,
 				B931EEF61CFCE1C7008E58DD /* TryCatcher.h */,
 				B931EEF71CFCE1C7008E58DD /* TryCatcher.m */,
+				443073BC1F38FF5100EEFC68 /* WeakProxy.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -728,6 +732,7 @@
 				D29FC8001E5FE7FC004CA8E0 /* Dictionary+FlintKit.swift in Sources */,
 				B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */,
 				C594E3BE1DCED73600629B43 /* UIView+FlintKit.swift in Sources */,
+				443073BD1F38FF5100EEFC68 /* WeakProxy.swift in Sources */,
 				C594E3A91DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift in Sources */,
 				03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */,
 				B9437BD41D0BA09A00357DAD /* CGRect+FlintKit.swift in Sources */,
@@ -778,6 +783,7 @@
 				442E11F21F2FDD290096C3C4 /* MKMapView+FlintKit.swift in Sources */,
 				442E11F91F2FDD4C0096C3C4 /* String+FlintKit.swift in Sources */,
 				442E11F41F2FDD300096C3C4 /* Keychain.swift in Sources */,
+				443073BE1F38FF5100EEFC68 /* WeakProxy.swift in Sources */,
 				442E11EE1F2FDD260096C3C4 /* AsynchronousOperation.swift in Sources */,
 				442E11E01F2FDCD70096C3C4 /* AnalyticsManager.swift in Sources */,
 				442E11E81F2FDD170096C3C4 /* MigrationManager.swift in Sources */,
