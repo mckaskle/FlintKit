@@ -32,7 +32,7 @@ public class WeakProxy: NSObject {
   
   // MARK: - Object Lifecycle
   
-  init(target: NSObjectProtocol) {
+  public init(target: NSObjectProtocol) {
     self.target = target
   }
   
