@@ -31,6 +31,8 @@
 		03FA915D1CDF631A00475260 /* AsynchronousOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */; };
 		1FA2F8F01F40999500A110B5 /* MutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8EF1F40999500A110B5 /* MutableBox.swift */; };
 		1FA2F8F11F40999A00A110B5 /* MutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8EF1F40999500A110B5 /* MutableBox.swift */; };
+		1FA2F8F51F40AF0F00A110B5 /* UIColor+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8F41F40AF0F00A110B5 /* UIColor+FlintKit.swift */; };
+		1FA2F8F61F40AF0F00A110B5 /* UIColor+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8F41F40AF0F00A110B5 /* UIColor+FlintKit.swift */; };
 		1FADD5ED1EA1564B00274197 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FADD5EA1EA1564B00274197 /* ListTableViewCell.swift */; };
 		1FADD5EE1EA1564B00274197 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */; };
 		1FD0AAA71E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */; };
@@ -152,6 +154,7 @@
 		03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperationTests.swift; sourceTree = "<group>"; };
 		1FA2F8EF1F40999500A110B5 /* MutableBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableBox.swift; sourceTree = "<group>"; };
+		1FA2F8F41F40AF0F00A110B5 /* UIColor+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlintKit.swift"; sourceTree = "<group>"; };
 		1FADD5EA1EA1564B00274197 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
@@ -414,16 +417,17 @@
 		03C8C3D11C867BE900E7BFAE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1FADD5E71EA1564B00274197 /* Views */,
 				03C8C3D21C867BE900E7BFAE /* CellRegistration.swift */,
 				1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */,
 				03C8C3D31C867BE900E7BFAE /* NibLoadableView.swift */,
 				C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */,
 				03C8C3D41C867BE900E7BFAE /* UIAlertController+FlintKit.swift */,
+				1FA2F8F41F40AF0F00A110B5 /* UIColor+FlintKit.swift */,
 				B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */,
 				1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */,
 				C594E3BD1DCED73600629B43 /* UIView+FlintKit.swift */,
 				C5AC57091DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift */,
+				1FADD5E71EA1564B00274197 /* Views */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -743,6 +747,7 @@
 				B9437BD41D0BA09A00357DAD /* CGRect+FlintKit.swift in Sources */,
 				4483FE0F1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift in Sources */,
 				03C8C3C71C86776100E7BFAE /* Array+FlintKit.swift in Sources */,
+				1FA2F8F51F40AF0F00A110B5 /* UIColor+FlintKit.swift in Sources */,
 				C5052E661DBD07960046AFDA /* MKMapView+FlintKit.swift in Sources */,
 				03C8C3D61C867BE900E7BFAE /* NibLoadableView.swift in Sources */,
 				03C8C3D71C867BE900E7BFAE /* UIAlertController+FlintKit.swift in Sources */,
@@ -794,6 +799,7 @@
 				442E11E01F2FDCD70096C3C4 /* AnalyticsManager.swift in Sources */,
 				442E11E81F2FDD170096C3C4 /* MigrationManager.swift in Sources */,
 				442E12011F2FDD840096C3C4 /* UIImage+FlintKit.swift in Sources */,
+				1FA2F8F61F40AF0F00A110B5 /* UIColor+FlintKit.swift in Sources */,
 				442E11E21F2FDCD70096C3C4 /* PrintingAnalyticsService.swift in Sources */,
 				442E11F11F2FDD260096C3C4 /* MultipartFormData.swift in Sources */,
 				442E11E91F2FDD170096C3C4 /* NSManagedObject+FlintKit.swift in Sources */,
