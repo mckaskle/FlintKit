@@ -42,28 +42,4 @@ public extension UIViewController {
     child.removeFromParentViewController()
   }
   
-  /// UIKit will not present a view controller if the presenter is already 
-  /// presenting another view controller. This method works around that behavior
-  /// by presenting on top of whatever view controllers are already presented.
-  ///
-  /// **Warning:** If the view controller that will be doing the presenting is
-  /// in the process of being presented or dismissed, a short delay will be
-  /// introduced before retrying.
-  func presentOnPresented(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)?) {
-    var presenter = self
-    while true {
-      guard let presented = presenter.presentedViewController else { break }
-      presenter = presented
-    }
-    
-    guard !presenter.isBeingDismissed, !presenter.isBeingPresented else {
-      DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(350)) { [weak self] in
-        self?.presentOnPresented(viewControllerToPresent, animated: animated, completion: completion)
-      }
-      return
-    }
-    
-    presenter.present(viewControllerToPresent, animated: animated, completion: completion)
-  }
-  
 }
