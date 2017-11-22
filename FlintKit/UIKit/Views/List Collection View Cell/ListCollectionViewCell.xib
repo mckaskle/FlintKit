@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,25 +20,27 @@
                 <subviews>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="SYR-lP-FR6" userLabel="Leading View" customClass="ListCellAccessoryContainerView" customModule="FlintKit" customModuleProvider="target">
                         <rect key="frame" x="16" y="12" width="42" height="38"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slk-64-KT8" userLabel="Label Container">
                         <rect key="frame" x="73" y="12" width="175" height="39.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8K-jO-ziM">
                                 <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Subhead" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-Hd-7Vg">
                                 <rect key="frame" x="0.0" y="21" width="175" height="18.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="N8K-jO-ziM" firstAttribute="top" secondItem="slk-64-KT8" secondAttribute="top" id="2xc-oq-EbI"/>
                             <constraint firstAttribute="trailing" secondItem="ldZ-Hd-7Vg" secondAttribute="trailing" id="55p-pY-MRd"/>
@@ -51,7 +53,7 @@
                     </view>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-TD-vR5" userLabel="Trailing View" customClass="ListCellAccessoryContainerView" customModule="FlintKit" customModuleProvider="target">
                         <rect key="frame" x="263" y="12" width="42" height="38"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
             </view>
