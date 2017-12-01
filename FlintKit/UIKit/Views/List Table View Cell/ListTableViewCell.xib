@@ -20,7 +20,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-Je-KS9" userLabel="Leading View" customClass="ListCellAccessoryContainerView" customModule="FlintKit" customModuleProvider="target">
                         <rect key="frame" x="16" y="12" width="42" height="39"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-fa-OdQ" userLabel="Label Container">
                         <rect key="frame" x="73" y="12" width="175" height="39"/>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ryY-47-McY" secondAttribute="bottom" id="3FV-IU-677"/>
                             <constraint firstAttribute="trailing" secondItem="ryY-47-McY" secondAttribute="trailing" id="HZ4-h5-0G0"/>
@@ -53,7 +53,7 @@
                     </view>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="ByB-ie-p1l" userLabel="Trailing View" customClass="ListCellAccessoryContainerView" customModule="FlintKit" customModuleProvider="target">
                         <rect key="frame" x="263" y="12" width="42" height="39"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
                 <constraints>
