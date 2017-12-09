@@ -34,11 +34,22 @@ public protocol FetchedResultsControllerCollectionViewDataSourceDelegate: class 
   
   func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, configureCell cell: CellType, forItem item: ItemType, atIndexPath indexPath: IndexPath)
   
+  func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, canMoveItemAt indexPath: IndexPath) -> Bool
+  
   func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, moveItemAtIndexPath sourceIndexPath: IndexPath, toIndexPath destinationIndexPath: IndexPath)
   
   func fetchedResultsControllerCollectionViewDataSourceDidUpdateContent(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>)
   
   func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView?
+}
+
+
+public extension FetchedResultsControllerCollectionViewDataSourceDelegate {
+  
+  func fetchedResultsControllerCollectionViewDataSource(_ dataSource: FetchedResultsControllerCollectionViewDataSource<ItemType, CellType, Self>, canMoveItemAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
 }
 
 
@@ -287,6 +298,11 @@ final public class FetchedResultsControllerCollectionViewDataSource<
     delegate?.fetchedResultsControllerCollectionViewDataSource(self, configureCell: cell, forItem: item, atIndexPath: itemIndexPath)
     
     return cell
+  }
+  
+  public func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    guard let delegate = delegate else { return true }
+    return delegate.fetchedResultsControllerCollectionViewDataSource(self, canMoveItemAt: indexPath)
   }
   
   public func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
