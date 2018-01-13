@@ -19,9 +19,26 @@ import Foundation
  - Author: https://oleb.net/blog/2017/03/dump-as-equatable-safeguard/
  */
 public func assertDumpsEqual<T>(_ lhs: @autoclosure () -> T,
-                      _ rhs: @autoclosure () -> T,
-                      file: StaticString = #file, line: UInt = #line) {
+                                _ rhs: @autoclosure () -> T,
+                                file: StaticString = #file, line: UInt = #line) {
   assert(String(dumping: lhs()) == String(dumping: rhs()),
          "Expected dumps to be equal.",
+         file: file, line: line)
+}
+
+/**
+ Asserts that two expressions have different `dump` outputs.
+ 
+ - Note: Like the standard library's `assert`, the
+ assertion is only active in playgrounds and `-Onone`
+ builds. The function does nothing in optimized builds.
+ - Seealso: `dump(_:to:name:indent:maxDepth:maxItems)`
+ - Author: https://oleb.net/blog/2017/03/dump-as-equatable-safeguard/
+ */
+public func assertDumpsNotEqual<T>(_ lhs: @autoclosure () -> T,
+                                _ rhs: @autoclosure () -> T,
+                                file: StaticString = #file, line: UInt = #line) {
+  assert(String(dumping: lhs()) != String(dumping: rhs()),
+         "Expected dumps to be not equal.",
          file: file, line: line)
 }
