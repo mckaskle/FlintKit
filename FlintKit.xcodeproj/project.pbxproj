@@ -84,6 +84,7 @@
 		4483FE111EF065C900EA8FA3 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */; };
 		4483FE131EF0665000EA8FA3 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4483FE121EF0665000EA8FA3 /* ListCollectionViewCell.xib */; };
 		44AA394C1EFC261700015795 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA394B1EFC261700015795 /* Assert.swift */; };
+		44FD53A520166D9200187F0C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FD53A420166D9200187F0C /* Reachability.swift */; };
 		B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */; };
 		B90C46881D19FD1000CD4F36 /* UIImage+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */; };
 		B92095851D14CE55004B4FBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095841D14CE55004B4FBE /* Result.swift */; };
@@ -170,6 +171,7 @@
 		4483FE101EF065C900EA8FA3 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		4483FE121EF0665000EA8FA3 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		44AA394B1EFC261700015795 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
+		44FD53A420166D9200187F0C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B90AADD91D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerTableViewDataSource.swift; sourceTree = "<group>"; };
 		B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FlintKit.swift"; sourceTree = "<group>"; };
 		B92095841D14CE55004B4FBE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -250,7 +252,10 @@
 				03C8C3891C8674AD00E7BFAE /* FlintKitTests */,
 				03C8C37C1C8674AD00E7BFAE /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		03C8C37C1C8674AD00E7BFAE /* Products */ = {
 			isa = PBXGroup;
@@ -276,6 +281,7 @@
 				4433A6331ED4BE1700344033 /* Security */,
 				03C8C3B41C86762800E7BFAE /* Swift Standard Library */,
 				C52A5A061DA0607F0003ACB0 /* Sys */,
+				443C603D20166B75006C210E /* System Configuration */,
 				03C8C3D11C867BE900E7BFAE /* UIKit */,
 				03C8C3951C8674CF00E7BFAE /* Supporting Files */,
 			);
@@ -487,6 +493,14 @@
 				4433A6341ED4BE2D00344033 /* Keychain.swift */,
 			);
 			path = Security;
+			sourceTree = "<group>";
+		};
+		443C603D20166B75006C210E /* System Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				44FD53A420166D9200187F0C /* Reachability.swift */,
+			);
+			path = "System Configuration";
 			sourceTree = "<group>";
 		};
 		4483FE0D1EF0659A00EA8FA3 /* List Collection View Cell */ = {
@@ -731,6 +745,7 @@
 				1FA2F8F01F40999500A110B5 /* MutableBox.swift in Sources */,
 				1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */,
 				03C8C3BB1C8676D600E7BFAE /* NSManagedObject+FlintKit.swift in Sources */,
+				44FD53A520166D9200187F0C /* Reachability.swift in Sources */,
 				03C8C3D51C867BE900E7BFAE /* CellRegistration.swift in Sources */,
 				03C8C3C51C86774700E7BFAE /* FileManager+FlintKit.swift in Sources */,
 				C5AC570A1DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift in Sources */,
