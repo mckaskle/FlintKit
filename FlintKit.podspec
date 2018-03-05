@@ -35,7 +35,12 @@ Swift Standard Library, UIKit and more.
 
   s.source_files = 'FlintKit/**/*'
   s.exclude_files = 'FlintKit/Supporting Files/**/*'
-  s.tvos.exclude_files = ['FlintKit/UIKit/Views/**/*', 'FlintKit/UIKit/NetworkActivityIndicatorManager.swift']
+  s.tvos.exclude_files = [
+    'FlintKit/UIKit/Views/**/*', 
+    'FlintKit/UIKit/NetworkActivityIndicatorManager.swift',
+    'FlintKit/UIKit/KeyboardManager.swift',
+    'FlintKit/Foundation/Notification+FlintKit.swift'
+  ]
   
   # s.resource_bundles = {
   #   'FlintKit' => ['FlintKit/Assets/*.png']
