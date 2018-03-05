@@ -141,8 +141,6 @@ public final class KeyboardManager {
     let duration = context.animationDuration ?? 0.3
 
     UIView.animate(withDuration: duration, delay: 0, options: context.animationOptions, animations: {
-      self.keyboardWillShowHandler?(context)
-      
       for scrollView in self.scrollViews {
         guard let frame = context.convertedFrameEnd(in: scrollView) else { continue }
         let heightOverlappingScrollView = scrollView.bounds.intersection(frame).height
@@ -150,6 +148,8 @@ public final class KeyboardManager {
         scrollView.contentInset.bottom = heightOverlappingScrollView
         scrollView.scrollIndicatorInsets.bottom = heightOverlappingScrollView
       }
+      
+      self.keyboardWillShowHandler?(context)
     }, completion: nil)
   }
   
@@ -157,12 +157,12 @@ public final class KeyboardManager {
     let context = Context(notification: notification)
     let duration = context.animationDuration ?? 0.3
     UIView.animate(withDuration: duration, delay: 0, options: context.animationOptions, animations: {
-      self.keyboardWillHideHandler?(context)
-      
       for scrollView in self.scrollViews {
         scrollView.contentInset.bottom = 0
         scrollView.scrollIndicatorInsets.bottom = 0
       }
+      
+      self.keyboardWillHideHandler?(context)
     }, completion: nil)
   }
   
