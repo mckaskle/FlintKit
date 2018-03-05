@@ -29,6 +29,8 @@
 		03F795031C8A69DB00385923 /* NibLoadableViewTwoTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F795021C8A69DB00385923 /* NibLoadableViewTwoTest.xib */; };
 		03FA91591CDF62DF00475260 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */; };
 		03FA915D1CDF631A00475260 /* AsynchronousOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */; };
+		1F1E26F1204CA946007FDD1D /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E26F0204CA946007FDD1D /* KeyboardManager.swift */; };
+		1F1E26F3204CA9BE007FDD1D /* Notification+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E26F2204CA9BE007FDD1D /* Notification+FlintKit.swift */; };
 		1FA2F8F01F40999500A110B5 /* MutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8EF1F40999500A110B5 /* MutableBox.swift */; };
 		1FA2F8F11F40999A00A110B5 /* MutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8EF1F40999500A110B5 /* MutableBox.swift */; };
 		1FA2F8F51F40AF0F00A110B5 /* UIColor+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2F8F41F40AF0F00A110B5 /* UIColor+FlintKit.swift */; };
@@ -154,6 +156,8 @@
 		03F795021C8A69DB00385923 /* NibLoadableViewTwoTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NibLoadableViewTwoTest.xib; sourceTree = "<group>"; };
 		03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		03FA915C1CDF631A00475260 /* AsynchronousOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperationTests.swift; sourceTree = "<group>"; };
+		1F1E26F0204CA946007FDD1D /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		1F1E26F2204CA9BE007FDD1D /* Notification+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+FlintKit.swift"; sourceTree = "<group>"; };
 		1FA2F8EF1F40999500A110B5 /* MutableBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableBox.swift; sourceTree = "<group>"; };
 		1FA2F8F41F40AF0F00A110B5 /* UIColor+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+FlintKit.swift"; sourceTree = "<group>"; };
 		1FADD5EA1EA1564B00274197 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 				03C8C3C41C86774700E7BFAE /* FileManager+FlintKit.swift */,
 				C5B38E6D1D1EF01800A8F28B /* MultipartFormData.swift */,
 				1FA2F8EF1F40999500A110B5 /* MutableBox.swift */,
+				1F1E26F2204CA9BE007FDD1D /* Notification+FlintKit.swift */,
 				B931EEF61CFCE1C7008E58DD /* TryCatcher.h */,
 				B931EEF71CFCE1C7008E58DD /* TryCatcher.m */,
 				443073BC1F38FF5100EEFC68 /* WeakProxy.swift */,
@@ -424,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				03C8C3D21C867BE900E7BFAE /* CellRegistration.swift */,
+				1F1E26F0204CA946007FDD1D /* KeyboardManager.swift */,
 				1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */,
 				03C8C3D31C867BE900E7BFAE /* NibLoadableView.swift */,
 				C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */,
@@ -744,6 +750,7 @@
 				B931EEF91CFCE1C7008E58DD /* TryCatcher.m in Sources */,
 				1FA2F8F01F40999500A110B5 /* MutableBox.swift in Sources */,
 				1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */,
+				1F1E26F1204CA946007FDD1D /* KeyboardManager.swift in Sources */,
 				03C8C3BB1C8676D600E7BFAE /* NSManagedObject+FlintKit.swift in Sources */,
 				44FD53A520166D9200187F0C /* Reachability.swift in Sources */,
 				03C8C3D51C867BE900E7BFAE /* CellRegistration.swift in Sources */,
@@ -758,6 +765,7 @@
 				C594E3BE1DCED73600629B43 /* UIView+FlintKit.swift in Sources */,
 				443073BD1F38FF5100EEFC68 /* WeakProxy.swift in Sources */,
 				C594E3A91DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift in Sources */,
+				1F1E26F3204CA9BE007FDD1D /* Notification+FlintKit.swift in Sources */,
 				03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */,
 				B9437BD41D0BA09A00357DAD /* CGRect+FlintKit.swift in Sources */,
 				4483FE0F1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift in Sources */,
