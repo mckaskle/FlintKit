@@ -142,7 +142,12 @@ public final class KeyboardManager {
 
     UIView.animate(withDuration: duration, delay: 0, options: context.animationOptions, animations: {
       for scrollView in self.scrollViews {
-        guard let frame = context.convertedFrameEnd(in: scrollView) else { continue }
+        guard var frame = context.convertedFrameEnd(in: scrollView) else { continue }
+        
+        if #available(iOS 11.0, *) {
+          frame = frame.inset(by: scrollView.safeAreaInsets)
+        }
+        
         let heightOverlappingScrollView = scrollView.bounds.intersection(frame).height
         
         scrollView.contentInset.bottom = heightOverlappingScrollView
