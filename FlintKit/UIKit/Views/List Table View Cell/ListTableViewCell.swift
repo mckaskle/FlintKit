@@ -39,6 +39,7 @@ final public class ListTableViewCell: UITableViewCell {
       subheadLabel.adjustsFontForContentSizeCategory = true
     }
     
+    defaultLabelsVerticalPadding = labelsVerticalPaddingGuardConstraint.constant
     defaultLeadingAccessoryViewHorizontalLabelPadding = leadingAccessoryViewHorizontalLabelPaddingConstraint.constant
     defaultTrailingAccessoryViewHorizontalLabelPadding = trailingAccessoryViewHorizontalLabelPaddingConstraint.constant
     defaultLeadingAccessoryViewHorizontalCellPadding = leadingAccessoryViewHorizontalCellPaddingConstraint.constant
@@ -111,6 +112,14 @@ final public class ListTableViewCell: UITableViewCell {
     }
   }
   
+  public var labelsVerticalPadding: CGFloat {
+    get { return labelsVerticalPaddingGuardConstraint.constant }
+    set {
+      labelsVerticalPaddingGuardConstraint.constant = newValue
+      labelsVerticalPaddingSuggestionConstraint.constant = newValue
+    }
+  }
+  
   public var leadingAccessoryViewHorizontalLabelPadding: CGFloat = 0 {
     didSet {
       guard leadingAccessoryView != nil else { return }
@@ -154,6 +163,7 @@ final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Private Properties
   
+  private var defaultLabelsVerticalPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultLeadingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultTrailingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultLeadingAccessoryViewHorizontalCellPadding: CGFloat = 15 // will be overridden in awakeFromNib
@@ -166,6 +176,8 @@ final public class ListTableViewCell: UITableViewCell {
   @IBOutlet private weak var leadingAccessoryViewContainer: ListCellAccessoryContainerView!
   @IBOutlet private weak var trailingAccessoryViewContainer: ListCellAccessoryContainerView!
   
+  @IBOutlet private weak var labelsVerticalPaddingGuardConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var labelsVerticalPaddingSuggestionConstraint: NSLayoutConstraint!
   @IBOutlet private weak var leadingAccessoryViewHorizontalLabelPaddingConstraint: NSLayoutConstraint!
   @IBOutlet private weak var trailingAccessoryViewHorizontalLabelPaddingConstraint: NSLayoutConstraint!
   @IBOutlet private weak var leadingAccessoryViewHorizontalCellPaddingConstraint: NSLayoutConstraint!
@@ -191,6 +203,7 @@ final public class ListTableViewCell: UITableViewCell {
     headlineTextAlignment = .natural
     subheadTextAlignment = .natural
     
+    labelsVerticalPadding = defaultLabelsVerticalPadding
     leadingAccessoryViewHorizontalLabelPadding = defaultLeadingAccessoryViewHorizontalLabelPadding
     trailingAccessoryViewHorizontalLabelPadding = defaultTrailingAccessoryViewHorizontalLabelPadding
     leadingAccessoryViewHorizontalCellPadding = defaultLeadingAccessoryViewHorizontalCellPadding
