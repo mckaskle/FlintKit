@@ -210,6 +210,8 @@ final public class ListTableViewCell: UITableViewCell {
     trailingAccessoryViewHorizontalCellPadding = defaultTrailingAccessoryViewHorizontalCellPadding
     leadingAccessoryViewVerticalPadding = defaultLeadingAccessoryViewVerticalPadding
     trailingAccessoryViewVerticalPadding = defaultTrailingAccessoryViewVerticalPadding
+    
+    accessibilityIdentifier = nil
   }
   
   
@@ -219,6 +221,16 @@ final public class ListTableViewCell: UITableViewCell {
     super.prepareForReuse()
     
     reset()
+  }
+  
+  
+  // MARK: - UIAccessibilityIdentification
+  
+  override public var accessibilityIdentifier: String? {
+    didSet {
+      headlineLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).headline" }
+      subheadLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).subhead" }
+    }
   }
   
 }
