@@ -30,6 +30,8 @@ import UIKit
 
 public extension UIView {
   
+  // MARK: - Properties
+  
   @IBInspectable
   var cornerRadius: CGFloat {
     get { return layer.cornerRadius }
@@ -55,6 +57,19 @@ public extension UIView {
       return UIColor(cgColor: color)
     }
     set { layer.borderColor = newValue?.cgColor }
+  }
+  
+  
+  // MARK: - Methods
+  
+  @available(iOS 9.0, *)
+  func makeConstraints(forSubview subview: UIView, insetBy insets: UIEdgeInsets) -> [NSLayoutConstraint] {
+    return [
+      subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left),
+      subview.topAnchor.constraint(equalTo: topAnchor, constant: insets.top),
+      trailingAnchor.constraint(equalTo: subview.trailingAnchor, constant: insets.right),
+      bottomAnchor.constraint(equalTo: subview.bottomAnchor, constant: insets.bottom),
+    ]
   }
   
 }
