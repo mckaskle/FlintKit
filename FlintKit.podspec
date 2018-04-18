@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlintKit'
-  s.version          = '1.6'
+  s.version          = '1.7'
   s.summary          = 'Basic categories and utilities.'
 
 # This description is used to generate tags and improve search results.
