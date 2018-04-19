@@ -33,6 +33,10 @@ public extension Bundle {
     return infoDictionary?["CFBundleVersion"] as? String
   }
   
+  var localizedAppName: String? {
+    return infoDictionary?["CFBundleDisplayName"] as? String
+  }
+  
   var versionNumber: String? {
     return infoDictionary?["CFBundleShortVersionString"] as? String
   }
