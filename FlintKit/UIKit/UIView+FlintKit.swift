@@ -63,9 +63,9 @@ public extension UIView {
   // MARK: - Methods
   
   @available(iOS 9.0, *)
-  func makeConstraints(for other: UIView,
-                       insetBy insets: UIEdgeInsets = .zero,
-                       for edges: UIRectEdge = .all) -> [NSLayoutConstraint] {
+  func makeInsetConstraints(for other: UIView,
+                            insetBy insets: UIEdgeInsets = .zero,
+                            edges: UIRectEdge = .all) -> [NSLayoutConstraint] {
     var constraints: [NSLayoutConstraint] = []
     
     if edges.contains(.left) {
@@ -82,6 +82,31 @@ public extension UIView {
     
     if edges.contains(.bottom) {
       constraints.append(bottomAnchor.constraint(equalTo: other.bottomAnchor, constant: insets.bottom))
+    }
+    
+    return constraints
+  }
+  
+  @available(iOS 11.0, tvOS 11.0, *)
+  func makeSafeAreaInsetConstraints(for other: UIView,
+                                    insetBy insets: UIEdgeInsets = .zero,
+                                    edges: UIRectEdge = .all) -> [NSLayoutConstraint] {
+    var constraints: [NSLayoutConstraint] = []
+    
+    if edges.contains(.left) {
+      constraints.append(other.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: insets.left))
+    }
+    
+    if edges.contains(.top) {
+      constraints.append(other.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: insets.top))
+    }
+    
+    if edges.contains(.right) {
+      constraints.append(safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: other.trailingAnchor, constant: insets.right))
+    }
+    
+    if edges.contains(.bottom) {
+      constraints.append(safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: other.bottomAnchor, constant: insets.bottom))
     }
     
     return constraints

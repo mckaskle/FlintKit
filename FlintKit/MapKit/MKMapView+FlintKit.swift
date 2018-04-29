@@ -33,6 +33,7 @@ public protocol ReusableAnnotationView: class {
 }
 
 
+@available(tvOS 9.2, *)
 public extension ReusableAnnotationView where Self: MKAnnotationView {
   static var reuseIdentifier: String {
     return String(describing: self)
@@ -40,9 +41,11 @@ public extension ReusableAnnotationView where Self: MKAnnotationView {
 }
 
 
+@available(tvOS 9.2, *)
 extension MKAnnotationView: ReusableAnnotationView {}
 
 
+@available(tvOS 9.2, *)
 public extension MKMapView {
   
   func dequeueAnnotationView<T: MKAnnotationView>(for annotation: MKAnnotation) -> T {
