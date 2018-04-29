@@ -31,7 +31,7 @@ public extension Dictionary where Key: ExpressibleByStringLiteral {
   
   func formURLEncoded() -> String {
     let allowed = CharacterSet.urlQueryAllowed
-    let pairs: [String] = flatMap { key, value in
+    let pairs: [String] = compactMap { key, value in
       guard
         let escapedKey = String(describing: key).addingPercentEncoding(withAllowedCharacters: allowed),
         let escapedValue = String(describing: value).addingPercentEncoding(withAllowedCharacters: allowed) else {
