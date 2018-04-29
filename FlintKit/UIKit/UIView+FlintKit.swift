@@ -63,13 +63,28 @@ public extension UIView {
   // MARK: - Methods
   
   @available(iOS 9.0, *)
-  func makeConstraints(forSubview subview: UIView, insetBy insets: UIEdgeInsets) -> [NSLayoutConstraint] {
-    return [
-      subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left),
-      subview.topAnchor.constraint(equalTo: topAnchor, constant: insets.top),
-      trailingAnchor.constraint(equalTo: subview.trailingAnchor, constant: insets.right),
-      bottomAnchor.constraint(equalTo: subview.bottomAnchor, constant: insets.bottom),
-    ]
+  func makeConstraints(for other: UIView,
+                       insetBy insets: UIEdgeInsets = .zero,
+                       for edges: UIRectEdge = .all) -> [NSLayoutConstraint] {
+    var constraints: [NSLayoutConstraint] = []
+    
+    if edges.contains(.left) {
+      constraints.append(other.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left))
+    }
+    
+    if edges.contains(.top) {
+      constraints.append(other.topAnchor.constraint(equalTo: topAnchor, constant: insets.top))
+    }
+    
+    if edges.contains(.right) {
+      constraints.append(trailingAnchor.constraint(equalTo: other.trailingAnchor, constant: insets.right))
+    }
+    
+    if edges.contains(.bottom) {
+      constraints.append(bottomAnchor.constraint(equalTo: other.bottomAnchor, constant: insets.bottom))
+    }
+    
+    return constraints
   }
   
 }
