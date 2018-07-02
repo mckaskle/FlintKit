@@ -29,6 +29,14 @@ import Foundation
 
 public struct AnalyticsManager {
   
+  // MARK: - Type Aliases
+  
+  /// Returns true if the error should be considered to be logged.
+  public typealias ErrorFilter = (Error) -> Bool
+  /// Token that is used when registering/unregistering ErrorFilters.
+  public typealias ErrorFilterToken = UUID
+  
+  
   // MARK: - Object Lifecyle
   
   private init() {} // disable instantiations
@@ -57,12 +65,42 @@ public struct AnalyticsManager {
   
   // MARK: - Public Methods
   
+  public static func isErrorWhitelisted(_ error: Error) -> Bool {
+    return whiteListedErrors[error._domain]?.contains(error._code) ?? false
+  }
+  
   public static func log(_ error: Error) {
-    guard !(whiteListedErrors[error._domain]?.contains(error._code) ?? false) else { return }
+    for filter in errorFilters.values {
+      guard filter(error) else { return }
+    }
+    
+    guard !isErrorWhitelisted(error) else { return }
     
     for service in services {
       service.log(error)
     }
   }
+  
+  /// ErrorFilters provide a way to filter errors before they are logged. This is useful
+  /// when determining if an error should be logged is not as simple as checking the
+  /// domain and error code. For errors that can be filtered simply by domain and error
+  /// code, add them to `whiteListedErrors` instead.
+  ///
+  /// Returns a token that can later be used to unregister the filter.
+  @discardableResult
+  public static func register(errorFilter: @escaping ErrorFilter) -> ErrorFilterToken {
+    let token = UUID()
+    errorFilters[token] = errorFilter
+    return token
+  }
+  
+  public static func unregister(errorFilterToken: ErrorFilterToken) {
+    errorFilters.removeValue(forKey: errorFilterToken)
+  }
+  
+  
+  // MARK: - Private Properties
+  
+  private static var errorFilters: [ErrorFilterToken: ErrorFilter] = [:]
   
 }
