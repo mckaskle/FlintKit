@@ -29,17 +29,16 @@ import UIKit
 
 public extension UIViewController {
   
-  func add(child: UIViewController, in superview: UIView, withFrame frame: CGRect) {
-    addChildViewController(child)
-    child.view.frame = frame
+  func add(child: UIViewController, in superview: UIView) {
+    addChild(child)
     superview.addSubview(child.view)
-    child.didMove(toParentViewController: self)
+    child.didMove(toParent: self)
   }
   
   func remove(child: UIViewController) {
-    child.willMove(toParentViewController: nil)
+    child.willMove(toParent: nil)
     child.view.removeFromSuperview()
-    child.removeFromParentViewController()
+    child.removeFromParent()
   }
   
 }

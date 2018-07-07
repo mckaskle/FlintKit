@@ -31,14 +31,14 @@ import UIKit
 public extension Notification {
   
   var keyboardAnimationDuration: TimeInterval? {
-    let duration = userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber
+    let duration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
     return duration?.doubleValue
   }
   
-  var keyboardAnimationOptions: UIViewAnimationOptions {
+  var keyboardAnimationOptions: UIView.AnimationOptions {
     guard
-      let curveNumber = userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber,
-      let curve = UIViewAnimationCurve(rawValue: curveNumber.intValue) else {
+      let curveNumber = userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber,
+      let curve = UIView.AnimationCurve(rawValue: curveNumber.intValue) else {
         return []
     }
     
@@ -51,12 +51,12 @@ public extension Notification {
   }
   
   var keyboardFrameBegin: CGRect? {
-    let value = userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue
+    let value = userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue
     return value?.cgRectValue
   }
   
   var keyboardFrameEnd: CGRect? {
-    let value = userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+    let value = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
     return value?.cgRectValue
   }
   

@@ -53,7 +53,7 @@ final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Properties
   
-  static public let rowHeight = UITableViewAutomaticDimension
+  static public let rowHeight = UITableView.automaticDimension
   static public let estimatedRowHeight: CGFloat = 63
   
   public var headline: String? {

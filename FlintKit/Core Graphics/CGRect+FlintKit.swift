@@ -33,8 +33,4 @@ public extension CGRect {
     return CGPoint(x: midX, y: midY)
   }
   
-  func inset(by insets: UIEdgeInsets) -> CGRect {
-    return UIEdgeInsetsInsetRect(self, insets)
-  }
-  
 }

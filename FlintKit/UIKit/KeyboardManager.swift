@@ -52,7 +52,7 @@ public final class KeyboardManager {
     // MARK: - Public Properties
     
     public let animationDuration: TimeInterval?
-    public let animationOptions: UIViewAnimationOptions
+    public let animationOptions: UIView.AnimationOptions
     /// `CGRect` that identifies the start frame of the keyboard in screen
     /// coordinates. These coordinates do not take into account any rotation
     /// factors applied to the view’s contents as a result of interface
@@ -96,13 +96,13 @@ public final class KeyboardManager {
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(keyboardWillHide(_:)),
-      name: .UIKeyboardWillHide,
+      name: UIResponder.keyboardWillHideNotification,
       object: nil
     )
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(keyboardWillShow(_:)),
-      name: .UIKeyboardWillShow,
+      name: UIResponder.keyboardWillShowNotification,
       object: nil
     )
   }

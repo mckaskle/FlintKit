@@ -188,7 +188,7 @@ final public class FetchedResultsControllerTableViewDataSource<
     return delegate?.fetchedResultsControllerTableViewDataSource(self, canEditItem: item, atIndexPath: indexPath) ?? false
   }
   
-  public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+  public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     switch editingStyle {
     case .none:
       break

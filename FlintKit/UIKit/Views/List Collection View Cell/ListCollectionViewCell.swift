@@ -53,7 +53,7 @@ final public class ListCollectionViewCell: UICollectionViewCell {
   // MARK: - Properties
   
   @available(iOS 10.0, *)
-  public static let itemSize = UICollectionViewFlowLayoutAutomaticSize
+  public static let itemSize = UICollectionViewFlowLayout.automaticSize
   
   public var headline: String? {
     get { return headlineLabel.text }
