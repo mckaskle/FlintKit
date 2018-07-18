@@ -42,10 +42,6 @@ public extension NSManagedObjectCreatable where Self: NSManagedObject {
     return NSFetchRequest(entityName: entityName)
   }
   
-  static func createWithContext(_ context: NSManagedObjectContext) -> Self {
-    return NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Self
-  }
-  
 }
 
 
