@@ -76,12 +76,12 @@ final public class ListTableViewCell: UITableViewCell {
     set { subheadLabel.font = newValue }
   }
   
-  public var headlineColor: UIColor {
+  public var headlineColor: UIColor! {
     get { return headlineLabel.textColor }
     set { headlineLabel.textColor = newValue }
   }
   
-  public var subheadColor: UIColor {
+  public var subheadColor: UIColor! {
     get { return subheadLabel.textColor }
     set { subheadLabel.textColor = newValue }
   }
