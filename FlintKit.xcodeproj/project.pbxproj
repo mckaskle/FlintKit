@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038BC7F621074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */; };
 		03C8C3861C8674AD00E7BFAE /* FlintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */; };
 		03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */; };
 		03C8C3A51C8675C600E7BFAE /* CFString+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C3A01C8675C600E7BFAE /* CFString+FlintKit.swift */; };
@@ -132,6 +133,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizingMask+FlintKit.swift"; sourceTree = "<group>"; };
 		03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlintKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C8C39B1C86751900E7BFAE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */,
 				1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */,
 				C594E3BD1DCED73600629B43 /* UIView+FlintKit.swift */,
+				038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */,
 				C5AC57091DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift */,
 				1FADD5E71EA1564B00274197 /* Views */,
 			);
@@ -734,6 +737,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038BC7F621074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift in Sources */,
 				C52A5A0B1DA064BF0003ACB0 /* AnalyticsService.swift in Sources */,
 				C52A5A051DA05CE50003ACB0 /* Bundle+FlintKit.swift in Sources */,
 				4483FE111EF065C900EA8FA3 /* ListCollectionViewCell.swift in Sources */,
