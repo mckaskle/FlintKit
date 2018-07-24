@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */; };
 		038BC7F621074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */; };
 		03C8C3861C8674AD00E7BFAE /* FlintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */; };
 		03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+FlintKit.swift"; sourceTree = "<group>"; };
 		038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizingMask+FlintKit.swift"; sourceTree = "<group>"; };
 		03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlintKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,6 +404,7 @@
 				C5B38E6D1D1EF01800A8F28B /* MultipartFormData.swift */,
 				1FA2F8EF1F40999500A110B5 /* MutableBox.swift */,
 				1F1E26F2204CA9BE007FDD1D /* Notification+FlintKit.swift */,
+				03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */,
 				B931EEF61CFCE1C7008E58DD /* TryCatcher.h */,
 				B931EEF71CFCE1C7008E58DD /* TryCatcher.m */,
 				443073BC1F38FF5100EEFC68 /* WeakProxy.swift */,
@@ -783,6 +786,7 @@
 				C5CD2AAB1D9F64FE007199DE /* StoryboardLoadable.swift in Sources */,
 				C5145A861D9F028B001BA24A /* AFError.swift in Sources */,
 				B9437BD61D0BB8BF00357DAD /* MigrationManager.swift in Sources */,
+				03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */,
 				03C8C3A51C8675C600E7BFAE /* CFString+FlintKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
