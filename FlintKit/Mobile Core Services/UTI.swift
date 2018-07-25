@@ -31,22 +31,44 @@ import MobileCoreServices
  
  Converts a MIME type to a UTI.
  
- - Parameter MIMEType: The MIME type to be converted
+ - Parameter mimeType: The MIME type to be converted
  
  - Returns: The UTI for the given MIME type.
  
  - Note: If no result is found, this function creates a dynamic type beginning
-    with the dyn prefix. This allows you to pass the UTI around and convert
-    it back to the original tag.
+ with the dyn prefix. This allows you to pass the UTI around and convert
+ it back to the original tag.
  
  */
-public func UTIForMIMEType(_ MIMEType: String) -> String {
+public func utiForMIMEType(_ mimeType: String) -> String {
   // Note: because we are not constraining the UTI to conform
   // to any UTI, there will always be a return value. It is
   // therefore known to be safe to force unwrap the return
   // value.
-  let UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, MIMEType as CFString, nil)
-  return UTI!.takeRetainedValue() as String
+  let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, mimeType as CFString, nil)
+  return uti!.takeRetainedValue() as String
+}
+
+/**
+ 
+ Converts a file extension to a UTI.
+ 
+ - Parameter fileExtension: The file extension to be converted
+ 
+ - Returns: The UTI for the given file extension.
+ 
+ - Note: If no result is found, this function creates a dynamic type beginning
+ with the dyn prefix. This allows you to pass the UTI around and convert
+ it back to the original tag.
+ 
+ */
+public func utiForFileExtension(_ fileExtension: String) -> String {
+  // Note: because we are not constraining the UTI to conform
+  // to any UTI, there will always be a return value. It is
+  // therefore known to be safe to force unwrap the return
+  // value.
+  let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as CFString, nil)
+  return uti!.takeRetainedValue() as String
 }
 
 

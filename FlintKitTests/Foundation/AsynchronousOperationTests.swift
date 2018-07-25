@@ -90,19 +90,4 @@ class AsynchronousOperationTests: XCTestCase {
     XCTAssert(operation.isExecuting)
   }
   
-  func testCancellation_mainIsNotCalled() {
-    let operation = AsynchronousRecorderOperation()
-    operation.cancel()
-    
-    let expectation = self.expectation(description: "completed")
-    let dependent = BlockOperation { expectation.fulfill() }
-    dependent.addDependency(operation)
-    
-    let queue = OperationQueue()
-    queue.addOperations([operation, dependent], waitUntilFinished: false)
-    
-    waitForExpectations(timeout: 0.1, handler: nil)
-    XCTAssertFalse(operation.mainCalled)
-  }
-  
 }
