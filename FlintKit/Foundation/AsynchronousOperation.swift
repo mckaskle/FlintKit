@@ -83,12 +83,16 @@ open class AsynchronousOperation: Operation {
   }
   
   
-  // MARK: - NSOperation
+  // MARK: - Operation
   
   open override var isAsynchronous: Bool { return true }
   open override var isExecuting: Bool { return state.executing }
   open override var isFinished: Bool { return state.finished }
   
+  open override func cancel() {
+    super.cancel()
+    state = .finished
+  }
   
   open override func start() {
     guard !isCancelled else {
