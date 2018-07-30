@@ -36,7 +36,7 @@ public extension UITableView {
     let container = UIView()
     container.translatesAutoresizingMaskIntoConstraints = false
     container.addSubview(subview)
-    NSLayoutConstraint.activate(container.makeInsetConstraints(for: subview, insetBy: insets))
+    NSLayoutConstraint.activate(container.makeSafeAreaInsetConstraints(for: subview, insetBy: insets))
     
     let widthConstraint = container.widthAnchor.constraint(equalToConstant: width)
     widthConstraint.isActive = true
