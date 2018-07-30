@@ -132,8 +132,6 @@
 		1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+FlintKit.swift"; sourceTree = "<group>"; };
 		442E11D81F2FDBD10096C3C4 /* FlintKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlintKit.h; sourceTree = "<group>"; };
 		442E11D91F2FDBD10096C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		442E11DB1F2FDBD10096C3C4 /* FlintKitTV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlintKitTV.h; sourceTree = "<group>"; };
-		442E11DC1F2FDBD10096C3C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		443073BC1F38FF5100EEFC68 /* WeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakProxy.swift; sourceTree = "<group>"; };
 		4433A6341ED4BE2D00344033 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		4483FE0E1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellAccessoryContainerView.swift; sourceTree = "<group>"; };
@@ -267,8 +265,8 @@
 		03C8C3951C8674CF00E7BFAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				442E11D71F2FDBD10096C3C4 /* iOS */,
-				442E11DA1F2FDBD10096C3C4 /* tvOS */,
+				442E11D81F2FDBD10096C3C4 /* FlintKit.h */,
+				442E11D91F2FDBD10096C3C4 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -434,24 +432,6 @@
 				1FADD5EB1EA1564B00274197 /* ListTableViewCell.xib */,
 			);
 			path = "List Table View Cell";
-			sourceTree = "<group>";
-		};
-		442E11D71F2FDBD10096C3C4 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				442E11D81F2FDBD10096C3C4 /* FlintKit.h */,
-				442E11D91F2FDBD10096C3C4 /* Info.plist */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		442E11DA1F2FDBD10096C3C4 /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				442E11DB1F2FDBD10096C3C4 /* FlintKitTV.h */,
-				442E11DC1F2FDBD10096C3C4 /* Info.plist */,
-			);
-			path = tvOS;
 			sourceTree = "<group>";
 		};
 		4433A6331ED4BE1700344033 /* Security */ = {
@@ -862,7 +842,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "FlintKit/Supporting Files/iOS/Info.plist";
+				INFOPLIST_FILE = "FlintKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKit;
@@ -882,7 +862,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "FlintKit/Supporting Files/iOS/Info.plist";
+				INFOPLIST_FILE = "FlintKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinmckaskle.FlintKit;
