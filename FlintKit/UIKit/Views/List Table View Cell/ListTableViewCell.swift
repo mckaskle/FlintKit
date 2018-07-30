@@ -191,6 +191,10 @@ final public class ListTableViewCell: UITableViewCell {
   // MARK: - Private Methods
   
   private func reset() {
+    accessoryType = .none
+    indentationLevel = 0
+    selectionStyle = .default
+    
     leadingAccessoryView = nil
     headline = nil
     subhead = nil
