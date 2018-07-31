@@ -33,18 +33,6 @@ public extension UIView {
   // MARK: - Properties
   
   @IBInspectable
-  var cornerRadius: CGFloat {
-    get { return layer.cornerRadius }
-    set {
-      layer.cornerRadius = newValue
-      
-      if newValue > 0 {
-        layer.masksToBounds = true
-      }
-    }
-  }
-  
-  @IBInspectable
   var borderWidth: CGFloat {
     get { return layer.borderWidth }
     set { layer.borderWidth = newValue }
@@ -58,6 +46,21 @@ public extension UIView {
     }
     set { layer.borderColor = newValue?.cgColor }
   }
+  
+  @IBInspectable
+  var cornerRadius: CGFloat {
+    get { return layer.cornerRadius }
+    set {
+      layer.cornerRadius = newValue
+      
+      if newValue > 0 {
+        layer.masksToBounds = true
+      }
+    }
+  }
+  
+  var safeAreaBounds: CGRect { return bounds.inset(by: safeAreaInsets) }
+  var safeAreaFrame: CGRect { return frame.inset(by: safeAreaInsets) }
   
   
   // MARK: - Methods
