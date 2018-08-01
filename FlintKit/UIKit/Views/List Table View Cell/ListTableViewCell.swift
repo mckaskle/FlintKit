@@ -112,12 +112,8 @@ final public class ListTableViewCell: UITableViewCell {
     }
   }
   
-  public var labelsVerticalPadding: CGFloat {
-    get { return labelsVerticalPaddingGuardConstraint.constant }
-    set {
-      labelsVerticalPaddingGuardConstraint.constant = newValue
-      labelsVerticalPaddingSuggestionConstraint.constant = newValue
-    }
+  public var labelsVerticalPadding: CGFloat = 0 {
+    didSet { refreshLabelsVerticalPaddingConstraints() }
   }
   
   public var leadingAccessoryViewHorizontalLabelPadding: CGFloat = 0 {
@@ -144,24 +140,25 @@ final public class ListTableViewCell: UITableViewCell {
     set { trailingAccessoryViewHorizontalCellPaddingConstraint.constant = newValue }
   }
   
-  public var leadingAccessoryViewVerticalPadding: CGFloat {
-    get { return leadingAccessoryViewVerticalPaddingGuardConstraint.constant }
-    set {
-      leadingAccessoryViewVerticalPaddingGuardConstraint.constant = newValue
-      leadingAccessoryViewVerticalPaddingSuggestionConstraint.constant = newValue
-    }
+  public var leadingAccessoryViewVerticalPadding: CGFloat = 0 {
+    didSet { refreshLeadingAccessoryViewVerticalPaddingConstraints() }
   }
   
-  public var trailingAccessoryViewVerticalPadding: CGFloat {
-    get { return trailingAccessoryViewVerticalPaddingGuardConstraint.constant }
-    set {
-      trailingAccessoryViewVerticalPaddingGuardConstraint.constant = newValue
-      trailingAccessoryViewVerticalPaddingSuggestionConstraint.constant = newValue
+  public var trailingAccessoryViewVerticalPadding: CGFloat = 0 {
+    didSet { refreshTrailingAccessoryViewVerticalPaddingConstraints() }
+  }
+  
+  public var adjustsVerticalPaddingForContentSizeCategory = true {
+    didSet {
+      guard adjustsVerticalPaddingForContentSizeCategory != oldValue else { return }
+      refreshAllVerticalPaddingConstraints()
     }
   }
   
   
   // MARK: - Private Properties
+  
+  private let verticalPaddingMetrics = UIFontMetrics(forTextStyle: .body)
   
   private var defaultLabelsVerticalPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultLeadingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
@@ -218,6 +215,35 @@ final public class ListTableViewCell: UITableViewCell {
     accessibilityIdentifier = nil
   }
   
+  private func scaledVerticalPadding(from: CGFloat) -> CGFloat {
+    guard adjustsVerticalPaddingForContentSizeCategory else { return from }
+    return verticalPaddingMetrics.scaledValue(for: from, compatibleWith: traitCollection)
+  }
+  
+  private func refreshLabelsVerticalPaddingConstraints() {
+    let padding = scaledVerticalPadding(from: labelsVerticalPadding)
+    labelsVerticalPaddingGuardConstraint.constant = padding
+    labelsVerticalPaddingSuggestionConstraint.constant = padding
+  }
+  
+  private func refreshLeadingAccessoryViewVerticalPaddingConstraints() {
+    let padding = scaledVerticalPadding(from: leadingAccessoryViewVerticalPadding)
+    leadingAccessoryViewVerticalPaddingGuardConstraint.constant = padding
+    leadingAccessoryViewVerticalPaddingSuggestionConstraint.constant = padding
+  }
+  
+  private func refreshTrailingAccessoryViewVerticalPaddingConstraints() {
+    let padding = scaledVerticalPadding(from: trailingAccessoryViewVerticalPadding)
+    trailingAccessoryViewVerticalPaddingGuardConstraint.constant = padding
+    trailingAccessoryViewVerticalPaddingSuggestionConstraint.constant = padding
+  }
+  
+  private func refreshAllVerticalPaddingConstraints() {
+    refreshLabelsVerticalPaddingConstraints()
+    refreshLeadingAccessoryViewVerticalPaddingConstraints()
+    refreshTrailingAccessoryViewVerticalPaddingConstraints()
+  }
+  
   
   // MARK: - UITableViewCell
   
@@ -234,6 +260,17 @@ final public class ListTableViewCell: UITableViewCell {
     didSet {
       headlineLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).headline" }
       subheadLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).subhead" }
+    }
+  }
+  
+  
+  // MARK: - UITraitEnvironment
+  
+  public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    
+    if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory && adjustsVerticalPaddingForContentSizeCategory {
+      refreshAllVerticalPaddingConstraints()
     }
   }
   
