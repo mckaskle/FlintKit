@@ -27,11 +27,11 @@
 import UIKit
 
 
-final public class ListCollectionViewCell: UICollectionViewCell {
+open class ListCollectionViewCell: UICollectionViewCell {
   
   // MARK: - Object Lifecycle
   
-  override public func awakeFromNib() {
+  override open func awakeFromNib() {
     super.awakeFromNib()
     
     if #available(iOS 10.0, *) {
@@ -204,7 +204,7 @@ final public class ListCollectionViewCell: UICollectionViewCell {
   
   // MARK: - UICollectionReusableView
   
-  override public func prepareForReuse() {
+  override open func prepareForReuse() {
     super.prepareForReuse()
     
     reset()
@@ -213,7 +213,7 @@ final public class ListCollectionViewCell: UICollectionViewCell {
   
   // MARK: - UIAccessibilityIdentification
   
-  override public var accessibilityIdentifier: String? {
+  override open var accessibilityIdentifier: String? {
     didSet {
       headlineLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).headline" }
       subheadLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).subhead" }
