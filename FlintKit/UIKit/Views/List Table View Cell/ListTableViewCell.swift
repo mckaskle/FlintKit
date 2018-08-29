@@ -27,11 +27,11 @@
 import UIKit
 
 
-open class ListTableViewCell: UITableViewCell {
+final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Object Lifecycle
   
-  override open func awakeFromNib() {
+  override public func awakeFromNib() {
     super.awakeFromNib()
     
     if #available(iOS 10.0, *) {
@@ -217,7 +217,7 @@ open class ListTableViewCell: UITableViewCell {
   
   // MARK: - UITableViewCell
   
-  override open func prepareForReuse() {
+  override public func prepareForReuse() {
     super.prepareForReuse()
     
     reset()
@@ -226,7 +226,7 @@ open class ListTableViewCell: UITableViewCell {
   
   // MARK: - UIAccessibilityIdentification
   
-  override open var accessibilityIdentifier: String? {
+  override public var accessibilityIdentifier: String? {
     didSet {
       headlineLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).headline" }
       subheadLabel.accessibilityIdentifier = accessibilityIdentifier.map { "\($0).subhead" }
