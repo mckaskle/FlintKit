@@ -35,6 +35,48 @@ fileprivate enum UIColorError: Error {
 
 extension UIColor {
   
+  // MARK: - Object Lifecycle
+  
+  /// Supported formats are: #abc, #abcf, #aabbcc, #aabbccff where:
+  /// - a: red
+  /// - b: blue
+  /// - c: green
+  /// - f: alpha
+  public convenience init?(hexadecimal: String) {
+    var normalized = hexadecimal
+    if normalized.hasPrefix("#") {
+      normalized = String(normalized.dropFirst())
+    }
+    
+    var characterCount = normalized.count
+    if characterCount == 3 || characterCount == 4 {
+      // Double each character.
+      normalized = normalized.lazy.map { "\($0)\($0)" }.joined()
+      // Character count has doubled.
+      characterCount *= 2
+    }
+    
+    if characterCount == 6 {
+      // If alpha was not included, add it.
+      normalized.append("ff")
+      characterCount += 2
+    }
+    
+    // If the string is not 8 characters at this point, it could not be normalized.
+    guard characterCount == 8 else { return nil }
+    
+    let scanner = Scanner(string: normalized)
+    var value: UInt32 = 0
+    guard scanner.scanHexInt32(&value) else { return nil }
+    
+    let red = CGFloat((value & 0xFF000000) >> 24) / 255
+    let green = CGFloat((value & 0xFF0000) >> 16) / 255
+    let blue = CGFloat((value & 0xFF00) >> 8) / 255
+    let alpha = CGFloat(value & 0xFF) / 255
+    self.init(red: red, green: green, blue: blue, alpha: alpha)
+  }
+  
+  
   // MARK: - Public Methods
   
   public func image(withSize size: CGSize) throws -> UIImage {
