@@ -118,3 +118,42 @@ public extension UITextField {
   }
   
 }
+
+
+public extension UITextView {
+  
+  var configuration: TextFieldConfiguration {
+    get {
+      return TextFieldConfiguration(
+        textContentType: textContentType,
+        autocapitalizationType: autocapitalizationType,
+        autocorrectionType: autocorrectionType,
+        smartDashesType: smartDashesType,
+        smartInsertDeleteType: smartInsertDeleteType,
+        smartQuotesType: smartQuotesType,
+        spellCheckingType: spellCheckingType,
+        keyboardType: keyboardType,
+        keyboardAppearance: keyboardAppearance,
+        returnKeyType: returnKeyType,
+        enablesReturnKeyAutomatically: enablesReturnKeyAutomatically,
+        isSecureTextEntry: isSecureTextEntry
+      )
+    }
+    
+    set {
+      textContentType = newValue.textContentType
+      autocapitalizationType = newValue.autocapitalizationType
+      autocorrectionType = newValue.autocorrectionType
+      smartDashesType = newValue.smartDashesType
+      smartInsertDeleteType = newValue.smartInsertDeleteType
+      smartQuotesType = newValue.smartQuotesType
+      spellCheckingType = newValue.spellCheckingType
+      keyboardType = newValue.keyboardType
+      keyboardAppearance = newValue.keyboardAppearance
+      returnKeyType = newValue.returnKeyType
+      enablesReturnKeyAutomatically = newValue.enablesReturnKeyAutomatically
+      isSecureTextEntry = newValue.isSecureTextEntry
+    }
+  }
+  
+}
