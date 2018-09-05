@@ -79,15 +79,20 @@ final public class CoreDataStack {
     // MARK: - Object Lifecycle
     
     public init() throws {
-      guard let model = NSManagedObjectModel.mergedModel(from: nil) else {
+      let filename = "store.sqlite"
+      let documentsDirectory = try FileManager.default.documentsDirectory()
+      let url = documentsDirectory.appendingPathComponent(filename, isDirectory: false)
+      
+      try self.init(persistentStoreType: .sqLite(storeUrl: url))
+    }
+    
+    public init(modelBundles: [Bundle] = [.main], persistentStoreType: CoreDataStack.PersistentStoreType) throws {
+      guard let model = NSManagedObjectModel.mergedModel(from: modelBundles) else {
         throw CoreDataStackError.cannotLoadModelInit
       }
       managedObjectModel = model
       
-      let filename = "store.sqlite"
-      let documentsDirectory = try FileManager.default.documentsDirectory()
-      let url = documentsDirectory.appendingPathComponent(filename, isDirectory: false)
-      persistentStoreType = .sqLite(storeUrl: url)
+      self.persistentStoreType = persistentStoreType
     }
     
     
