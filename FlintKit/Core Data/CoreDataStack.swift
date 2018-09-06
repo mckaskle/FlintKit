@@ -219,6 +219,11 @@ final public class CoreDataStack {
     return context
   }
   
+  public func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+    let context = newBackgroundContext()
+    context.perform { block(context) }
+  }
+  
   
   // MARK: - Private Properties
   
