@@ -224,6 +224,28 @@ final public class CoreDataStack {
     context.perform { block(context) }
   }
   
+  public func deleteAllData() throws {
+    guard let url = configuration.persistentStoreType.storeURL else { return }
+    
+    let existingStore = persistentStoreCoordinator.persistentStore(for: url)
+    try persistentStoreCoordinator.destroyPersistentStore(
+      at: url,
+      ofType: configuration.persistentStoreType.value,
+      options: existingStore?.options
+    )
+    
+    let options: [String: Any] = [
+      NSInferMappingModelAutomaticallyOption: true,
+      NSSQLitePragmasOption: ["journal_mode": "WAL"]
+    ]
+    try persistentStoreCoordinator.addPersistentStore(
+      ofType: configuration.persistentStoreType.value,
+      configurationName: nil,
+      at: url,
+      options: options
+    )
+  }
+  
   
   // MARK: - Private Properties
   
