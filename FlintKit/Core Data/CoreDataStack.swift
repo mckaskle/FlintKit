@@ -83,7 +83,7 @@ final public class CoreDataStack {
       let documentsDirectory = try FileManager.default.documentsDirectory()
       let url = documentsDirectory.appendingPathComponent(filename, isDirectory: false)
       
-      try self.init(persistentStoreType: .sqLite(storeUrl: url))
+      try self.init(persistentStoreType: .sqLite(storeURL: url))
     }
     
     public init(modelBundles: [Bundle] = [.main], persistentStoreType: CoreDataStack.PersistentStoreType) throws {
@@ -127,7 +127,7 @@ final public class CoreDataStack {
   // MARK: - Enum
   
   public enum PersistentStoreType {
-    case sqLite(storeUrl: URL), inMemory
+    case sqLite(storeURL: URL), inMemory
     
     var value: String {
       switch self {
@@ -139,10 +139,10 @@ final public class CoreDataStack {
       }
     }
     
-    fileprivate var storeUrl: URL? {
+    fileprivate var storeURL: URL? {
       switch self {
       case .inMemory: return nil
-      case .sqLite(let storeUrl): return storeUrl
+      case .sqLite(let storeURL): return storeURL
       }
     }
   }
@@ -172,7 +172,7 @@ final public class CoreDataStack {
     }
     
     persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: configuration.managedObjectModel)
-    try persistentStoreCoordinator.addPersistentStore(ofType: configuration.persistentStoreType.value, configurationName: nil, at: configuration.persistentStoreType.storeUrl, options: options)
+    try persistentStoreCoordinator.addPersistentStore(ofType: configuration.persistentStoreType.value, configurationName: nil, at: configuration.persistentStoreType.storeURL, options: options)
     
     mainContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     mainContext.persistentStoreCoordinator = persistentStoreCoordinator
