@@ -31,9 +31,46 @@ extension String {
   
   // MARK: - Public Properties
   
-  public static let cancel = NSLocalizedString("Cancel", tableName: "FlintKitLocalizable", comment: "Cancel button on alert view")
-  public static let done = NSLocalizedString("Done", tableName: "FlintKitLocalizable", comment: "Done button on alert view")
-  public static let ok = NSLocalizedString("OK", tableName: "FlintKitLocalizable", comment: "OK button on alert view")
+  // MARK: C
+  
+  public static var cancel: String {
+    return NSLocalizedString("Cancel", tableName: "FlintKitLocalizable", comment: "Cancel button on alert view")
+  }
+  
+  public static var couldNotLaunchApp: String {
+    guard let appName = Bundle.main.localizedAppName else {
+      return NSLocalizedString("Could Not Launch App", tableName: "FlintKitLocalizable", comment: "title of alert that is shown when there was an error launching the app")
+    }
+    
+    let format = NSLocalizedString("Could Not Launch %@", tableName: "FlintKitLocalizable", comment: "title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name")
+    return String(format: format, appName)
+  }
+  
+  
+  // MARK: D
+  
+  public static var done: String {
+    return NSLocalizedString("Done", tableName: "FlintKitLocalizable", comment: "Done button on alert view")
+  }
+  
+  
+  // MARK: O
+  
+  public static var ok: String {
+    return NSLocalizedString("OK", tableName: "FlintKitLocalizable", comment: "OK button on alert view")
+  }
+  
+  
+  // MARK: - T
+  
+  public static var theAppWillNowQuit: String {
+    guard let appName = Bundle.main.localizedAppName else {
+      return NSLocalizedString("The app will now quit.", tableName: "FlintKitLocalizable", comment: "message of error alert when the appe could not be loaded.")
+    }
+    
+    let format = NSLocalizedString("%@ will now quit.", tableName: "FlintKitLocalizable", comment: "message of error alert when the app could not be loaded; %@ is replaced with the app's name")
+    return String(format: format, appName)
+  }
   
   
   // MARK: - Public Methods

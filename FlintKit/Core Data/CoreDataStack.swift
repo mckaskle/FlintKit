@@ -26,6 +26,7 @@
 
 import CoreData
 import Foundation
+import UIKit
 
 
 public protocol CoreDataStackConfigurationType {
@@ -189,6 +190,87 @@ final public class CoreDataStack {
   
   
   // MARK: - Public Methods
+  
+  /// Will migrate the data stack if needed in the background while showing the
+  /// `launchViewController`. Whether the migration is needed or not, the
+  /// `postMigrationConfigurationHandler` will be called to give the caller a
+  /// chance to set up the rootViewController or any other set up necessary
+  /// before animating away from the `launchViewController`.
+  ///
+  /// If the migration fails, the user will be presented with an alert that
+  /// explains the app could not be launched. When the user taps "OK", the app
+  /// will forcibly exit.
+  ///
+  /// - Parameters:
+  ///   - with: the data stack's configuration
+  ///   - launchViewController: a VC that should be shown while the migration is
+  ///     occurring.
+  ///   - animationDuration: the amount of time it should take to hide the
+  ///     `launchViewController`
+  ///   - postMigrationConfigurationHandler: a block of code that should run
+  ///     after the migration has completed to set up the main app VC. One thing
+  ///     this handler might do is set up the rootViewController of the key
+  ///     window now that the data stack has been migrated.
+  ///   - completion: a handler that is run at the very end of the migration.
+  ///     This is called regardless of if the migration or the
+  ///     `postMigrationConfigurationHandler` succeeds or fails.
+  public class func migrateIfNeeded(with configuration: CoreDataStackConfigurationType,
+                                    launchViewController: UIViewController,
+                                    animationDuration: TimeInterval = 0.3,
+                                    postMigrationConfigurationHandler: @escaping () throws -> Void,
+                                    completion: @escaping (_ result: SimpleResult) -> Void) {
+    // Set up the launch window above the key window so that we can load the persistent
+    // container.
+    let launchWindow = UIWindow()
+    launchWindow.windowLevel = .statusBar
+    launchWindow.rootViewController = launchViewController
+    launchWindow.isHidden = false
+    
+    func handleLaunchError(_ error: Error) {
+      // Dispatch to next run loop in case the launch window hasn't been set up yet.
+      DispatchQueue.main.async {
+        let alert = UIAlertController(
+          title: .couldNotLaunchApp,
+          message: .theAppWillNowQuit,
+          preferredStyle: .alert
+        )
+        alert.addOkayAction { (_) in
+          exit(1)
+        }
+        launchWindow.rootViewController?.present(alert, animated: true, completion: nil)
+        
+        completion(.failure(error))
+      }
+    }
+    
+    DispatchQueue.global(qos: .userInitiated).async {
+      do {
+        if try CoreDataStack.isMigrationNeeded(for: configuration) {
+          try CoreDataStack.migrate(with: configuration)
+        }
+        
+        DispatchQueue.main.async {
+          do {
+            try postMigrationConfigurationHandler()
+            
+            // Now that the root view controller is set up, hide the launch window.
+            let animator = UIViewPropertyAnimator(duration: animationDuration, dampingRatio: 1) {
+              launchWindow.alpha = 0
+            }
+            animator.addCompletion { (_) in
+              launchWindow.isHidden = true
+              completion(.success)
+            }
+            animator.startAnimation()
+          } catch {
+            handleLaunchError(error)
+          }
+        }
+      } catch {
+        handleLaunchError(error)
+      }
+    }
+  }
   
   public class func isMigrationNeeded(for configuration: CoreDataStackConfigurationType) throws -> Bool {
     switch configuration.persistentStoreType {
