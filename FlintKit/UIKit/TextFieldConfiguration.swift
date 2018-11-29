@@ -27,6 +27,7 @@
 import UIKit
 
 
+@available(iOS 11.0, *)
 public struct TextFieldConfiguration {
   
   // MARK: - Object Lifecycle
@@ -81,6 +82,7 @@ public struct TextFieldConfiguration {
 
 public extension UITextField {
   
+  @available(iOS 11.0, *)
   var configuration: TextFieldConfiguration {
     get {
       return TextFieldConfiguration(
@@ -122,6 +124,7 @@ public extension UITextField {
 
 public extension UITextView {
   
+  @available(iOS 11.0, *)
   var configuration: TextFieldConfiguration {
     get {
       return TextFieldConfiguration(

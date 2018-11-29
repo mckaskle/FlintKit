@@ -59,7 +59,10 @@ public extension UIView {
     }
   }
   
+  @available(iOS 11.0, *)
   var safeAreaBounds: CGRect { return bounds.inset(by: safeAreaInsets) }
+  
+  @available(iOS 11.0, *)
   var safeAreaFrame: CGRect { return frame.inset(by: safeAreaInsets) }
   
   
