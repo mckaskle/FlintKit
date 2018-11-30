@@ -27,6 +27,10 @@
 import UIKit
 
 
+@available(iOS 11.0, *)
+private let verticalPaddingMetrics = UIFontMetrics(forTextStyle: .body)
+
+
 final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Object Lifecycle
@@ -158,8 +162,6 @@ final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Private Properties
   
-  private let verticalPaddingMetrics = UIFontMetrics(forTextStyle: .body)
-  
   private var defaultLabelsVerticalPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultLeadingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultTrailingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
@@ -217,7 +219,11 @@ final public class ListTableViewCell: UITableViewCell {
   
   private func scaledVerticalPadding(from: CGFloat) -> CGFloat {
     guard adjustsVerticalPaddingForContentSizeCategory else { return from }
-    return verticalPaddingMetrics.scaledValue(for: from, compatibleWith: traitCollection)
+    if #available(iOS 11.0, *) {
+      return verticalPaddingMetrics.scaledValue(for: from, compatibleWith: traitCollection)
+    } else {
+      return from
+    }
   }
   
   private func refreshLabelsVerticalPaddingConstraints() {
