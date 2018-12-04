@@ -36,11 +36,12 @@ public extension Notification {
   }
   
   var keyboardAnimationOptions: UIView.AnimationOptions {
-    guard
-      let curveNumber = userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber,
-      let curve = UIView.AnimationCurve(rawValue: curveNumber.intValue) else {
-        return []
-    }
+    guard let curveNumber = userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber else { return [] }
+    let curveInt = curveNumber.intValue
+    // NOTE: The following curve can be created even if the curveInt is invalid. If this happens, it leads to a crash.
+    // Therefore a manual guard is put in to ensure the curveInt is not out of bounds.
+    guard curveInt < 4 else { return [] }
+    guard let curve = UIView.AnimationCurve(rawValue: curveInt) else { return [] }
     
     switch curve {
     case .easeIn: return [.curveEaseIn]
