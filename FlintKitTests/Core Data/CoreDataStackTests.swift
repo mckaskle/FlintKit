@@ -98,7 +98,7 @@ private struct SQLiteWithNoExistingStoreConfiguration: CoreDataStackConfiguratio
     let url = URL(fileURLWithPath: NSTemporaryDirectory())
       .appendingPathComponent(NSUUID().uuidString, isDirectory: false)
       .appendingPathExtension("sqlite")
-    return .sqLite(storeUrl: url)
+    return .sqLite(storeURL: url)
   }()
   
   func destinationModel(forSourceModelContainer container: CoreDataStackSourceModelContainer) throws -> NSManagedObjectModel {
