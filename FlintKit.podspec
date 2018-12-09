@@ -30,7 +30,7 @@ Swift Standard Library, UIKit and more.
   s.source           = { :git => 'https://github.com/mckaskle/FlintKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.3'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'FlintKit/**/*'
   s.exclude_files = 'FlintKit/Supporting Files/**/*'
