@@ -68,6 +68,7 @@ public extension UIView {
   
   // MARK: - Methods
   
+  /// The constraints that are returned are not active. The caller must activate them for them to be in effect.
   @available(iOS 9.0, *)
   func makeInsetConstraints(for other: UIView,
                             insetBy insets: UIEdgeInsets = .zero,
@@ -93,6 +94,7 @@ public extension UIView {
     return constraints
   }
   
+  /// The constraints that are returned are not active. The caller must activate them for them to be in effect.
   @available(iOS 11.0, tvOS 11.0, *)
   func makeSafeAreaInsetConstraints(for other: UIView,
                                     insetBy insets: UIEdgeInsets = .zero,
@@ -116,6 +118,30 @@ public extension UIView {
     }
     
     return constraints
+  }
+  
+  /// The constraints that are returned are not active. The caller must activate them for them to be in effect.
+  func makeSizeConstraints(equalTo size: CGSize) -> [NSLayoutConstraint] {
+    return [
+      widthAnchor.constraint(equalToConstant: size.width),
+      heightAnchor.constraint(equalToConstant: size.height),
+    ]
+  }
+  
+  /// The constraints that are returned are not active. The caller must activate them for them to be in effect.
+  func makeSizeConstraints(greaterThanOrEqualTo size: CGSize) -> [NSLayoutConstraint] {
+    return [
+      widthAnchor.constraint(greaterThanOrEqualToConstant: size.width),
+      heightAnchor.constraint(greaterThanOrEqualToConstant: size.height),
+    ]
+  }
+  
+  /// The constraints that are returned are not active. The caller must activate them for them to be in effect.
+  func makeSizeConstraints(lessThanOrEqualTo size: CGSize) -> [NSLayoutConstraint] {
+    return [
+      widthAnchor.constraint(lessThanOrEqualToConstant: size.width),
+      heightAnchor.constraint(lessThanOrEqualToConstant: size.height),
+    ]
   }
   
 }
