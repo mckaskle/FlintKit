@@ -27,19 +27,29 @@
 import UIKit
 
 
-public extension UIAlertController {
+extension UIAlertController {
   
-  func addDoneAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
+  // MARK: - Object Lifecycle
+  
+  public convenience init(title: String?, message: String? = nil, okayButtonHandler: ((UIAlertAction) -> Void)? = nil) {
+    self.init(title: title, message: message, preferredStyle: .alert)
+    addOkayAction(okayButtonHandler)
+  }
+  
+  
+  // MARK: - Public Methods
+  
+  public func addDoneAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
     let action = UIAlertAction(title: .done, style: .default, handler: handler)
     addAction(action)
   }
   
-  func addOkayAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
+  public func addOkayAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
     let action = UIAlertAction(title: .ok, style: .default, handler: handler)
     addAction(action)
   }
   
-  func addCancelAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
+  public func addCancelAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
     let action = UIAlertAction(title: .cancel, style: .cancel, handler: handler)
     addAction(action)
   }
