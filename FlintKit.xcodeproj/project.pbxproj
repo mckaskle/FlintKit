@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0307A32122133867006FB762 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A32022133867006FB762 /* Label.swift */; };
 		03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */; };
 		036F7DA2210EA16200DFABEB /* TextFieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */; };
 		036F7DA4210EBF1400DFABEB /* UITableView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0307A32022133867006FB762 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+FlintKit.swift"; sourceTree = "<group>"; };
 		036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfiguration.swift; sourceTree = "<group>"; };
 		036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FlintKit.swift"; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			children = (
 				03C8C3D21C867BE900E7BFAE /* CellRegistration.swift */,
 				1F1E26F0204CA946007FDD1D /* KeyboardManager.swift */,
+				0307A32022133867006FB762 /* Label.swift */,
 				1FD0AAA61E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift */,
 				03C8C3D31C867BE900E7BFAE /* NibLoadableView.swift */,
 				C5CD2AAA1D9F64FE007199DE /* StoryboardLoadable.swift */,
@@ -637,6 +640,7 @@
 			files = (
 				038BC7F621074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift in Sources */,
 				C52A5A0B1DA064BF0003ACB0 /* AnalyticsService.swift in Sources */,
+				0307A32122133867006FB762 /* Label.swift in Sources */,
 				C52A5A051DA05CE50003ACB0 /* Bundle+FlintKit.swift in Sources */,
 				4483FE111EF065C900EA8FA3 /* ListCollectionViewCell.swift in Sources */,
 				03FA91591CDF62DF00475260 /* AsynchronousOperation.swift in Sources */,

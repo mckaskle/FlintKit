@@ -38,11 +38,7 @@ final public class ListTableViewCell: UITableViewCell {
   override public func awakeFromNib() {
     super.awakeFromNib()
     
-    if #available(iOS 10.0, *) {
-      headlineLabel.adjustsFontForContentSizeCategory = true
-      subheadLabel.adjustsFontForContentSizeCategory = true
-    }
-    
+    defaultInterLabelsSpacing = interLabelsSpacingConstraint.constant
     defaultLabelsVerticalPadding = labelsVerticalPaddingGuardConstraint.constant
     defaultLeadingAccessoryViewHorizontalLabelPadding = leadingAccessoryViewHorizontalLabelPaddingConstraint.constant
     defaultTrailingAccessoryViewHorizontalLabelPadding = trailingAccessoryViewHorizontalLabelPaddingConstraint.constant
@@ -60,41 +56,52 @@ final public class ListTableViewCell: UITableViewCell {
   static public let rowHeight = UITableView.automaticDimension
   static public let estimatedRowHeight: CGFloat = 63
   
+  public var headlineLabel: Label { return headlineLabelView }
+  public var subheadLabel: Label { return subheadLabelView }
+  
+  @available(*, deprecated, renamed: "headlineLabel.text")
   public var headline: String? {
     get { return headlineLabel.text }
     set { headlineLabel.text = newValue }
   }
   
+  @available(*, deprecated, renamed: "subheadLabel.text")
   public var subhead: String? {
     get { return subheadLabel.text }
     set { subheadLabel.text = newValue }
   }
   
+  @available(*, deprecated, renamed: "headlineLabel.font")
   public var headlineFont: UIFont {
     get { return headlineLabel.font }
     set { headlineLabel.font = newValue }
   }
   
+  @available(*, deprecated, renamed: "subheadLabel.font")
   public var subheadFont: UIFont {
     get { return subheadLabel.font }
     set { subheadLabel.font = newValue }
   }
   
+  @available(*, deprecated, renamed: "headlineLabel.textColor")
   public var headlineColor: UIColor! {
     get { return headlineLabel.textColor }
     set { headlineLabel.textColor = newValue }
   }
   
+  @available(*, deprecated, renamed: "subheadLabel.textColor")
   public var subheadColor: UIColor! {
     get { return subheadLabel.textColor }
     set { subheadLabel.textColor = newValue }
   }
   
+  @available(*, deprecated, renamed: "headlineLabel.textAlignment")
   public var headlineTextAlignment: NSTextAlignment {
     get { return headlineLabel.textAlignment }
     set { headlineLabel.textAlignment = newValue }
   }
   
+  @available(*, deprecated, renamed: "subheadLabel.textAlignment")
   public var subheadTextAlignment: NSTextAlignment {
     get { return subheadLabel.textAlignment }
     set { subheadLabel.textAlignment = newValue }
@@ -114,6 +121,10 @@ final public class ListTableViewCell: UITableViewCell {
       trailingAccessoryViewContainer.subview = newValue
       trailingAccessoryViewHorizontalLabelPaddingConstraint.constant = newValue == nil ? 0 : trailingAccessoryViewHorizontalLabelPadding
     }
+  }
+  
+  public var interLabelsSpacing: CGFloat = 0 {
+    didSet { refreshInterLabelSpacing() }
   }
   
   public var labelsVerticalPadding: CGFloat = 0 {
@@ -162,6 +173,7 @@ final public class ListTableViewCell: UITableViewCell {
   
   // MARK: - Private Properties
   
+  private var defaultInterLabelsSpacing: CGFloat = 0 // will be overridden in awakeFromNib
   private var defaultLabelsVerticalPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultLeadingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
   private var defaultTrailingAccessoryViewHorizontalLabelPadding: CGFloat = 15 // will be overridden in awakeFromNib
@@ -170,11 +182,12 @@ final public class ListTableViewCell: UITableViewCell {
   private var defaultLeadingAccessoryViewVerticalPadding: CGFloat = 12 // will be overridden in awakeFromNib
   private var defaultTrailingAccessoryViewVerticalPadding: CGFloat = 12 // will be overridden in awakeFromNib
   
-  @IBOutlet private weak var headlineLabel: UILabel!
-  @IBOutlet private weak var subheadLabel: UILabel!
+  @IBOutlet private weak var headlineLabelView: UILabel!
+  @IBOutlet private weak var subheadLabelView: UILabel!
   @IBOutlet private weak var leadingAccessoryViewContainer: ListCellAccessoryContainerView!
   @IBOutlet private weak var trailingAccessoryViewContainer: ListCellAccessoryContainerView!
   
+  @IBOutlet private weak var interLabelsSpacingConstraint: NSLayoutConstraint!
   @IBOutlet private weak var labelsVerticalPaddingGuardConstraint: NSLayoutConstraint!
   @IBOutlet private weak var labelsVerticalPaddingSuggestionConstraint: NSLayoutConstraint!
   @IBOutlet private weak var leadingAccessoryViewHorizontalLabelPaddingConstraint: NSLayoutConstraint!
@@ -195,17 +208,11 @@ final public class ListTableViewCell: UITableViewCell {
     selectionStyle = .default
     
     leadingAccessoryView = nil
-    headline = nil
-    subhead = nil
+    headlineLabel.resetToDefaults()
+    subheadLabel.resetToDefaults()
     trailingAccessoryView = nil
     
-    headlineFont = .preferredFont(forTextStyle: .body)
-    subheadFont = .preferredFont(forTextStyle: .body)
-    headlineColor = .darkText
-    subheadColor = .darkText
-    headlineTextAlignment = .natural
-    subheadTextAlignment = .natural
-    
+    interLabelsSpacing = defaultInterLabelsSpacing
     labelsVerticalPadding = defaultLabelsVerticalPadding
     leadingAccessoryViewHorizontalLabelPadding = defaultLeadingAccessoryViewHorizontalLabelPadding
     trailingAccessoryViewHorizontalLabelPadding = defaultTrailingAccessoryViewHorizontalLabelPadding
@@ -224,6 +231,10 @@ final public class ListTableViewCell: UITableViewCell {
     } else {
       return from
     }
+  }
+  
+  private func refreshInterLabelSpacing() {
+    interLabelsSpacingConstraint.constant = scaledVerticalPadding(from: interLabelsSpacing)
   }
   
   private func refreshLabelsVerticalPaddingConstraints() {
@@ -245,6 +256,7 @@ final public class ListTableViewCell: UITableViewCell {
   }
   
   private func refreshAllVerticalPaddingConstraints() {
+    refreshInterLabelSpacing()
     refreshLabelsVerticalPaddingConstraints()
     refreshLeadingAccessoryViewVerticalPaddingConstraints()
     refreshTrailingAccessoryViewVerticalPaddingConstraints()

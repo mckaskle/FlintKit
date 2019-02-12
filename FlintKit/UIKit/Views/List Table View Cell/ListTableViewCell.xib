@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,21 +19,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-Je-KS9" userLabel="Leading View" customClass="ListCellAccessoryContainerView" customModule="FlintKit" customModuleProvider="target">
-                        <rect key="frame" x="16" y="12" width="42" height="39"/>
+                        <rect key="frame" x="16" y="12" width="42" height="38.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-fa-OdQ" userLabel="Label Container">
-                        <rect key="frame" x="73" y="12" width="175" height="39"/>
+                        <rect key="frame" x="73" y="12" width="175" height="38.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-gZ-nRJ">
-                                <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Subhead" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryY-47-McY">
-                                <rect key="frame" x="0.0" y="21" width="175" height="18"/>
+                                <rect key="frame" x="0.0" y="20.5" width="175" height="18"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
@@ -52,7 +52,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="ByB-ie-p1l" userLabel="Trailing View" customClass="ListCellAccessoryContainerView" customModule="FlintKit" customModuleProvider="target">
-                        <rect key="frame" x="263" y="12" width="42" height="39"/>
+                        <rect key="frame" x="263" y="12" width="42" height="38.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
@@ -73,7 +73,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="headlineLabel" destination="fjN-gZ-nRJ" id="2n2-cr-42H"/>
+                <outlet property="headlineLabelView" destination="fjN-gZ-nRJ" id="x8h-hC-fVM"/>
+                <outlet property="interLabelsSpacingConstraint" destination="WVi-NY-aZp" id="JFc-zr-uf3"/>
                 <outlet property="labelsVerticalPaddingGuardConstraint" destination="ihm-pM-W79" id="fL2-Ej-FEe"/>
                 <outlet property="labelsVerticalPaddingSuggestionConstraint" destination="xUV-u8-XFs" id="PzC-Q9-sVZ"/>
                 <outlet property="leadingAccessoryViewContainer" destination="e0q-Je-KS9" id="bGc-mF-TZP"/>
@@ -81,7 +82,7 @@
                 <outlet property="leadingAccessoryViewHorizontalLabelPaddingConstraint" destination="MPu-zE-16Z" id="Nng-P2-6B8"/>
                 <outlet property="leadingAccessoryViewVerticalPaddingGuardConstraint" destination="9hy-wc-xcc" id="shs-wY-fYn"/>
                 <outlet property="leadingAccessoryViewVerticalPaddingSuggestionConstraint" destination="F2n-8z-PhB" id="kc4-yD-Mjr"/>
-                <outlet property="subheadLabel" destination="ryY-47-McY" id="m8K-Yi-zb9"/>
+                <outlet property="subheadLabelView" destination="ryY-47-McY" id="tMj-Kh-qpC"/>
                 <outlet property="trailingAccessoryViewContainer" destination="ByB-ie-p1l" id="cgS-Yp-fjS"/>
                 <outlet property="trailingAccessoryViewHorizontalCellPaddingConstraint" destination="fAI-yp-Fl4" id="9tv-GN-jVQ"/>
                 <outlet property="trailingAccessoryViewHorizontalLabelPaddingConstraint" destination="cL3-SR-Zht" id="Mg5-ES-0JA"/>

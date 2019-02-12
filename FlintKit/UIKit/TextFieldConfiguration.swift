@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  StoryboardLoadable.swift
+//  TextFieldConfiguration.swift
 //
 //  Copyright (c) 2018 Devin McKaskle
 //
