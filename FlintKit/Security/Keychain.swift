@@ -136,9 +136,6 @@ final public class Keychain {
     case whenUnlockedThisDeviceOnly
     
     
-    public static var `default`: Accessibility { return .whenUnlocked }
-    
-    
     fileprivate var keychainAttrValue: CFString {
       switch self {
         case .afterFirstUnlock: return kSecAttrAccessibleAfterFirstUnlock
@@ -175,9 +172,10 @@ final public class Keychain {
   ///   identify all keys stored using this keychain wrapper instance.
   /// - parameter accessGroup: Optional unique AccessGroup for this instance. Use a
   ///   matching AccessGroup between applications to allow shared keychain access.
-  public init(serviceName: String, accessGroup: String? = nil) {
+  public init(serviceName: String, accessGroup: String? = nil, defaultAccessibility: Accessibility = .whenUnlocked) {
     self.serviceName = serviceName
     self.accessGroup = accessGroup
+    self.defaultAccessibility = defaultAccessibility
   }
   
   
@@ -293,19 +291,19 @@ final public class Keychain {
   
   // MARK: Setters
   
-  public func set(_ value: Int, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: Int, forKey key: String, accessibility: Accessibility? = nil) throws {
     try set(NSNumber(value: value), forKey: key, accessibility: accessibility)
   }
   
-  public func set(_ value: Float, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: Float, forKey key: String, accessibility: Accessibility? = nil) throws {
     try set(NSNumber(value: value), forKey: key, accessibility: accessibility)
   }
   
-  public func set(_ value: Double, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: Double, forKey key: String, accessibility: Accessibility? = nil) throws {
     try set(NSNumber(value: value), forKey: key, accessibility: accessibility)
   }
   
-  public func set(_ value: Bool, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: Bool, forKey key: String, accessibility: Accessibility? = nil) throws {
     try set(NSNumber(value: value), forKey: key, accessibility: accessibility)
   }
   
@@ -318,7 +316,7 @@ final public class Keychain {
   /// - parameter accessibility: accessibility to use when setting the keychain 
   ///   item.
   /// - throws: Throws an error if the save failed.
-  public func set(_ value: String, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: String, forKey key: String, accessibility: Accessibility? = nil) throws {
     guard let data = value.data(using: .utf8, allowLossyConversion: false) else { throw Error.couldNotEncodeString }
     try set(data, forKey: key, accessibility: accessibility)
   }
@@ -332,7 +330,7 @@ final public class Keychain {
   /// - parameter accessibility:  accessibility to use when setting the keychain
   ///   item.
   /// - throws: Throws an error if the save failed.
-  public func set(_ value: NSCoding, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: NSCoding, forKey key: String, accessibility: Accessibility? = nil) throws {
     let data = NSKeyedArchiver.archivedData(withRootObject: value)
     try set(data, forKey: key, accessibility: accessibility)
   }
@@ -346,7 +344,8 @@ final public class Keychain {
   /// - parameter accessibility: accessibility to use when setting the keychain
   ///   item.
   /// - throws: Throws an error if the save failed.
-  public func set(_ value: Data, forKey key: String, accessibility: Accessibility = .default) throws {
+  public func set(_ value: Data, forKey key: String, accessibility givenAccessibility: Accessibility? = nil) throws {
+    let accessibility = givenAccessibility ?? defaultAccessibility
     var dictionary = try queryDictionary(forKey: key, accessibility: accessibility)
     dictionary[SecValueData] = value
     dictionary[SecAttrAccessible] = accessibility.keychainAttrValue
@@ -370,7 +369,8 @@ final public class Keychain {
   /// - parameter accessibility: accessibility level to use when
   ///   looking up the keychain item.
   /// - throws: Throws an error if the item could not be deleted.
-  public func removeItem(forKey key: String, accessibility: Accessibility = .default) throws {
+  public func removeItem(forKey key: String, accessibility givenAccessibility: Accessibility? = nil) throws {
+    let accessibility = givenAccessibility ?? defaultAccessibility
     let dictionary = try queryDictionary(forKey: key, accessibility: accessibility)
     
     // Delete
@@ -411,6 +411,9 @@ final public class Keychain {
   /// Keychain Access Group this entry belongs to. This allows you to use the
   /// KeychainWrapper with shared keychain access between different applications.
   private let accessGroup: String?
+  
+  /// This is the accessibility that is used when setting or deleting a value if none is specified.
+  private let defaultAccessibility: Accessibility
   
   
   // MARK: - Private Methods
