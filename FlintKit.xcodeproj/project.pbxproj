@@ -14,7 +14,7 @@
 		03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */; };
 		036F7DA2210EA16200DFABEB /* TextFieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */; };
 		036F7DA4210EBF1400DFABEB /* UITableView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */; };
-		0388726F223187F4000B774A /* AccessibleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388726E223187F4000B774A /* AccessibleStackView.swift */; };
+		0388726F223187F4000B774A /* UIStackView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0388726E223187F4000B774A /* UIStackView+FlintKit.swift */; };
 		038BC7F621074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */; };
 		03C8C3861C8674AD00E7BFAE /* FlintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */; };
 		03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */; };
@@ -106,7 +106,7 @@
 		03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+FlintKit.swift"; sourceTree = "<group>"; };
 		036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfiguration.swift; sourceTree = "<group>"; };
 		036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FlintKit.swift"; sourceTree = "<group>"; };
-		0388726E223187F4000B774A /* AccessibleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleStackView.swift; sourceTree = "<group>"; };
+		0388726E223187F4000B774A /* UIStackView+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+FlintKit.swift"; sourceTree = "<group>"; };
 		038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizingMask+FlintKit.swift"; sourceTree = "<group>"; };
 		03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlintKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,7 +394,6 @@
 		03C8C3D11C867BE900E7BFAE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				0388726E223187F4000B774A /* AccessibleStackView.swift */,
 				03C8C3D21C867BE900E7BFAE /* CellRegistration.swift */,
 				034AA561222EEFA100D037B8 /* CustomFontLabel.swift */,
 				1F1E26F0204CA946007FDD1D /* KeyboardManager.swift */,
@@ -409,6 +408,7 @@
 				034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */,
 				B90C46871D19FD1000CD4F36 /* UIImage+FlintKit.swift */,
 				1FF5457B1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift */,
+				0388726E223187F4000B774A /* UIStackView+FlintKit.swift */,
 				036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */,
 				C594E3BD1DCED73600629B43 /* UIView+FlintKit.swift */,
 				038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */,
@@ -674,7 +674,7 @@
 				034AA55E222EEB2100D037B8 /* UIFont+FlintKit.swift in Sources */,
 				44FD53A520166D9200187F0C /* Reachability.swift in Sources */,
 				03C8C3D51C867BE900E7BFAE /* CellRegistration.swift in Sources */,
-				0388726F223187F4000B774A /* AccessibleStackView.swift in Sources */,
+				0388726F223187F4000B774A /* UIStackView+FlintKit.swift in Sources */,
 				03C8C3C51C86774700E7BFAE /* FileManager+FlintKit.swift in Sources */,
 				C5AC570A1DA2E9CA00ECFA1D /* UIViewController+FlintKit.swift in Sources */,
 				C58C8C8B1DBC1A770064ADD5 /* String+FlintKit.swift in Sources */,
