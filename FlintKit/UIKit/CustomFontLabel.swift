@@ -1,9 +1,27 @@
 //
-//  CustomFontLabel.swift
-//  FlintKit
+//  MIT License
 //
-//  Created by Devin McKaskle on 3/5/19.
-//  Copyright © 2019 Devin McKaskle. All rights reserved.
+//  CustomFontLabel.swift
+//
+//  Copyright (c) 2019 Devin McKaskle
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import Foundation
@@ -26,12 +44,6 @@ public final class CustomFontLabel: UILabel {
     super.init(frame: frame)
     
     designedFont = font
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(contentSizeCategoryDidChange),
-      name: UIContentSizeCategory.didChangeNotification,
-      object: nil
-    )
     refreshFont()
   }
   
@@ -41,19 +53,12 @@ public final class CustomFontLabel: UILabel {
     
     super.init(coder: aDecoder)
     
-    // The real designedFont will be set and the observer will be added in `awakeFromNib`.
+    // The real designedFont will be set in `awakeFromNib`.
   }
   
   override public func awakeFromNib() {
     super.awakeFromNib()
-    
     designedFont = font
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(contentSizeCategoryDidChange),
-      name: UIContentSizeCategory.didChangeNotification,
-      object: nil
-    )
   }
   
   
@@ -90,21 +95,6 @@ public final class CustomFontLabel: UILabel {
   }
   
   
-  // MARK: - Private Properties
-  
-  /// Set to `true` when the font is being refreshed internally so that it is known that the designedFont isn't being
-  /// changed.
-  private var isRefreshingFont = false
-  
-  
-  // MARK: - Actions
-  
-  @objc dynamic private func contentSizeCategoryDidChange() {
-    guard adjustsFontForContentSizeCategory else { return }
-    refreshFont()
-  }
-  
-  
   // MARK: - Private Methods
   
   private func refreshFont() {
@@ -114,6 +104,16 @@ public final class CustomFontLabel: UILabel {
       maximumPointSize: maximumFontPointSize,
       compatibleWith: traitCollection
     )
+  }
+  
+  
+  // MARK: - UITraitEnvironment
+  
+  public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    
+    guard adjustsFontForContentSizeCategory else { return }
+    refreshFont()
   }
   
 }

@@ -1,7 +1,7 @@
 //
 //  MIT License
 //
-//  UIFont+FlintKit.swift
+//  AccessibleStackView.swift
 //
 //  Copyright (c) 2019 Devin McKaskle
 //
@@ -28,22 +28,43 @@ import Foundation
 import UIKit
 
 
-extension UIFont {
+/// This UIStackView subclass is intended to be used to show a 2 column layout when UIContentSizeCategory is not an
+/// accessibility category. When it is an accessibility category, it is assumed that the content is taking up enough
+/// space that the stack view should be a 2 row layout instead of a 2 column layout.
+public class AccessibleStackView: UIStackView {
   
-  // MARK: - Public Properties
+  // MARK: - Object Lifecycle
   
-  /// Will use UIFontMetrics when available. Otherwise, will use UIContentSizeCategory's estimatedPointSizeScale to
-  /// scale the font.
-  public func scaledFont(designedPointSize: CGFloat, textStyle: UIFont.TextStyle = .body, maximumPointSize: CGFloat = .greatestFiniteMagnitude, compatibleWith traitCollection: UITraitCollection? = nil) -> UIFont {
-    if #available(iOS 11.0, *) {
-      let metrics = UIFontMetrics(forTextStyle: textStyle)
-      return metrics.scaledFont(for: self, maximumPointSize: maximumPointSize, compatibleWith: traitCollection)
-    } else {
-      let category = traitCollection?.preferredContentSizeCategory ?? UIApplication.shared.preferredContentSizeCategory
-      let scaledPointSize = pointSize * category.estimatedPointSizeScale
-      // Bound so that 0 < scaledPointSize <= maximumPointSize
-      return withSize(max(0.1, min(maximumPointSize, scaledPointSize)))
-    }
+  public override init(frame: CGRect) {
+    #error("change this to be an extension")
+    super.init(frame: frame)
+    configureView()
+  }
+  
+  public required init(coder: NSCoder) {
+    super.init(coder: coder)
+    configureView()
+  }
+  
+  private func configureView() {
+    refreshAxis()
+  }
+  
+  
+  // MARK: - Private Methods
+  
+  private func refreshAxis() {
+    axis = traitCollection.preferredContentSizeCategory.isAccessibilityCategory_backwardsCompatible
+      ? .vertical : .horizontal
+  }
+  
+  
+  // MARK: - UITraitEnvironment
+  
+  public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    
+    refreshAxis()
   }
   
 }
