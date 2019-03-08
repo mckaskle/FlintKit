@@ -98,7 +98,7 @@ public final class CustomFontLabel: UILabel {
   // MARK: - Private Methods
   
   private func refreshFont() {
-    font = font.scaledFont(
+    font = designedFont.scaledFont(
       designedPointSize: designedFont.pointSize,
       textStyle: textStyle,
       maximumPointSize: maximumFontPointSize,
