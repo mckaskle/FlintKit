@@ -14,6 +14,7 @@
 		03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */; };
 		036F7DA2210EA16200DFABEB /* TextFieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */; };
 		036F7DA4210EBF1400DFABEB /* UITableView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */; };
+		037C17412232D6EB00369315 /* NSMutableAttributedString+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C17402232D6EB00369315 /* NSMutableAttributedString+FlintKit.swift */; };
 		038BC7F621074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */; };
 		03C8C3861C8674AD00E7BFAE /* FlintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */; };
 		03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8C39E1C8675C600E7BFAE /* CoreDataStack.swift */; };
@@ -105,6 +106,7 @@
 		03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+FlintKit.swift"; sourceTree = "<group>"; };
 		036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfiguration.swift; sourceTree = "<group>"; };
 		036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FlintKit.swift"; sourceTree = "<group>"; };
+		037C17402232D6EB00369315 /* NSMutableAttributedString+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+FlintKit.swift"; sourceTree = "<group>"; };
 		038BC7F521074B11007D5AA9 /* UIViewAutoresizingMask+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAutoresizingMask+FlintKit.swift"; sourceTree = "<group>"; };
 		03C8C37B1C8674AD00E7BFAE /* FlintKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C8C3851C8674AD00E7BFAE /* FlintKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlintKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +365,7 @@
 				C5B38E6D1D1EF01800A8F28B /* MultipartFormData.swift */,
 				1FA2F8EF1F40999500A110B5 /* MutableBox.swift */,
 				1F1E26F2204CA9BE007FDD1D /* Notification+FlintKit.swift */,
+				037C17402232D6EB00369315 /* NSMutableAttributedString+FlintKit.swift */,
 				03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */,
 				B931EEF61CFCE1C7008E58DD /* TryCatcher.h */,
 				B931EEF71CFCE1C7008E58DD /* TryCatcher.m */,
@@ -663,6 +666,7 @@
 				4433A6351ED4BE2D00344033 /* Keychain.swift in Sources */,
 				C543E35F1F150CDD0078DBDF /* Bundle+CoreData+FlintKit.swift in Sources */,
 				1FD0AAA71E95139E00AF7BAF /* NetworkActivityIndicatorManager.swift in Sources */,
+				037C17412232D6EB00369315 /* NSMutableAttributedString+FlintKit.swift in Sources */,
 				B931EEF91CFCE1C7008E58DD /* TryCatcher.m in Sources */,
 				1FA2F8F01F40999500A110B5 /* MutableBox.swift in Sources */,
 				1FF5457C1E6E37A900F462CA /* UINavigationViewController+FlintKit.swift in Sources */,
