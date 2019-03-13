@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0307A32122133867006FB762 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A32022133867006FB762 /* Label.swift */; };
+		0316BAB222398ECA003A007B /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316BAB122398ECA003A007B /* WeakBox.swift */; };
+		0316BAB622398F55003A007B /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0316BAB522398F55003A007B /* WeakArray.swift */; };
 		034AA55E222EEB2100D037B8 /* UIFont+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */; };
 		034AA560222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA55F222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift */; };
 		034AA562222EEFA100D037B8 /* CustomFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA561222EEFA100D037B8 /* CustomFontLabel.swift */; };
@@ -100,6 +102,8 @@
 
 /* Begin PBXFileReference section */
 		0307A32022133867006FB762 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		0316BAB122398ECA003A007B /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
+		0316BAB522398F55003A007B /* WeakArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
 		034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FlintKit.swift"; sourceTree = "<group>"; };
 		034AA55F222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentSizeCategory+FlintKit.swift"; sourceTree = "<group>"; };
 		034AA561222EEFA100D037B8 /* CustomFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontLabel.swift; sourceTree = "<group>"; };
@@ -369,6 +373,8 @@
 				03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */,
 				B931EEF61CFCE1C7008E58DD /* TryCatcher.h */,
 				B931EEF71CFCE1C7008E58DD /* TryCatcher.m */,
+				0316BAB522398F55003A007B /* WeakArray.swift */,
+				0316BAB122398ECA003A007B /* WeakBox.swift */,
 				443073BC1F38FF5100EEFC68 /* WeakProxy.swift */,
 			);
 			path = Foundation;
@@ -690,7 +696,9 @@
 				036F7DA4210EBF1400DFABEB /* UITableView+FlintKit.swift in Sources */,
 				03C8C3A41C8675C600E7BFAE /* CoreDataStack.swift in Sources */,
 				036F7DA2210EA16200DFABEB /* TextFieldConfiguration.swift in Sources */,
+				0316BAB622398F55003A007B /* WeakArray.swift in Sources */,
 				B9437BD41D0BA09A00357DAD /* CGRect+FlintKit.swift in Sources */,
+				0316BAB222398ECA003A007B /* WeakBox.swift in Sources */,
 				034AA562222EEFA100D037B8 /* CustomFontLabel.swift in Sources */,
 				4483FE0F1EF0659A00EA8FA3 /* ListCellAccessoryContainerView.swift in Sources */,
 				03C8C3C71C86776100E7BFAE /* Array+FlintKit.swift in Sources */,
