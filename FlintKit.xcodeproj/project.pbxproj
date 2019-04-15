@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03043C232264F30A00FF45AE /* Associable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03043C222264F30A00FF45AE /* Associable.swift */; };
+		03043C252265019F00FF45AE /* NSObject+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03043C242265019F00FF45AE /* NSObject+FlintKit.swift */; };
 		0307A32122133867006FB762 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A32022133867006FB762 /* Label.swift */; };
 		034AA55E222EEB2100D037B8 /* UIFont+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */; };
 		034AA560222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA55F222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift */; };
@@ -99,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03043C222264F30A00FF45AE /* Associable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associable.swift; sourceTree = "<group>"; };
+		03043C242265019F00FF45AE /* NSObject+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+FlintKit.swift"; sourceTree = "<group>"; };
 		0307A32022133867006FB762 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FlintKit.swift"; sourceTree = "<group>"; };
 		034AA55F222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentSizeCategory+FlintKit.swift"; sourceTree = "<group>"; };
@@ -359,12 +363,14 @@
 			isa = PBXGroup;
 			children = (
 				C5145A851D9F028B001BA24A /* AFError.swift */,
+				03043C222264F30A00FF45AE /* Associable.swift */,
 				03FA91581CDF62DF00475260 /* AsynchronousOperation.swift */,
 				C52A5A041DA05CE50003ACB0 /* Bundle+FlintKit.swift */,
 				03C8C3C41C86774700E7BFAE /* FileManager+FlintKit.swift */,
 				C5B38E6D1D1EF01800A8F28B /* MultipartFormData.swift */,
 				1FA2F8EF1F40999500A110B5 /* MutableBox.swift */,
 				1F1E26F2204CA9BE007FDD1D /* Notification+FlintKit.swift */,
+				03043C242265019F00FF45AE /* NSObject+FlintKit.swift */,
 				037C17402232D6EB00369315 /* NSMutableAttributedString+FlintKit.swift */,
 				03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */,
 				B931EEF61CFCE1C7008E58DD /* TryCatcher.h */,
@@ -685,6 +691,7 @@
 				B90AADDA1D035123002DA811 /* FetchedResultsControllerTableViewDataSource.swift in Sources */,
 				C594E3BE1DCED73600629B43 /* UIView+FlintKit.swift in Sources */,
 				443073BD1F38FF5100EEFC68 /* WeakProxy.swift in Sources */,
+				03043C252265019F00FF45AE /* NSObject+FlintKit.swift in Sources */,
 				C594E3A91DCE3AF400629B43 /* CLLocationCoordinate2D+FlintKit.swift in Sources */,
 				1F1E26F3204CA9BE007FDD1D /* Notification+FlintKit.swift in Sources */,
 				036F7DA4210EBF1400DFABEB /* UITableView+FlintKit.swift in Sources */,
@@ -702,6 +709,7 @@
 				C5CD2AAB1D9F64FE007199DE /* StoryboardLoadable.swift in Sources */,
 				C5145A861D9F028B001BA24A /* AFError.swift in Sources */,
 				B9437BD61D0BB8BF00357DAD /* MigrationManager.swift in Sources */,
+				03043C232264F30A00FF45AE /* Associable.swift in Sources */,
 				034AA560222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift in Sources */,
 				03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */,
 				03C8C3A51C8675C600E7BFAE /* CFString+FlintKit.swift in Sources */,
