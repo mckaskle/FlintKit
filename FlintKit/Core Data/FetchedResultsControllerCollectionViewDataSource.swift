@@ -151,6 +151,9 @@ final public class FetchedResultsControllerCollectionViewDataSource<
       
     case .update, .move:
       break
+      
+    @unknown default:
+      break
     }
   }
   
@@ -191,6 +194,9 @@ final public class FetchedResultsControllerCollectionViewDataSource<
       }
       
       changes.append(.objectMove(indexPath, newIndexPath))
+      
+    @unknown default:
+      assertionFailure()
     }
   }
   

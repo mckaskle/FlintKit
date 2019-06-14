@@ -120,6 +120,9 @@ final public class FetchedResultsControllerTableViewDataSource<
       
     case .move, .update:
       assertionFailure("Invalid change type for section update.")
+      
+    @unknown default:
+      assertionFailure("Invalid change type for section update.")
     }
   }
   
@@ -155,6 +158,9 @@ final public class FetchedResultsControllerTableViewDataSource<
       }
       
       tableView?.moveRow(at: indexPath, to: newIndexPath)
+      
+    @unknown default:
+      assertionFailure("Invalid change type for object update.")
     }
   }
   
@@ -199,6 +205,9 @@ final public class FetchedResultsControllerTableViewDataSource<
     case .delete:
       let item = object(at: indexPath)
       delegate?.fetchedResultsControllerTableViewDataSource(self, commitDeleteForItem: item, atIndexPath: indexPath)
+      
+    @unknown default:
+      assertionFailure("unknown editing style")
     }
   }
   
