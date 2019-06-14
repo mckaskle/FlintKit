@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'FlintKit'
   s.version          = '10.10.0'
   s.summary          = 'Basic categories and utilities.'
+  s.swift_versions.  = ['4.2', '5.0']
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
