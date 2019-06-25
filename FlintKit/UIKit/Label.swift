@@ -85,7 +85,12 @@ public extension Label {
   func resetToDefaults() {
     text = nil
     font = .preferredFont(forTextStyle: .body)
-    textColor = .darkText
+    
+    if #available(iOS 13.0, *) {
+      textColor = .label
+    } else {
+      textColor = .darkText
+    }
     textAlignment = .natural
     lineBreakMode = .byTruncatingTail
     isEnabled = true
