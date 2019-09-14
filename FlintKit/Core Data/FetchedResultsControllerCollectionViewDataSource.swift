@@ -95,6 +95,13 @@ final public class FetchedResultsControllerCollectionViewDataSource<
   }
   
   
+  // MARK: - Public Properties
+
+  /// Useful to turn on when UICollectionViewDropCoordinator is dropping an item and therefore already updating the
+  /// collection view cells.
+  public var shouldIgnoreChanges = false
+  
+  
   // MARK: - Public Methods
   
   public func object(at indexPath: IndexPath) -> ItemType {
@@ -206,6 +213,7 @@ final public class FetchedResultsControllerCollectionViewDataSource<
     // the collection view already knows of the changes, we don't need to do
     // anything.
     guard !isProgrammaticallyMovingItem else { return }
+    guard !shouldIgnoreChanges else { return }
     
     defer { delegate?.fetchedResultsControllerCollectionViewDataSourceDidUpdateContent(self) }
     
