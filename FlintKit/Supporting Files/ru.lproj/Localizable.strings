@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  FlintKit
+
+  Created by Devin McKaskle on 9/25/19.
+  Copyright © 2019 Devin McKaskle. All rights reserved.
+*/
+
+"%@ will now quit." = "%@ сейчас выйдет.";
+"Cancel" = "Отмена";
+"Could Not Launch %@" = "Не удалось запустить %@";
+"Could Not Launch App" = "Не удалось запустить приложение";
+"Done" = "Готово";
+"OK" = "Хорошо";
+"The app will now quit." = "Приложение теперь закроется.";

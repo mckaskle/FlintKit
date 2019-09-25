@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  FlintKit
+
+  Created by Devin McKaskle on 9/25/19.
+  Copyright © 2019 Devin McKaskle. All rights reserved.
+*/
+
+"%@ will now quit." = "％@は終了します。";
+"Cancel" = "キャンセル";
+"Could Not Launch %@" = "％@を起動できませんでした";
+"Could Not Launch App" = "アプリを起動できませんでした";
+"Done" = "完了";
+"OK" = "OK";
+"The app will now quit." = "これでアプリは終了します。";

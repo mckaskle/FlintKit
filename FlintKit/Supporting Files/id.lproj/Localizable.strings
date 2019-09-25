@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  FlintKit
+
+  Created by Devin McKaskle on 9/25/19.
+  Copyright © 2019 Devin McKaskle. All rights reserved.
+*/
+
+"%@ will now quit." = "%@ sekarang akan berhenti.";
+"Cancel" = "Membatalkan";
+"Could Not Launch %@" = "Tidak dapat meluncurkan %@";
+"Could Not Launch App" = "Tidak dapat meluncurkan aplikasi";
+"Done" = "Selesai";
+"OK" = "Baik";
+"The app will now quit." = "Aplikasi sekarang akan berhenti.";

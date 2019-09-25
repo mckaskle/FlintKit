@@ -13,6 +13,7 @@
 		034AA55E222EEB2100D037B8 /* UIFont+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */; };
 		034AA560222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA55F222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift */; };
 		034AA562222EEFA100D037B8 /* CustomFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AA561222EEFA100D037B8 /* CustomFontLabel.swift */; };
+		034CD24F233BBBC90053EF72 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 034CD251233BBBC90053EF72 /* Localizable.strings */; };
 		03520CE42107A24600993C49 /* OperationQueue+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */; };
 		036F7DA2210EA16200DFABEB /* TextFieldConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */; };
 		036F7DA4210EBF1400DFABEB /* UITableView+FlintKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */; };
@@ -107,6 +108,13 @@
 		034AA55D222EEB2100D037B8 /* UIFont+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FlintKit.swift"; sourceTree = "<group>"; };
 		034AA55F222EEC6700D037B8 /* UIContentSizeCategory+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIContentSizeCategory+FlintKit.swift"; sourceTree = "<group>"; };
 		034AA561222EEFA100D037B8 /* CustomFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontLabel.swift; sourceTree = "<group>"; };
+		034CD250233BBBC90053EF72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		034CD252233BBBCC0053EF72 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		034CD253233BBBCD0053EF72 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		034CD254233BBBCD0053EF72 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		034CD255233BBBCE0053EF72 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		034CD256233BBBD10053EF72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		034CD257233BBBD20053EF72 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03520CE32107A24600993C49 /* OperationQueue+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+FlintKit.swift"; sourceTree = "<group>"; };
 		036F7DA1210EA16200DFABEB /* TextFieldConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfiguration.swift; sourceTree = "<group>"; };
 		036F7DA3210EBF1400DFABEB /* UITableView+FlintKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+FlintKit.swift"; sourceTree = "<group>"; };
@@ -281,6 +289,7 @@
 			children = (
 				442E11D81F2FDBD10096C3C4 /* FlintKit.h */,
 				442E11D91F2FDBD10096C3C4 /* Info.plist */,
+				034CD251233BBBC90053EF72 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -617,6 +626,12 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				id,
+				ja,
+				"pt-BR",
+				ru,
+				es,
 			);
 			mainGroup = 03C8C3711C8674AD00E7BFAE;
 			productRefGroup = 03C8C37C1C8674AD00E7BFAE /* Products */;
@@ -635,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4483FE131EF0665000EA8FA3 /* ListCollectionViewCell.xib in Resources */,
+				034CD24F233BBBC90053EF72 /* Localizable.strings in Resources */,
 				1FADD5EE1EA1564B00274197 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +764,23 @@
 			targetProxy = 03C8C3871C8674AD00E7BFAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		034CD251233BBBC90053EF72 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				034CD250233BBBC90053EF72 /* en */,
+				034CD252233BBBCC0053EF72 /* fr */,
+				034CD253233BBBCD0053EF72 /* id */,
+				034CD254233BBBCD0053EF72 /* ja */,
+				034CD255233BBBCE0053EF72 /* pt-BR */,
+				034CD256233BBBD10053EF72 /* ru */,
+				034CD257233BBBD20053EF72 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		03C8C38D1C8674AD00E7BFAE /* Debug */ = {
