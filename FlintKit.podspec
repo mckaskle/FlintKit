@@ -34,7 +34,10 @@ Swift Standard Library, UIKit and more.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'FlintKit/**/*'
-  s.exclude_files = 'FlintKit/Supporting Files/**/*'
+  s.exclude_files = [
+    'FlintKit/Supporting Files/FlintKit.h',
+    'FlintKit/Supporting Files/Info.plist'
+  ]
   s.tvos.exclude_files = [
     'FlintKit/UIKit/Views/**/*', 
     'FlintKit/UIKit/NetworkActivityIndicatorManager.swift',
