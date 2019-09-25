@@ -28,7 +28,7 @@ import Foundation
 
 
 private class Dummy {}
-private let bundle = Bundle(for: Dummy.self)
+private let bundle = Bundle.main
 
 
 extension String {
@@ -38,15 +38,15 @@ extension String {
   // MARK: C
   
   public static var cancel: String {
-    return NSLocalizedString("Cancel", bundle: bundle, comment: "Cancel button on alert view")
+    return NSLocalizedString("Cancel", tableName: "FlintKitLocalizable", bundle: bundle, comment: "Cancel button on alert view")
   }
   
   public static var couldNotLaunchApp: String {
     guard let appName = Bundle.main.localizedAppName else {
-      return NSLocalizedString("Could Not Launch App", bundle: bundle, comment: "title of alert that is shown when there was an error launching the app")
+      return NSLocalizedString("Could Not Launch App", tableName: "FlintKitLocalizable", bundle: bundle, comment: "title of alert that is shown when there was an error launching the app")
     }
     
-    let format = NSLocalizedString("Could Not Launch %@", bundle: bundle, comment: "title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name")
+    let format = NSLocalizedString("Could Not Launch %@", tableName: "FlintKitLocalizable", bundle: bundle, comment: "title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name")
     return String(format: format, appName)
   }
   
@@ -54,14 +54,14 @@ extension String {
   // MARK: D
   
   public static var done: String {
-    return NSLocalizedString("Done", bundle: bundle, comment: "Done button on alert view")
+    return NSLocalizedString("Done", tableName: "FlintKitLocalizable", bundle: bundle, comment: "Done button on alert view")
   }
   
   
   // MARK: O
   
   public static var ok: String {
-    return NSLocalizedString("OK", bundle: bundle, comment: "OK button on alert view")
+    return NSLocalizedString("OK", tableName: "FlintKitLocalizable", bundle: bundle, comment: "OK button on alert view")
   }
   
   
@@ -69,10 +69,10 @@ extension String {
   
   public static var theAppWillNowQuit: String {
     guard let appName = Bundle.main.localizedAppName else {
-      return NSLocalizedString("The app will now quit.", bundle: bundle, comment: "message of error alert when the appe could not be loaded.")
+      return NSLocalizedString("The app will now quit.", tableName: "FlintKitLocalizable", bundle: bundle, comment: "message of error alert when the appe could not be loaded.")
     }
     
-    let format = NSLocalizedString("%@ will now quit.", bundle: bundle, comment: "message of error alert when the app could not be loaded; %@ is replaced with the app's name")
+    let format = NSLocalizedString("%@ will now quit.", tableName: "FlintKitLocalizable", bundle: bundle, comment: "message of error alert when the app could not be loaded; %@ is replaced with the app's name")
     return String(format: format, appName)
   }
   
