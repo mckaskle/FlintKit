@@ -45,9 +45,9 @@ Swift Standard Library, UIKit and more.
     'FlintKit/Foundation/Notification+FlintKit.swift'
   ]
   
-  s.resource_bundles = {
-    'FlintKit' => ['FlintKit/Supporting Files/*.lproj']
-  }
+  # s.resource_bundles = {
+  #   'FlintKit' => ['FlintKit/Supporting Files/*.lproj']
+  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
