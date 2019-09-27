@@ -33,7 +33,7 @@ Swift Standard Library, UIKit and more.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'FlintKit/**/*{h,m,swift,xib}'
+  s.source_files = 'FlintKit/**/*'
   s.exclude_files = [
     'FlintKit/Supporting Files/FlintKit.h',
     'FlintKit/Supporting Files/Info.plist'
