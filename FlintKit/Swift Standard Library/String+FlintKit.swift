@@ -28,7 +28,18 @@ import Foundation
 
 
 private class Dummy {}
-private let bundle = Bundle.main
+private let bundle: Bundle = {
+  let frameworkBundle = Bundle(for: Dummy.self)
+  
+  guard
+    let resourceBundleURL = frameworkBundle.url(forResource: "FlintKit", withExtension: "bundle"),
+    let resourceBundle = Bundle(url: resourceBundleURL) else {
+      assertionFailure("Could not find resource bundle.")
+      return frameworkBundle
+  }
+  
+  return resourceBundle
+}()
 
 
 extension String {

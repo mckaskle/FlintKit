@@ -33,7 +33,7 @@ Swift Standard Library, UIKit and more.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'FlintKit/**/*'
+  s.source_files = 'FlintKit/**/*{h,m,swift,xib}'
   s.exclude_files = [
     'FlintKit/Supporting Files/FlintKit.h',
     'FlintKit/Supporting Files/Info.plist'
@@ -46,7 +46,7 @@ Swift Standard Library, UIKit and more.
   ]
   
   s.resource_bundles = {
-    'FlintKit' => ['FlintKit/Supporting Files/*.lproj']
+    'FlintKit' => ['FlintKit/Supporting Files/*.lproj/**']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
