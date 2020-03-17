@@ -61,17 +61,17 @@ final class MigrationManager {
     let sourceModelContainer = try configuration.sourceModelContainer(forSourceMetadata: sourceMetadata)
     
     let destinationModel = try configuration.destinationModel(forSourceModelContainer: sourceModelContainer)
-    let destinationURL = try destinationStoreUrl(sourceStoreUrl: sourceStoreURL)
+    let intermediateURL = try destinationStoreUrl(sourceStoreUrl: sourceStoreURL)
     let mappingModels = try configuration.mappingModels(fromSource: sourceModelContainer.model, toDestination: destinationModel)
     
     let manager = NSMigrationManager(sourceModel: sourceModelContainer.model, destinationModel: destinationModel)
     
     for mappingModel in mappingModels {
-      try manager.migrateStore(from: sourceStoreURL, sourceType: type, options: nil, with: mappingModel, toDestinationURL: destinationURL, destinationType: type, destinationOptions: nil)
+      try manager.migrateStore(from: sourceStoreURL, sourceType: type, options: nil, with: mappingModel, toDestinationURL: intermediateURL, destinationType: type, destinationOptions: nil)
     }
 
     let fileManager = FileManager.default
-    let resultingItemURL = try fileManager.replaceItemAt(sourceStoreURL, withItemAt: destinationURL, options: [.usingNewMetadataOnly])
+    let resultingItemURL = try fileManager.replaceItemAt(sourceStoreURL, withItemAt: intermediateURL, options: [.usingNewMetadataOnly])
     
     let newSourceStoreURL = (resultingItemURL as URL?) ?? sourceStoreURL
 
@@ -80,7 +80,7 @@ final class MigrationManager {
     // https://stackoverflow.com/a/21099483/1223950
     for suffix in ["-shm", "-wal"] {
       // Copying from `destinationURL` to `newSourceStoreURL`.
-      let suffixedOriginalItemURL = URL(fileURLWithPath: destinationURL.path + suffix)
+      let suffixedOriginalItemURL = URL(fileURLWithPath: intermediateURL.path + suffix)
       let suffixedNewItemURL = URL(fileURLWithPath: newSourceStoreURL.path + suffix)
 
       let suffixedOriginalItemExists = fileManager.fileExists(atPath: suffixedOriginalItemURL.path)
