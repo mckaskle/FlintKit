@@ -41,17 +41,17 @@ final class MigrationManager {
   func migrate(configuration: CoreDataStackConfigurationType) throws {
     switch configuration.persistentStoreType {
     case .inMemory: return // No migration needed.
-    case .sqLite(let storeUrl):
-      try progressivelyMigrate(sourceStoreUrl: storeUrl, withConfiguration: configuration)
+    case .sqLite(let storeURL):
+      try progressivelyMigrate(sourceStoreURL: storeURL, withConfiguration: configuration)
     }
   }
   
   
   // MARK: - Private Methods
   
-  fileprivate func progressivelyMigrate(sourceStoreUrl: URL, withConfiguration configuration: CoreDataStackConfigurationType) throws {
+  fileprivate func progressivelyMigrate(sourceStoreURL: URL, withConfiguration configuration: CoreDataStackConfigurationType) throws {
     let type = configuration.persistentStoreType.value
-    let sourceMetadata = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: type, at: sourceStoreUrl)
+    let sourceMetadata = try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: type, at: sourceStoreURL)
     
     guard !configuration.managedObjectModel.isConfiguration(withName: nil, compatibleWithStoreMetadata: sourceMetadata) else {
       // No migration needed.
@@ -61,20 +61,51 @@ final class MigrationManager {
     let sourceModelContainer = try configuration.sourceModelContainer(forSourceMetadata: sourceMetadata)
     
     let destinationModel = try configuration.destinationModel(forSourceModelContainer: sourceModelContainer)
-    let destinationUrl = try destinationStoreUrl(sourceStoreUrl: sourceStoreUrl)
+    let destinationURL = try destinationStoreUrl(sourceStoreUrl: sourceStoreURL)
     let mappingModels = try configuration.mappingModels(fromSource: sourceModelContainer.model, toDestination: destinationModel)
     
     let manager = NSMigrationManager(sourceModel: sourceModelContainer.model, destinationModel: destinationModel)
     
     for mappingModel in mappingModels {
-      try manager.migrateStore(from: sourceStoreUrl, sourceType: type, options: nil, with: mappingModel, toDestinationURL: destinationUrl, destinationType: type, destinationOptions: nil)
+      try manager.migrateStore(from: sourceStoreURL, sourceType: type, options: nil, with: mappingModel, toDestinationURL: destinationURL, destinationType: type, destinationOptions: nil)
     }
+
+    let fileManager = FileManager.default
+    let resultingItemURL = try fileManager.replaceItemAt(sourceStoreURL, withItemAt: destinationURL, options: [.usingNewMetadataOnly])
     
-    var resultingItemUrl: NSURL?
-    try FileManager.default.replaceItem(at: sourceStoreUrl, withItemAt: destinationUrl, backupItemName: nil, options: [.usingNewMetadataOnly], resultingItemURL: &resultingItemUrl)
-    
-    let newSourceStoreUrl = (resultingItemUrl as URL?) ?? sourceStoreUrl
-    try progressivelyMigrate(sourceStoreUrl: newSourceStoreUrl, withConfiguration: configuration)
+    let newSourceStoreURL = (resultingItemURL as URL?) ?? sourceStoreURL
+
+    // When WAL option is used to create a persistent store, some extra files may have been created.
+    // Copy those over too, if necessary.
+    // https://stackoverflow.com/a/21099483/1223950
+    for suffix in ["-shm", "-wal"] {
+      // Copying from `destinationURL` to `newSourceStoreURL`.
+      let suffixedOriginalItemURL = URL(fileURLWithPath: destinationURL.path + suffix)
+      let suffixedNewItemURL = URL(fileURLWithPath: newSourceStoreURL.path + suffix)
+
+      let suffixedOriginalItemExists = fileManager.fileExists(atPath: suffixedOriginalItemURL.path)
+      let suffixedNewItemExists = fileManager.fileExists(atPath: suffixedNewItemURL.path)
+
+      switch (suffixedOriginalItemExists, suffixedNewItemExists) {
+      case (true, true):
+        // Both exist. Replace the original w/ the new.
+        let _ = try fileManager.replaceItemAt(suffixedOriginalItemURL, withItemAt: suffixedNewItemURL)
+
+      case (true, false):
+        // Original exists but there is no new one. Delete the original.
+        try fileManager.removeItem(at: suffixedOriginalItemURL)
+
+      case (false, true):
+        // There is a new item, but it's not replacing anything. Just rename it.
+        try fileManager.moveItem(at: suffixedNewItemURL, to: suffixedOriginalItemURL)
+
+      case (false, false):
+        // Nothing to delete. Nothing to move.
+        break
+      }
+    }
+
+    try progressivelyMigrate(sourceStoreURL: newSourceStoreURL, withConfiguration: configuration)
   }
   
 }

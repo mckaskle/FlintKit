@@ -46,7 +46,6 @@ private enum CoreDataStackConfigurationTypeError: Error {
 extension CoreDataStackConfigurationType {
   
   public func sourceModelContainer(forSourceMetadata metadata: [String: Any]) throws -> CoreDataStackSourceModelContainer {
-    print(Bundle.allBundles)
     for bundle in Bundle.allBundles {
       guard
         let path = bundle.path(forManagedObjectModelSourceMetadata: metadata),
