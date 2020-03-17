@@ -80,24 +80,24 @@ final class MigrationManager {
     // https://stackoverflow.com/a/21099483/1223950
     for suffix in ["-shm", "-wal"] {
       // Copying from `destinationURL` to `newSourceStoreURL`.
-      let suffixedOriginalItemURL = URL(fileURLWithPath: intermediateURL.path + suffix)
+      let suffixedIntermediateItemURL = URL(fileURLWithPath: intermediateURL.path + suffix)
       let suffixedNewItemURL = URL(fileURLWithPath: newSourceStoreURL.path + suffix)
 
-      let suffixedOriginalItemExists = fileManager.fileExists(atPath: suffixedOriginalItemURL.path)
+      let suffixedIntermediateItemExists = fileManager.fileExists(atPath: suffixedIntermediateItemURL.path)
       let suffixedNewItemExists = fileManager.fileExists(atPath: suffixedNewItemURL.path)
 
-      switch (suffixedOriginalItemExists, suffixedNewItemExists) {
+      switch (suffixedIntermediateItemExists, suffixedNewItemExists) {
       case (true, true):
-        // Both exist. Replace the original w/ the new.
-        let _ = try fileManager.replaceItemAt(suffixedOriginalItemURL, withItemAt: suffixedNewItemURL)
+        // Both exist. Replace the original w/ the intermediate.
+        let _ = try fileManager.replaceItemAt(suffixedNewItemURL, withItemAt: suffixedIntermediateItemURL)
 
       case (true, false):
-        // Original exists but there is no new one. Delete the original.
-        try fileManager.removeItem(at: suffixedOriginalItemURL)
+        // Intermediate exists but there is no new one. Delete the original.
+        try fileManager.moveItem(at: suffixedIntermediateItemURL, to: suffixedNewItemURL)
 
       case (false, true):
         // There is a new item, but it's not replacing anything. Just rename it.
-        try fileManager.moveItem(at: suffixedNewItemURL, to: suffixedOriginalItemURL)
+        try fileManager.removeItem(at: suffixedNewItemURL)
 
       case (false, false):
         // Nothing to delete. Nothing to move.
