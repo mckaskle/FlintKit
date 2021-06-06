@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ artıq işdən çıxacaq.";
+
+/* Cancel button on alert view */
+"Cancel" = "Ləğv etmək";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "%s açıla bilmədi @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Proqramı işə sala bilmədim";
+
+/* Done button on alert view */
+"Done" = "Yerinə yetdi";
+
+/* OK button on alert view */
+"OK" = "Yaxşı";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "İndi proqram işdən çıxacaq.";
+

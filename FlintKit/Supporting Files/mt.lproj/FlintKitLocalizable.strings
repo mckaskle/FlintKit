@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ issa se jieqaf.";
+
+/* Cancel button on alert view */
+"Cancel" = "Ikkanċella";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Ma setax Iniedi % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Ma setax Iniedi Applikazzjoni";
+
+/* Done button on alert view */
+"Done" = "Magħmul";
+
+/* OK button on alert view */
+"OK" = "Kollox sew";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "L-app issa se tieqaf.";
+

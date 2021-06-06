@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ tani do të heq dorë.";
+
+/* Cancel button on alert view */
+"Cancel" = "Anulo";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "I pamundur lëshimi % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "I pamundur lëshimi i app";
+
+/* Done button on alert view */
+"Done" = "U bë";
+
+/* OK button on alert view */
+"OK" = "Në rregull";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "App tani do të heq dorë.";
+

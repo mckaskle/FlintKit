@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ այսուհետ կթողնի ծխելը:";
+
+/* Cancel button on alert view */
+"Cancel" = "Չեղարկել";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Չէր կարող մեկնարկել % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Չէր կարող բացել app";
+
+/* Done button on alert view */
+"Done" = "Արված է";
+
+/* OK button on alert view */
+"OK" = "Լավ";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Այժմ հավելվածը կդադարի։";
+

@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "% @ ഇപ്പോൾ ഉപേക്ഷിക്കും.";
+
+/* Cancel button on alert view */
+"Cancel" = "ക്യാൻസൽ ചെയ്യ്";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "% വിക്ഷേപിക്കാൻ കഴിഞ്ഞില്ല @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "ആപ്പ് ലോഞ്ച് ചെയ്യാൻ കഴിഞ്ഞില്ല";
+
+/* Done button on alert view */
+"Done" = "ചെയ്തു";
+
+/* OK button on alert view */
+"OK" = "ശരി";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "ആപ്പ് ഇപ്പോൾ ഉപേക്ഷിക്കും.";
+

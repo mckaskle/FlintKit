@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "Scoirfidh %@ anois.";
+
+/* Cancel button on alert view */
+"Cancel" = "Cuir ar ceal";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Níorbh fhéidir % a sheoladh @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Níorbh fhéidir feidhmchlár a lainseáil";
+
+/* Done button on alert view */
+"Done" = "Arna dhéanamh";
+
+/* OK button on alert view */
+"OK" = "Ceart go leor";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Scoirfidh an aip anois.";
+

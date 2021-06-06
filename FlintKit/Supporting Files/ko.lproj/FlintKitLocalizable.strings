@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@는 이제 종료됩니다.";
+
+/* Cancel button on alert view */
+"Cancel" = "취소";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "출시 할 수 없습니다 % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "앱을 시작할 수 없습니다.";
+
+/* Done button on alert view */
+"Done" = "수행";
+
+/* OK button on alert view */
+"OK" = "그래";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "이제 앱이 종료됩니다.";
+

@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ bây giờ sẽ thoát.";
+
+/* Cancel button on alert view */
+"Cancel" = "hủy";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Không thể khởi chạy % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Không thể khởi chạy ứng dụng";
+
+/* Done button on alert view */
+"Done" = "Thực hiện";
+
+/* OK button on alert view */
+"OK" = "Ok";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Ứng dụng bây giờ sẽ thoát.";
+

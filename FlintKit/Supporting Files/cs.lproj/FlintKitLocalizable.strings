@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ bude nyní ukončete.";
+
+/* Cancel button on alert view */
+"Cancel" = "zrušit";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "1 000 % 000 00 @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Aplikaci 1 0 000 000";
+
+/* Done button on alert view */
+"Done" = "hotový";
+
+/* OK button on alert view */
+"OK" = "Ok";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Aplikace bude nyní ukončete.";
+

@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "٪@ در حال حاضر ترک خواهد شد.";
+
+/* Cancel button on alert view */
+"Cancel" = "لغو";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "نمی تواند راه اندازی ٪ @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "نمی تواند برنامه راه اندازی";
+
+/* Done button on alert view */
+"Done" = "انجام";
+
+/* OK button on alert view */
+"OK" = "باشه";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "برنامه در حال حاضر ترک خواهد شد.";
+

@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "Ny %@ dia hiala ankehitriny.";
+
+/* Cancel button on alert view */
+"Cancel" = "Foano";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Tsy afaka nanafatra % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Tsy afaka nampiditra app";
+
+/* Done button on alert view */
+"Done" = "Vita";
+
+/* OK button on alert view */
+"OK" = "Eny ary";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Hiala ankehitriny ilay rafibaovao.";
+

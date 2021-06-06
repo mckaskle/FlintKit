@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ এতিয়া ত্যাগ কৰিব।";
+
+/* Cancel button on alert view */
+"Cancel" = "বাতিল কৰা";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "% আৰম্ভ কৰিব পৰা নগ'ল @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "এপ্প আৰম্ভ কৰিব পৰা নগল";
+
+/* Done button on alert view */
+"Done" = "সম্পন্ন হৈছে";
+
+/* OK button on alert view */
+"OK" = "হ'ব";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "এপ্পটোৱে এতিয়া ত্যাগ কৰিব।";
+

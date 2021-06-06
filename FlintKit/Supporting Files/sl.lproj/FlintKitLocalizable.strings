@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ bo zdaj prenehal.";
+
+/* Cancel button on alert view */
+"Cancel" = "odpovedati";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "%% zagona ni bilo mogoče zagnati @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Aplikacije ni bilo mogoče zagnati";
+
+/* Done button on alert view */
+"Done" = "Storiti";
+
+/* OK button on alert view */
+"OK" = "v redu";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Aplikacija se bo zdaj opustila.";
+

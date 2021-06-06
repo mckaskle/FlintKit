@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "Το %@ θα παραιτηθεί τώρα.";
+
+/* Cancel button on alert view */
+"Cancel" = "ακυρώνω";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Δεν ήταν δυνατή η εκκίνηση % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Δεν ήταν δυνατή η εκκίνηση της εφαρμογής";
+
+/* Done button on alert view */
+"Done" = "Έγινε";
+
+/* OK button on alert view */
+"OK" = "Ok";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Η εφαρμογή θα τερματιστεί τώρα.";
+

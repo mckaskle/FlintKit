@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "٪@ به اوس پریږدې.";
+
+/* Cancel button on alert view */
+"Cancel" = "لغوه کول";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "نه شی کولای ٪ پیل کړی @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "نه شی کولای چې اپ پیل کړی";
+
+/* Done button on alert view */
+"Done" = "ترسره شوی";
+
+/* OK button on alert view */
+"OK" = "سمه ده";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "دا اپلیکیشن به اوس پریږدی.";
+

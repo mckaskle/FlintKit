@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ ຈະລາອອກດຽວນີ້.";
+
+/* Cancel button on alert view */
+"Cancel" = "ຍົກເລີກ";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "ບໍ່ສາມາດເປີດຕົວ % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "ບໍ່ສາມາດເປີດApp";
+
+/* Done button on alert view */
+"Done" = "ເຮັດແລ້ວ";
+
+/* OK button on alert view */
+"OK" = "ໂອເຄ";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "ບັດນີ້ແອັບພລິເຄຊັນຈະເຊົາ.";
+

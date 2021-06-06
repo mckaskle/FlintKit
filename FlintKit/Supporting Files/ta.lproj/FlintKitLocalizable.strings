@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ இப்போது வெளியேறும்.";
+
+/* Cancel button on alert view */
+"Cancel" = "ரத்து";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "தொடங்க முடியவில்லை % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "பயன்பாட்டை தொடங்க முடியவில்லை";
+
+/* Done button on alert view */
+"Done" = "முடிந்த";
+
+/* OK button on alert view */
+"OK" = "சரி";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "பயன்பாடு இப்போது வெளியேறும்.";
+

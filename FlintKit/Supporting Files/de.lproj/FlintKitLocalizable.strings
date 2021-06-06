@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%- wird nun beendet.";
+
+/* Cancel button on alert view */
+"Cancel" = "Abbrechen";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Konnte % nicht starten @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "App konnte nicht gestartet werden";
+
+/* Done button on alert view */
+"Done" = "fertig";
+
+/* OK button on alert view */
+"OK" = "Okay";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Die App wird nun beendet.";
+

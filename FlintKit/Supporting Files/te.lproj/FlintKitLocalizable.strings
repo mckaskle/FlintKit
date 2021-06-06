@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ ఇప్పుడు నిష్క్రమిస్తుంది.";
+
+/* Cancel button on alert view */
+"Cancel" = "రద్దు";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "%ను ప్రారంభించలేకపోయింది @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "యాప్ లాంఛ్ చేయలేకపోయింది";
+
+/* Done button on alert view */
+"Done" = "పూర్తయింది";
+
+/* OK button on alert view */
+"OK" = "సరే";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "యాప్ ఇప్పుడు నిష్క్రమిస్తుంది.";
+

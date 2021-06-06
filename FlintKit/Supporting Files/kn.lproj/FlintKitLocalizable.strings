@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ ಈಗ ತೊರೆಯುತ್ತದೆ.";
+
+/* Cancel button on alert view */
+"Cancel" = "ರದ್ದುಮಾಡಿ";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "% ಅನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಬಿಡುಗಡೆ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ";
+
+/* Done button on alert view */
+"Done" = "ಮುಗಿದಿದೆ";
+
+/* OK button on alert view */
+"OK" = "ಸರಿ";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "ಅಪ್ಲಿಕೇಶನ್ ಈಗ ತ್ಯಜಿಸುತ್ತದೆ.";
+

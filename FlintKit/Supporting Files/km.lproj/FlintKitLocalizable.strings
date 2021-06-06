@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "តើ អ្នក នឹង ឆ្លើយ យ៉ាង ណា?";
+
+/* Cancel button on alert view */
+"Cancel" = "លប់ចោល";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "មិន អាច បើក ដំណើរការ បាន ទេ & # 160; ។ @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "មិន អាច បើក កម្មវិធី បាន ទេ";
+
+/* Done button on alert view */
+"Done" = "បាន ធ្វើ រួច";
+
+/* OK button on alert view */
+"OK" = "យល់ព្រម";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "ឥឡូវ នេះ កម្មវិធី នឹង ឈប់ ។";
+

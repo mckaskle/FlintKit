@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ ייסגר כעת.";
+
+/* Cancel button on alert view */
+"Cancel" = "ביטל";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "לא היתה אפשרות להפעיל את % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "לא היתה אפשרות להפעיל את היישום";
+
+/* Done button on alert view */
+"Done" = "לעשות";
+
+/* OK button on alert view */
+"OK" = "אוקיי";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "האפליקציה תיסגר כעת.";
+

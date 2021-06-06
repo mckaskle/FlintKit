@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ ሕጂ ኼቋርጽ እዩ።";
+
+/* Cancel button on alert view */
+"Cancel" = "ደምስስ";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "ኪጅምር ኣይክእልን እዩ ነይሩ @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "ኣፕሊኬሽን ኪጅምር ኣይከኣለን";
+
+/* Done button on alert view */
+"Done" = "እተገብረ";
+
+/* OK button on alert view */
+"OK" = "ሐራይ";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "ሕጂ እታ ኣፕሊኬሽን ከተቋርጽ እያ።";
+

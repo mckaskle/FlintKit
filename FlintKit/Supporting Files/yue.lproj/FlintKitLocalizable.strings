@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%=而家將退出。";
+
+/* Cancel button on alert view */
+"Cancel" = "取消";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "無法啟動% @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "無法啟動應用程序";
+
+/* Done button on alert view */
+"Done" = "做";
+
+/* OK button on alert view */
+"OK" = "仲可以";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "該應用程序而家將退出。";
+

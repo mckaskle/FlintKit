@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ se va închide acum.";
+
+/* Cancel button on alert view */
+"Cancel" = "anula";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Imposibil de lansat % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Imposibil de lansat aplicația";
+
+/* Done button on alert view */
+"Done" = "făcut";
+
+/* OK button on alert view */
+"OK" = "ok";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Aplicația va renunța acum.";
+

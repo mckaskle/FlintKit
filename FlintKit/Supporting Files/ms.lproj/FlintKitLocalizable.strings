@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ kini akan berhenti.";
+
+/* Cancel button on alert view */
+"Cancel" = "Membatalkan";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Tidak Dapat Melancarkan % @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Aplikasi Tidak Dapat Dilancarkan";
+
+/* Done button on alert view */
+"Done" = "Dilakukan";
+
+/* OK button on alert view */
+"OK" = "Ok";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Aplikasi ini kini akan berhenti.";
+

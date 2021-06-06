@@ -1,0 +1,21 @@
+/* message of error alert when the app could not be loaded; %@ is replaced with the app's name */
+"%@ will now quit." = "%@ lopettaa nyt.";
+
+/* Cancel button on alert view */
+"Cancel" = "perua";
+
+/* title of alert that is shown when there was an error launching the app; %@ is replaced with the app's name */
+"Could Not Launch %@" = "Aloitusprosenttia ei voitu käynnistää @";
+
+/* title of alert that is shown when there was an error launching the app */
+"Could Not Launch App" = "Sovellusta ei voitu käynnistää";
+
+/* Done button on alert view */
+"Done" = "valmis";
+
+/* OK button on alert view */
+"OK" = "Okei";
+
+/* message of error alert when the appe could not be loaded. */
+"The app will now quit." = "Sovellus sulkeutuu nyt.";
+
