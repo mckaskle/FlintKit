@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FlintKit'
-  s.version          = '10.14.5'
+  s.version          = '10.15.0'
   s.summary          = 'Basic categories and utilities.'
   s.swift_versions   = ['4.2', '5.0']
 
